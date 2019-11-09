@@ -1,0 +1,257 @@
+
+package net;
+import "base_msg_struct.proto";
+import "error_code.proto";
+
+//-------------麻将游戏消息---------------------------------------
+
+// 牌组信息
+message weave_item
+{
+	optional uint32  weave_kind 	= 1; // 组合类型
+	optional uint32  center_card	= 2; // 中心扑克
+	optional uint32  public_card    = 3; // 公开标志
+	optional uint32  provide_user	= 4; // 供应用户
+}
+
+
+
+message mjaction_notify_hu
+{
+	repeated uint32 card	= 1; // 可胡牌
+	repeated uint32 score	= 2; // 胡分数
+	repeated uint32 count	= 3; // 牌数目
+}
+
+message mjaction_out_after_notify_hu_req
+{
+	repeated uint32 chairid	= 1; // chair id
+}
+
+message mjaction_out_after_notify_hu_rep
+{
+	optional uint32	last_out_card_user	= 1; //最后出牌用户
+	repeated mjaction_notify_hu notify_hu	= 2; //提示胡
+}
+
+message mjaction_out_front_notify_hu
+{
+	repeated uint32				out_card	= 1; //可出牌
+	repeated mjaction_notify_hu notify_hu	= 2; //提示胡
+}
+
+message msg_mjaction_oper_after_notify_hu_req
+{
+}
+
+message msg_mjaction_oper_after_notify_hu_rep
+{
+	optional uint32 oper_chairid				 	= 1; //操作用户
+	repeated mjaction_out_front_notify_hu notify_hu = 2; //提示胡
+}
+
+// 操作信息
+message mjaction
+{
+	optional uint32 code					= 1; // 操作码
+	optional uint32	card					= 2; // 操作牌
+}
+
+// 游戏信息
+message msg_majiang_game_info_rep
+{	
+	optional uint32 banker_user 	= 1; // 庄家
+	optional uint32 cur_user		= 2; // 当前用户
+	optional uint32 turn_winer		= 3; // 出牌玩家	
+	optional uint32 turn_card_data  = 4; // 出的牌(可能有多张)	
+
+	repeated uint32 discard_count   = 5; // 丢弃数目(大家的弃牌数目)
+	repeated uint32 discard_cards   = 6; // 丢弃记录(大家的弃牌)
+
+	repeated uint32 weave_count		= 7; // 组合数目(大家的组合数目)
+	repeated weave_item weave_items = 8; // 组合牌(大家的组合牌)
+
+	repeated uint32 hand_card_count = 9;  // 手牌数(大家的手牌数)
+	repeated uint32 hand_card_data  = 10; // 手牌(自己的手牌)
+
+	optional uint32 game_state		= 11;//
+	optional uint32 wait_time		= 12;// 定时器剩余时间
+	optional uint32 cur_round		= 13;// 当前局数
+	repeated mjaction cur_oper      = 14;// 当前操作	
+	optional uint32 left_card_count = 15;// 剩余数目
+	optional uint32 send_card_data  = 16;// 发的牌
+	repeated uint32 listen_states   = 17;// 听牌状态
+	optional uint32 resume_user     = 18;// 还原用户
+	repeated uint32 uid				= 19;// 用户uid
+	repeated uint32 trustee			= 20;// 托管操作
+	repeated mjaction_out_front_notify_hu notify_hu = 21; //提示胡
+	repeated int32 passhu_count	= 22;	// pass hu count
+	optional uint32 send_card_user  = 23;// 发牌用户
+}
+// 游戏开始
+message msg_majiang_start_rep
+{
+	repeated uint32 sice_count			= 1;	// 色子点数
+	optional uint32 banker_user			= 2;	// 庄家
+	optional uint32 cur_user			= 3;	// 当前用户
+	repeated mjaction user_action		= 4;	// 用户动作
+	repeated uint32 card_data 			= 5;	// 用户手牌
+	optional uint32 cur_round			= 6;	// 当前局数
+	repeated uint32 card_num			= 7;	// 牌数
+	optional uint32 left_card_count 	= 8;	// 剩余数目
+	repeated mjaction_out_front_notify_hu notify_hu = 9; //提示胡
+	repeated int32 passhu_count	= 10;	// pass hu count
+}
+// 玩家出牌
+message msg_majiang_out_card_req
+{
+	optional uint32 card_data 		= 1;	// 扑克数据
+}
+message msg_majiang_out_card_rep
+{
+	optional uint32 out_card_user 	= 1;	// 出牌玩家
+	optional uint32 out_card_data 	= 2;	// 出牌扑克
+	repeated mjaction_out_front_notify_hu notify_hu = 3; //提示胡
+
+}
+// 发送扑克(摸牌)
+message msg_majiang_send_card_rep
+{
+	optional uint32 card_data  		= 1;	// 扑克数据
+	repeated mjaction action		= 2;	// 操作
+	optional uint32 cur_user		= 3;	// 当前用户
+	optional uint32 is_not_gang		= 4;	// 是否杠牌
+	optional uint32 left_card_count = 5; 	// 剩余牌数
+	repeated uint32 cur_hand_card   = 6;    // 当前用户手牌
+	optional mjaction_out_front_notify_hu notify_hu = 7; //提示胡
+	repeated int32 passhu_count	= 8;	// pass hu count
+}
+// 听牌命令
+message msg_majiang_listen_card_rep
+{
+	optional uint32 listen_user		= 1;	// 听牌用户
+
+}
+// 操作提示
+message msg_majiang_oper_notify_rep
+{
+	optional uint32 resume_user		= 1;	// 还原用户
+	repeated mjaction action 		= 2;	// 用户操作
+	optional uint32 cur_user        = 3;	// 当前用户
+	repeated int32 passhu_count	= 4;	// pass hu count
+}
+// 用户操作
+message msg_majiang_oper_card_req
+{
+	optional uint32 oper_code		= 1;	// 操作代码
+	optional uint32 oper_card 		= 2;	// 操作扑克
+}
+// 操作命令
+message msg_majiang_oper_result_rep
+{
+	optional uint32 oper_user		= 1;	// 操作用户
+	optional uint32 provide_user	= 2;	// 供应用户
+	optional mjaction action 		= 3;	// 用户操作
+	repeated mjaction_out_front_notify_hu notify_hu = 4; //提示胡
+	repeated int32 passhu_count	= 5;	// pass hu count
+}
+// 游戏结束
+message mjhu_info
+{
+	repeated uint32 open_hu 	= 1; // 起手胡
+	repeated uint32 hu_kind 	= 2; // 胡类型
+	repeated uint32 hu_score 	= 3; // 胡分数
+	repeated uint32 hu_right 	= 4; // 胡权位
+	repeated uint32 hit_bird    = 5; // 扎鸟
+	optional int32  score       = 6; // 得分
+	optional uint32 hu_card 	= 7; // 胡的牌
+	//扑克信息	
+	repeated uint32 card_datas	= 8; // 手牌数据
+	repeated weave_item weave_items = 9; // 组合牌
+	optional uint32 bird_score  = 10; // 扎鸟分数
+}
+message msg_majiang_game_over_rep
+{
+	optional uint32 provide_user	= 1;	// 供应用户
+	optional uint32 chi_hu_card		= 2;	// 供应扑克
+	repeated mjhu_info hu_infos		= 3;	// 胡牌信息
+	optional uint32 end_type		= 4;	// 结束类型(0流局1点炮2自摸)
+	optional uint32 banker_user 	= 5;    // 庄家
+	repeated uint32 all_bird		= 6;	// 全部鸟牌
+	repeated int32  passhu_count    = 7;    // pass hu count
+}
+
+// 通知起手胡(长沙麻将)
+message msg_majiang_opening_hu_rep
+{
+	optional uint32 chair_id	= 1;// 亮牌玩家
+	repeated uint32 min_hu_type = 2;// 小胡类型
+	repeated uint32 card_data   = 3;// 亮牌
+}
+// 刷新牌面信息
+message msg_majiang_flush_desk_cards_rep
+{
+	
+	optional uint32 turn_card_data  = 1; // 出的牌	
+
+	repeated uint32 discard_count   = 2; // 丢弃数目(大家的弃牌数目)
+	repeated uint32 discard_cards   = 3; // 丢弃记录(大家的弃牌)
+
+	repeated uint32 weave_count		= 4; // 组合数目(大家的组合数目)
+	repeated weave_item weave_items = 5; // 组合牌(大家的组合牌)
+
+	repeated uint32 hand_card_count = 6; // 手牌数(大家的手牌数)
+	repeated uint32 hand_card_data  = 7; // 手牌(自己的手牌)
+	optional uint32 left_card_count = 8; // 剩余牌数
+	optional uint32 send_card_data  = 9; // 发的牌
+	optional uint32 cur_user		= 10; // 当前用户
+	optional uint32 send_card_user  = 11;// 发牌用户
+}
+// 公共牌亮牌
+message msg_majiang_show_public_cards_rep
+{
+	optional uint32 show_user 	= 1; // 谁翻出来的
+	optional uint32 show_type   = 2; // 亮牌操作类型
+	repeated uint32 show_cards 	= 3; // 亮牌
+	optional uint32 left_card_count = 4; // 剩余牌数
+}
+// 修改手牌
+message msg_majiang_change_hand_card_req
+{
+	optional uint32 change_user = 1; // 修改用户
+	repeated uint32 change_card = 2; // 修改后手牌
+}
+// 请求手牌数据
+message msg_majiang_get_hand_card_req
+{
+	optional uint32 user	= 1; // 
+}
+message msg_majiang_get_hand_card_rep
+{
+	repeated uint32 hand_card_data  = 1; // 手牌(自己的手牌)
+	optional uint32 left_card_count = 2; // 剩余牌数
+}
+
+//托管操作
+message msg_majiang_oper_trustee_req
+{
+	optional uint32 trustee	= 1;		//托管操作  0 取消托管
+}
+//托管操作
+message msg_majiang_oper_trustee_rep
+{
+	optional uint32 trustee	= 1;		//托管操作
+	optional uint32 result	= 2;		//操作结果  1 成功 2 失败
+
+}
+
+//托管广播
+message msg_majiang_oper_trustee_broadcast
+{
+	optional uint32 uid						= 1;	//用户uid
+	optional uint32 trustee					= 2;	//托管操作 0 取消托管 1 托管
+}
+
+//-----------------麻将游戏消息-----------------------------------
+
+

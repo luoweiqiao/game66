@@ -1,0 +1,20 @@
+
+update file 120.24.54.6
+/disk/ablitte/server/release/baccarat_server/baccaratServer
+/disk/ablitte/server/release/bainiu_server/bainiuServer
+/disk/ablitte/server/release/dice_server/diceServer
+/disk/ablitte/server/release/everycolor_server/everycolorServer
+/disk/ablitte/server/release/fight_server/fightServer
+/disk/ablitte/server/release/land_server/landServer
+/disk/ablitte/server/release/niuniu_server/niuniuServer
+/disk/ablitte/server/release/paijiu_server/paijiuServer
+/disk/ablitte/server/release/robniu_server/robniuServer
+/disk/ablitte/server/release/showhand_server/showhandServer
+/disk/ablitte/server/release/slot_server/slotServer
+/disk/ablitte/server/release/texas_server/texasServer
+/disk/ablitte/server/release/two_people_majiang_server/majiangServer
+/disk/ablitte/server/release/war_server/warServer
+/disk/ablitte/server/release/zajinhua_server/zajinhuaServer
+/disk/ablitte/server/release/fishing_server/fishingServer
+/disk/ablitte/server/release/lobby_server/lobbyServer
+

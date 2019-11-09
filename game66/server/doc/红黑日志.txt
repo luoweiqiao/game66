@@ -1,0 +1,100 @@
+{
+  "basescore": 100,
+  "begintime": 1531910104,
+  "chessid": "14-1-1-1531910104",
+  "consume": 2,
+  "content": "{\"card\":[{\"c\":[52,4,40],\"p\":0,\"t\":2},{\"c\":[22,38,10],\"p\":1,\"t\":2}],\"mult\":{\"c\":[0,1,1]},\"userBetInfo\":[{\"score_0\":0,\"score_1\":3000,\"score_2\":0,\"score_a\":3000,\"uid\":13111},{\"score_0\":0,\"score_1\":0,\"score_2\":200,\"score_a\":200,\"uid\":3367}]}\n",
+  "deal": 1,
+  "endtime": 1531910104,
+  "fee": -302,
+  "gid": 14,
+  "logtype": "gamelog",
+  "rid": 1,
+  "roomtype": 0,
+  "tid": 1,
+  "uids": [
+    {
+      "chair": 5,
+      "fee": -292,
+      "gamecount": 44,
+      "land": 0,
+      "newv": 124606,
+      "oldv": 119048,
+      "playerType": 1,
+      "safebox": 0,
+      "totalwinc": 42738,
+      "uid": 13111,
+      "win": 2708
+    },
+    {
+      "chair": 255,
+      "fee": -10,
+      "gamecount": 1,
+      "land": 0,
+      "newv": 116030,
+      "oldv": 115840,
+      "playerType": 0,
+      "safebox": 0,
+      "totalwinc": 190,
+      "uid": 3367,
+      "win": 190
+    }
+  ]
+}
+
+
+
+#define JETTON_INDEX_TIGER			0			黑
+#define JETTON_INDEX_LEOPARD		1			红
+#define JETTON_INDEX_OTHER			2			其他
+
+
+
+
+
+{
+    \"card\": [									// 牌信息
+        {
+            \"c\": [							// 牌数值
+                52,
+                4,
+                40
+            ],
+            \"p\": 0,							// 索引 上面定义
+            \"t\": 2							// 牌型
+        },
+        {
+            \"c\": [
+                22,
+                38,
+                10
+            ],
+            \"p\": 1,
+            \"t\": 2
+        }
+    ],
+    \"mult\": {									// 赔率
+        \"c\": [
+            0,
+            1,
+            1
+        ]
+    },
+    \"userBetInfo\": [
+        {
+            \"score_0\": 0,						// 0 区域下注分数 上面定义
+            \"score_1\": 3000,
+            \"score_2\": 0,
+            \"score_a\": 3000,					// 总下注分数
+            \"uid\": 13111
+        },
+        {
+            \"score_0\": 0,
+            \"score_1\": 0,
+            \"score_2\": 200,
+            \"score_a\": 200,
+            \"uid\": 3367
+        }
+    ]
+}
+

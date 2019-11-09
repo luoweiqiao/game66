@@ -1,0 +1,156 @@
+
+package net;
+import "base_msg_struct.proto";
+import "error_code.proto";
+
+//-------------百家乐游戏消息---------------------------------------
+
+// 游戏状态
+message msg_baccarat_game_info_free_rep
+{
+	optional uint32 time_leave 				= 1; 	//剩余时间
+	optional uint32 banker_id				= 2; 	//当前庄家
+	optional uint32 banker_time				= 3; 	//庄家局数
+	optional int64	banker_win_score		= 4; 	//庄家成绩
+	optional int64  banker_score			= 5; 	//庄家分数		
+	optional int64  banker_buyin_score  	= 6; 	//庄家带入
+	//optional int64  banker_show_score  		= 7; 	//庄家金币
+}
+message msg_baccarat_game_info_play_rep
+{
+	repeated int64  all_jetton_score		= 1;	//全体总注	
+	repeated msg_cards table_cards			= 2;	//桌面扑克
+	
+	optional uint32 banker_id				= 3;	//当前庄家
+	optional uint32 banker_time				= 4;	//庄家局数
+	optional int64  banker_win_score		= 5;	//庄家赢分
+	optional int64  banker_score			= 6;	//庄家分数		
+	optional uint32 time_leave				= 7;	//剩余时间
+	optional uint32 game_status				= 8;	//游戏状态	
+	repeated int64  self_jetton_score		= 9;	//自己下注
+	optional int64  banker_buyin_score  	= 10;	//庄家带入
+	optional uint32 need_leave_banker		= 11;	//是否已经申请下庄
+	//optional int64  banker_show_score  		= 11; 	//庄家金币
+}
+// 游戏开始
+message msg_baccarat_start_rep
+{
+	optional uint32 banker_id			= 1;	//庄家id
+	optional int64  banker_score		= 2;	//庄家金币
+	optional uint32 time_leave			= 3;	//剩余时间	
+	optional int64  banker_buyin_score  = 4;	//庄家带入
+	
+}
+// 用户下注
+message msg_baccarat_place_jetton_req
+{
+	optional uint32 jetton_area  = 1; //下注区域
+	optional int64  jetton_score = 2; //加注数目	
+}
+message msg_baccarat_place_jetton_rep
+{
+	optional uint32 jetton_area  = 1; //下注区域
+	optional int64  jetton_score = 2; //加注数目
+	optional uint32 result		 = 3; //加注返回
+}
+message msg_baccarat_place_jetton_broadcast
+{
+	optional uint32 uid					= 1;	//用户位置
+	optional uint32 jetton_area			= 2;	//筹码区域
+	optional int64  jetton_score		= 3;	//加注数目		
+	optional int64  total_jetton_score  = 4;	//总下注
+	
+}
+// 游戏结束
+message msg_baccarat_game_end
+{
+	optional uint32 	time_leave			= 1;	// 剩余时间
+	repeated msg_cards 	table_cards 		= 2;	// 桌面扑克
+	repeated uint32		card_types			= 3;	// 扑克牌型
+	optional int64		banker_win_score	= 4;	// 庄家成绩
+	optional int64		banker_total_score	= 5;	// 庄家成绩
+	optional uint32     banker_time			= 6;	// 做庄次数
+	optional int64		user_score			= 7;	// 玩家成绩
+	repeated int64		player_score		= 8;	// 玩家成绩
+	repeated uint32		win_types			= 9;	// 是否赢
+	optional uint32		remain_card			= 10;   // 剩余牌数
+	optional uint32 	settle_accounts_type= 11;	// 庄家结算类型
+}
+// 申请庄家
+message msg_baccarat_apply_banker
+{
+	optional uint32 apply_oper		= 1;	// 1申请0取消申请	
+	optional int64	apply_score		= 2;	// 上庄带入筹码
+	optional uint32 auto_addscore   = 3;	// 自动补币
+}
+message msg_baccarat_apply_banker_rep
+{
+	optional uint32 apply_oper	= 1;
+	optional uint32 result		= 2;
+	optional int64  buyin_score = 3;	
+}
+// 切换庄家
+message msg_baccarat_change_banker
+{
+	optional uint32 banker_user 	= 1;
+	optional int64	banker_score	= 2;	
+}
+// 更新积分
+message msg_baccarat_change_user_score
+{
+	optional uint32		chair_id			= 1;	// 椅子号码
+	optional int64		score				= 2;	// 玩家积分
+}
+// 申请庄家列表
+message msg_baccarat_apply_list
+{
+	repeated uint32     player_ids			= 1;	// 申请庄家列表	
+	repeated int64		apply_score			= 2;	// 带入积分
+}
+// 插队
+message msg_baccarat_jump_apply_queue_req
+{
+	optional uint32 jump_pos = 1;	
+}
+message msg_baccarat_jump_apply_queue_rep
+{
+	optional uint32 result = 1;
+}
+//	庄家结算
+message msg_baccarat_banker_calc_rep
+{
+	optional uint32 banker_time = 1; // 坐庄局数
+	optional uint32 win_count	= 2; // 胜利局数
+	optional int64  buyin_score = 3; // 带入积分
+	optional int64  win_score	= 4; // 盈利积分
+	optional int64  win_max		= 5; // 最佳赢币
+	optional int64  win_min		= 6; // 最惨输币
+	
+}
+//  庄家补币
+message msg_baccarat_add_bankerscore_rep
+{
+	optional int64 buyin_score  = 1; // 补币金额
+	
+}
+//  游戏记录
+message baccarat_play_log
+{
+	optional uint32	player_pair 	= 1;//闲家对子
+	optional uint32 banker_pair 	= 2;//庄家对子
+	optional uint32 player_count 	= 3;//闲家点数
+	optional uint32 banker_count	= 4;//庄家点数
+	optional uint32 is_small		= 5;// 1 小
+	optional uint32 is_super_six	= 6;//1 super_six
+	optional uint32 index			= 7;
+}
+message msg_baccarat_play_log_rep
+{
+	repeated baccarat_play_log logs = 1;//游戏记录	
+}
+
+
+//-----------------百家乐游戏消息----------------------------------------------------------------
+
+
+

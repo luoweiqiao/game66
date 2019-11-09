@@ -1,0 +1,57 @@
+execution mysql structured query language:
+
+USE `chess_sysdata`;
+
+DROP TABLE IF EXISTS `lucky_cfg`;
+
+CREATE TABLE `lucky_cfg` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '编号',
+  `uid` bigint(20) NOT NULL COMMENT '用户ID',
+  `gametype` int(11) DEFAULT NULL COMMENT '游戏ID',
+  `roomid` int(11) DEFAULT NULL COMMENT '房间ID',
+  `luckyvalue` int(11) DEFAULT NULL COMMENT '幸运值',
+  `rate` int(11) DEFAULT NULL COMMENT '输赢百分比',
+  `accumulated` int(11) DEFAULT NULL COMMENT '当前累计值',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uid` (`uid`,`gametype`,`roomid`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `room_stock_cfg`;
+
+CREATE TABLE `room_stock_cfg` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '序号',
+  `gametype` tinyint(2) NOT NULL COMMENT '1斗地主,2梭哈',
+  `roomid` tinyint(3) NOT NULL COMMENT '房间ID',
+  `stock_max` bigint(12) NOT NULL COMMENT '库存上限',
+  `stock_conversion_rate` int(11) NOT NULL COMMENT '库存转化率',
+  `stock` bigint(12) NOT NULL COMMENT '实时库存',
+  `jackpot_min` bigint(12) NOT NULL COMMENT '奖池最低触发值',
+  `jackpot_max_rate` int(11) NOT NULL COMMENT '奖池最大触发金额比例',
+  `jackpot_rate` int(11) NOT NULL COMMENT '奖池派送概率',
+  `jackpot_coefficient` int(11) NOT NULL COMMENT '奖池系数',
+  `jackpot_extract_rate` int(11) NOT NULL COMMENT '奖池抽取率',
+  `jackpot` bigint(12) NOT NULL COMMENT '实时奖池',
+  `kill_points_line` bigint(12) NOT NULL COMMENT '杀分警戒线',
+  `player_win_rate` int(11) NOT NULL COMMENT '玩家赢概率',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='库存奖池配置表';
+
+update file 120.24.54.6
+
+/disk/ablitte/server/release/baccarat_server/baccaratServer
+/disk/ablitte/server/release/bainiu_server/bainiuServer
+/disk/ablitte/server/release/dice_server/diceServer
+/disk/ablitte/server/release/everycolor_server/everycolorServer
+/disk/ablitte/server/release/fight_server/fightServer
+/disk/ablitte/server/release/land_server/landServer
+/disk/ablitte/server/release/niuniu_server/niuniuServer
+/disk/ablitte/server/release/paijiu_server/paijiuServer
+/disk/ablitte/server/release/robniu_server/robniuServer
+/disk/ablitte/server/release/showhand_server/showhandServer
+/disk/ablitte/server/release/slot_server/slotServer
+/disk/ablitte/server/release/texas_server/texasServer
+/disk/ablitte/server/release/two_people_majiang_server/majiangServer
+/disk/ablitte/server/release/war_server/warServer
+/disk/ablitte/server/release/zajinhua_server/zajinhuaServer
+/disk/ablitte/server/release/lobby_server/lobbyServer
+

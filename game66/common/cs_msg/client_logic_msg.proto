@@ -1,0 +1,912 @@
+
+package net;
+import "base_msg_struct.proto";
+import "error_code.proto";
+
+import "bainiu_logic_msg.proto";
+import "baccarat_logic_msg.proto";
+import "paijiu_logic_msg.proto";
+import "dice_logic_msg.proto";
+import "war_logic_msg.proto";
+import "fight_logic_msg.proto";
+import "twoeight_logic_msg.proto";
+import "carcity_logic_msg.proto";
+
+//-----------------------------大厅服消息-------------------------------------------------------------------
+// 心跳包
+message msg_heart_test
+{
+	optional uint32 svr_time = 1;
+}
+
+// 登录
+message msg_login_req
+{
+	optional uint32 uid  		= 1;		// 帐号ID
+	optional bytes  key  		= 2;		// 密码		
+	optional bytes  deviceid	= 3;		// 设备ID
+	optional bytes  city		= 4;		// 城市	
+	optional bytes  check_code	= 5;		// 精准控制校验串
+}
+// 登录返回
+message msg_login_rep
+{
+	optional uint32 result 		= 1;	// 返回结果
+	optional uint32 server_time = 2;	// 服务器时间
+}
+// 通知离开游戏
+message msg_notify_leave_rep
+{
+	optional uint32 result = 1;// 离开原因	
+}
+// 通知进入游戏
+message msg_enter_game_rep
+{
+	optional uint32 result = 1;	
+}
+// 发送玩家信息
+message msg_player_data_rep
+{	
+	optional base_info  base_data = 1;	// 基本信息		
+}
+// 更新玩家数值
+message msg_update_acc_value
+{
+	optional int64	diamond			= 1;				// 钻石
+	optional int64	coin 			= 2;				// 财富币	
+	optional int64 	score 			= 3;				// 积分
+	optional int64 	ingot			= 4;				// 元宝	
+	optional int64	cvalue 			= 5;				// 魅力值	
+	optional int64  safe_coin		= 6;				// 保险箱财富币		
+	
+}
+// 更新基础数值
+message msg_update_base_value
+{
+	optional uint32 safeboxstate	= 1;				// (0未登录，1登录，2无密码)
+	optional uint32 clogin			= 2;				// 连续登陆天数
+	optional uint32 weeklogin		= 3;				// 本周累计登陆天数
+	optional uint32	reward			= 4;				// 奖励领取标记
+	optional uint32 bankrupt		= 5;				// 破产次数	
+	optional uint32 day_game_count  = 6;				// 今日游戏局数	
+}
+
+message msg_send_base_value
+{
+	optional uint32 clogin			= 1;				// 连续登陆天数
+	repeated uint32 clogin_reward	= 2;				// 连续登陆奖励
+}
+
+// 更新斗地主信息(待删除)
+message msg_update_land_info
+{
+	optional land_info  land_data = 1;	// 斗地主数据	
+}
+// 更新游戏数据
+message msg_update_game_info
+{
+	optional game_data_info	data = 1; // 游戏数据
+}
+// 请求服务器信息
+message msg_svrs_info_req
+{
+	optional uint32  game_type = 1;	
+} 
+// 发送游戏服务器信息
+message msg_svrs_info_rep
+{
+	repeated svr_info svrs 		= 1; // 游戏服务器信息
+	optional uint32   cur_svrid = 2; // 当前游戏服务器ID(断线重连处理)
+	repeated player_num num     = 3; // 玩家数量和机器人数量
+}
+// 进入游戏服务器
+message msg_enter_gamesvr_req
+{
+	optional uint32 svrid = 1; // 游戏服务器ID
+}
+// 进入游戏服务器返回
+message msg_enter_gamesvr_rep
+{
+	optional uint32 result 		= 1;
+	optional uint32 svrid  		= 2;	
+	optional uint32 ctrl_flag	= 3;		// 精准控制标志位 0:表示不可控 1:表示可控
+}
+
+// 控制玩家权限发生改变,通知玩家返回大厅
+message msg_control_player_back_lobby
+{
+	optional uint32 uid 		= 1;	
+}
+
+// 登录保险箱
+message msg_login_safebox_req
+{
+	optional bytes passwd = 1;
+}
+message msg_login_safebox_rep
+{
+	optional uint32 result = 1;
+}
+// 修改保险箱密码
+message msg_change_safebox_pwd_req
+{
+	optional bytes old_pwd = 1;
+	optional bytes new_pwd = 2;
+}
+// 修改密码返回
+message msg_change_safebox_pwd_rep
+{
+	optional uint32 result = 1;	
+}
+// 保险箱存取操作
+message msg_take_safebox_req
+{
+	optional int64 take_coin = 1; // 存取金额	
+}
+// 保险箱存取操作返回
+message msg_take_safebox_rep
+{
+	optional int64  take_coin = 1; // 存取金额
+	optional uint32 result	  = 2; // 操作结果
+}
+// 保险箱赠送操作
+message msg_give_safebox_req
+{
+	optional uint32  give_uid   = 1; // 赠送玩家ID
+	optional int64	 give_coin  = 2; // 赠送金额
+	optional uint32 own_uid     = 3; // 玩家uid(客户端不用写 两个玩家不再同一大厅上时使用)
+}
+// 保险箱赠送操作返回
+message msg_give_safebox_rep
+{
+	optional uint32  give_uid  = 1; 
+	optional int64	 give_coin = 2;
+	optional uint32  result	   = 3;
+}
+// PHP转发广播消息
+message msg_php_broadcast_rep
+{
+	optional bytes msg = 1;
+}
+// 系统广播
+message msg_system_broadcast_rep
+{
+	optional bytes msg = 1;
+}
+
+
+//-----------------任务
+//获得所有任务数据
+message msg_send_all_mission_rep
+{
+	repeated mission_data missions = 1;//任务数据
+}
+//发送单条任务数据
+message msg_send_mission_rep
+{
+	optional mission_data mission = 1; //单条任务数据
+}
+//获得用户奖励
+message msg_get_mission_prize_req
+{
+	optional uint32 msid = 1;
+}
+message msg_get_mission_prize_rep
+{
+	optional uint32 result = 1;
+	optional mission_data mission = 2;
+	optional base_info baseinfo = 3;
+}
+//连续登陆奖励
+message msg_get_login_reward_req
+{
+	optional uint32 reward_flag = 1; // 领奖标记
+}
+message msg_get_login_reward_rep
+{
+	optional uint32 reward_flag = 1; // 领奖标记
+	optional uint32 result		= 2; // 领奖结果
+}
+//破产补助
+message msg_get_bankrupt_help_req
+{
+	optional uint32 help_count = 1; //无用
+}
+message msg_get_bankrupt_help_rep
+{
+	optional uint32 result 			= 1; // 领取结果
+	optional uint32 bankrupt_count  = 2; // 破产次数
+}
+//兑换财富币积分
+message msg_exchange_score_req
+{
+	optional uint32 exchange_type  = 1; // 兑换类型
+	optional uint32 exchange_id	   = 2; // 兑换id	
+}
+message msg_exchange_score_rep
+{
+	optional uint32 exchange_type = 1;
+	optional uint32 exchange_id	  = 2;
+	optional uint32 result  	  = 3;
+}
+// 喇叭
+message msg_speak_broadcast_req
+{
+	optional bytes msg = 1;	
+}	
+message msg_speak_broadcast_rep
+{
+	optional uint32 send_id 	= 1;
+	optional bytes  send_name 	= 2;
+	optional bytes  msg         = 3;
+}
+message msg_get_history_speak
+{
+	optional uint32 get_time = 1;	
+}
+message msg_send_history_speak
+{
+	repeated msg_speak_broadcast_rep msgs = 1;	
+}
+message msg_speak_oper_rep
+{
+	optional uint32 result = 1;
+	optional uint32 cdtime = 2;
+}
+message msg_get_server_info	
+{
+}
+message server_info
+{
+	optional uint32 svrid  	   = 1;
+	optional uint32 player_num = 2;
+	optional uint32 robot_num  = 3;	
+	optional uint32 game_type  = 4;
+}
+message msg_send_server_info
+{
+	repeated server_info servers = 1;	
+}
+	
+//---------------游戏服消息--------------------------------------------------------------------------
+// 请求房间列表信息
+message msg_rooms_info_req
+{
+	optional uint32 game_type = 1;	
+}
+// 发送游戏房间列表
+message msg_rooms_info_rep
+{
+	repeated room_info rooms 	= 1; // 房间信息
+	optional uint32 cur_roomid	= 2; // 当前房间ID(断线重连处理)
+}
+// 返回大厅
+message msg_back_lobby_req
+{
+	optional uint32 uid = 1;
+}
+// 返回大厅反馈
+message msg_back_lobby_rep
+{
+	optional uint32 result = 1;	
+}
+// 跳转游戏服务器
+message msg_goto_gamesvr_req
+{
+	optional uint32 svrid = 1; // 跳转游戏服务器
+}
+message msg_goto_gamesvr_rep
+{
+	optional uint32 result = 1;
+	optional uint32 svrid  = 2;	
+}
+// 进入房间
+message msg_enter_room_req
+{
+	optional uint32 room_id = 1;	
+}
+
+// 进入房间
+message msg_enter_novice_welfare_room_req
+{
+	optional int32 maxjettonrate	= 1;// 最大倍率
+}
+
+// 进入房间返回
+message msg_enter_room_rep
+{
+	optional uint32 	result 		= 1; // 进入房间结果(0失败，1成功)	
+	optional room_info  room   		= 2; // 进入的房间信息
+	optional uint32     cur_table 	= 3; // 当前所在桌子(0,新进，其它断线重连处理)
+}
+
+// 通知离开房间
+message msg_notify_leave_room_rep
+{
+	optional uint32 leave_type = 1; // 离开原因(xxx)	
+}
+// 请求桌子列表
+message msg_table_list_req
+{
+	optional uint32 table_id 	= 1; // 指定桌子ID(搜索)		
+	optional uint32 seach_type  = 2; // 搜索类型
+}
+// 桌子列表
+message msg_table_list_rep
+{
+	repeated table_face_info  tables = 1; // 桌子列表	
+}
+// 创建桌子
+message msg_create_table_req
+{
+	optional bytes  table_name 		= 1; // 名字
+	optional bytes  passwd	   		= 2; // 密码	
+	optional uint32 deal 			= 3; // 发牌方式
+	optional int64  base_score		= 4; // 底分
+	optional uint32 is_show			= 5; // 是否显示
+	optional uint32 fee_type		= 6; // 台费类型
+	optional int64  fee_value		= 7; // 台费比例
+	optional uint32 open_days		= 8; // 开放天数
+
+}
+// 创建桌子返回
+message msg_create_table_rep
+{
+	optional uint32 result 		= 1; // 创建结果
+	optional uint32 table_id 	= 2; // 桌子ID
+}
+// 续费桌子
+message msg_renew_table_req
+{
+	optional uint32 table_id	= 1; // 桌子ID
+	optional uint32 renew_days  = 2; // 续费天数
+
+}
+message msg_renew_table_rep
+{
+	optional uint32 table_id	= 1; // 桌子ID
+	optional uint32 renew_days  = 2; // 续费天数
+	optional uint32 result		= 3; // 续费结果
+}
+// 离开桌子
+message msg_leave_table_req
+{
+	optional uint32 table_id = 1;
+}
+// 离开桌子返回
+message msg_leave_table_rep
+{
+	optional uint32 result = 1; // 离开桌子返回
+}
+
+// 进入桌子
+message msg_enter_table_req
+{
+	optional uint32 table_id = 1; // 桌子ID
+	optional bytes	passwd	 = 2; // 桌子密码
+}
+message msg_enter_table_rep
+{
+	optional uint32 table_id = 1;
+	optional uint32 result   = 2;
+}
+
+// 桌子信息
+message msg_table_info_rep
+{	
+	optional table_face_info	table_info  = 1; // 桌子信息
+}
+// 座位信息
+message msg_seat_info_rep
+{
+	repeated seat_info 			players 	= 1; // 玩家信息	
+}
+
+// 桌子准备
+message msg_table_ready_req
+{
+	optional uint32 ready = 1;
+}
+message msg_table_ready_rep
+{
+	repeated uint32 readys 		= 1;  // 准备状态
+	repeated uint32 auto_states = 2;  // 托管状态
+}
+// 桌子聊天
+message msg_table_chat_req
+{
+	optional bytes  chat_msg = 1;
+}
+message msg_table_chat_rep
+{
+	optional uint32 uid 	 = 1;
+	optional bytes  chat_msg = 2;
+}
+//  托管
+message msg_table_set_auto_req
+{
+	optional uint32 auto_type = 1;// 1托管，0取消托管
+}
+message msg_table_set_auto_rep
+{
+	optional uint32 result 		= 1;// 操作结果
+	optional uint32 auto_state  = 2;// 托管状态
+}
+message msg_fast_join_room_req
+{
+	optional uint32 deal 		= 1;// 发牌方式
+	optional uint32 consume 	= 2;// 消费类型	
+}
+
+message msg_fast_join_by_room_id_req
+{
+	optional uint32 roomid 		= 1;// roomid
+}
+
+message msg_fast_join_room_rep
+{
+	optional uint32 result 		= 1;// 加入返回
+}
+message msg_fast_join_table_req
+{
+	optional uint32 table_id    = 1;// 快速换桌
+}
+message msg_fast_join_table_rep
+{
+	optional uint32 result		= 1;// 快速换桌返回 	
+}
+
+message msg_master_join_table_req
+{
+	optional uint32 table_id    = 1;// 超级权限进入桌子
+}
+
+message msg_master_join_table_rep
+{
+	optional uint32 result		= 1;// 超级权限进入桌子 	
+}
+
+// 查看桌子信息
+message msg_query_table_list_req
+{
+	optional uint32 startid 		= 1; // 起始ID
+	optional uint32 endid			= 2; // 终止ID		
+}
+// 桌子列表
+message msg_query_table_list_rep
+{
+	repeated table_face_info  tables = 1; // 桌子列表	
+	optional uint32 table_num		 = 2; // 桌子数量
+}
+// 玩家信息变更
+message msg_notify_player_join_rep
+{
+	optional uint32     	join_leave 	= 1; // 进入或者离开  	
+	optional looker_info 	player 		= 2; // 玩家信息	
+}
+// 座位信息
+message msg_looker_list_info_rep
+{
+	repeated looker_info lookers 	= 1; // 旁观玩家信息
+	optional uint32 	 is_reset   = 2; // 是否重置	
+}
+// 玩家坐下或者站起
+message msg_sitdown_standup_req
+{
+	optional uint32 oper_id 	= 1; // 1坐下0站起
+	optional uint32 chair_id	= 2; // 座位ID
+}
+message msg_sitdown_standup_rep
+{
+	optional uint32 oper_id 	= 1; // 1坐下0站起
+	optional uint32 chair_id	= 2; // 座位ID
+	optional uint32 result		= 3; // 结果
+}
+
+//道具使用
+message msg_items_user_req
+{
+	optional uint32 meuid		= 1; // 
+	optional uint32 bechair_id	= 2; // 
+	optional uint32 item_id		= 3; // 道具ID
+	optional uint32 item_count	= 4; // 道具数量
+}
+
+message msg_items_user_rep
+{
+	optional uint32 mechair_id	= 1; // 座位ID
+	optional uint32 bechair_id	= 2; // 座位ID
+	optional uint32 item_id		= 3; // 道具ID
+	optional uint32 item_count	= 4; // 道具数量
+}
+
+
+//更新金币
+message msg_ingame_update_score
+{
+	optional uint32 uid			=1;//uid
+	optional uint32 game_type	=2;//游戏类型
+	optional int64 diff_score	=3;//金币数量
+}
+
+//微信信息
+message vip_recharge_wechatinfo
+{
+	optional uint32 sortid		=1;//微信排序
+	optional bytes title		=2;//微信标题
+	optional bytes account		=3;//微信账号
+	optional uint32 low_amount	=4;//最低充值额度
+	repeated int32  pay_type    =5;//支付类型，1 支付宝  2 微信  3 银联卡
+}
+
+//vip界面充值显示请求
+message msg_notify_vip_recharge_show_req
+{
+}
+
+//vip界面充值显示
+message msg_notify_vip_recharge_show
+{
+	optional uint32 status		=1;// 0开启 1关闭
+	repeated vip_recharge_wechatinfo info	=2;// 微信信息
+}
+
+//银联充值显示请求
+message msg_notify_unionpayrecharge_show_req
+{
+}
+//银联充值显示
+message msg_notify_unionpayrecharge_show_rep
+{
+	optional uint32 status		=1;// 0开启 1关闭
+}
+
+
+//充值显示请求
+message msg_notify_wechatpayrecharge_show_req
+{
+}
+//充值显示
+message msg_notify_wechatpayrecharge_show_rep
+{
+	optional uint32 status		=1;// 0开启 1关闭
+}
+
+
+//充值显示请求
+message msg_notify_alipayrecharge_show_req
+{
+}
+//充值显示
+message msg_notify_alipayrecharge_show_rep
+{
+	optional uint32 status		=1;// 0开启 1关闭
+}
+
+
+//充值显示请求
+message msg_notify_otherpayrecharge_show_req
+{
+}
+//充值显示
+message msg_notify_otherpayrecharge_show_rep
+{
+	optional uint32 status		=1;// 0开启 1关闭
+}
+
+
+//充值显示请求
+message msg_notify_qqpayrecharge_show_req
+{
+}
+//充值显示
+message msg_notify_qqpayrecharge_show_rep
+{
+	optional uint32 status		=1;// 0开启 1关闭
+}
+
+
+//充值显示请求
+message msg_notify_wechatscanpayrecharge_show_req
+{
+}
+//充值显示
+message msg_notify_wechatscanpayrecharge_show_rep
+{
+	optional uint32 status		=1;// 0开启 1关闭
+}
+
+
+//充值显示请求
+message msg_notify_jdpayrecharge_show_req
+{
+}
+//充值显示
+message msg_notify_jdpayrecharge_show_rep
+{
+	optional uint32 status		=1;// 0开启 1关闭
+}
+
+
+//充值显示请求
+message msg_notify_applepayrecharge_show_req
+{
+}
+
+//充值显示
+message msg_notify_applepayrecharge_show_rep
+{
+	optional uint32 status		=1;// 0开启 1关闭
+}
+
+//充值显示
+message msg_notify_large_ali_payrecharge_show_req
+{
+}
+
+//充值显示
+message msg_notify_large_ali_payrecharge_show_rep
+{
+	optional uint32 status		=1;// 0开启 1关闭
+}
+
+// 专属支付宝信息
+message exclusive_alipay_info
+{
+	optional bytes account = 1; // 支付宝账号
+	optional bytes name    = 2; // 支付宝名字
+	optional bytes title   = 3; // 标题
+	optional int32 min_pay = 4; // 最低充值额度
+	optional int32 max_pay = 5; // 最高充值额度
+	optional int32 lower_float = 6; // 充值下浮动金额
+}
+
+// 个人专属支付宝界面充值信息显示
+message msg_notify_exclusive_alipay_recharge_show
+{
+	optional uint32 status              = 1; // 0开启 非0关闭
+	repeated exclusive_alipay_info info = 2; // 支付宝信息
+}
+
+// 个人专属支付宝界面充值信息请求
+message msg_notify_exclusive_alipay_recharge_show_req
+{
+}
+
+// 定额支付宝充值显示请求
+message msg_notify_fixed_alipay_recharge_show_req
+{
+}
+
+// 定额支付宝充值显示响应
+message msg_notify_fixed_alipay_recharge_show_rep
+{
+	optional uint32 status = 1; // 0开启 1关闭
+}
+
+// 定额微信充值显示请求
+message msg_notify_fixed_wechat_recharge_show_req
+{
+}
+
+// 定额微信充值显示响应
+message msg_notify_fixed_wechat_recharge_show_rep
+{
+	optional uint32 status = 1; // 0开启 1关闭
+}
+
+// 定额银联云闪付充值显示请求
+message msg_notify_fixed_unionpay_recharge_show_req
+{
+}
+
+// 定额银联云闪付充值显示响应
+message msg_notify_fixed_unionpay_recharge_show_rep
+{
+	optional uint32 status = 1; // 0开启 1关闭
+}
+
+// 专享闪付充值显示请求
+message msg_notify_exclusive_flash_recharge_show_req
+{
+}
+
+// 专享闪付充值显示响应
+message msg_notify_exclusive_flash_recharge_show_rep
+{
+	optional uint32 status = 1; // 0开启 1关闭
+	repeated vip_recharge_wechatinfo info = 2;// 微信信息
+}
+
+message bairen_jetton_info
+{
+	optional uint32 area = 1;
+	optional int64 score = 2;
+}
+message msg_continuous_pressure_jetton_info_rep
+{
+	repeated bairen_jetton_info info = 1;
+}
+
+message msg_player_continuous_pressure_jetton_req
+{
+	repeated bairen_jetton_info info = 1;
+}
+message msg_player_continuous_pressure_jetton_rep
+{
+	optional uint32 result		 = 1; //加注返
+}
+
+
+// 游戏记录
+message msg_game_play_log
+{
+	optional msg_bainiu_play_log_rep   bainiu   = 1; // 百牛
+	optional msg_baccarat_play_log_rep baccarat = 2; // 百家乐
+	optional msg_paijiu_play_log_rep   paijiu   = 3; // 牌九
+	optional msg_dice_play_log_rep	   dice	    = 4; // 骰子
+	optional msg_war_play_log_rep	   war      = 5; // 红黑
+	optional msg_fight_play_log_rep    fight    = 6; // 龙虎斗
+	optional msg_twoeight_play_log_rep twoeight = 7; // 二八杠
+	optional msg_carcity_play_log_rep  carcity  = 8; // 奔驰宝马
+}
+
+// 游戏记录
+message msg_game_play_log_req
+{
+}
+
+// 游戏记录
+message msg_game_play_log_rep
+{
+	optional uint32 gametype			= 1; // 游戏类型
+	optional uint32 roomid				= 2; // 房间  ID
+	optional uint32 gamestate			= 3; // 游戏状态
+	optional uint32 remain_time			= 4; // 剩余时间
+	optional msg_game_play_log play_log = 5; // 游戏日志
+}
+
+// 聊天信息转发
+message msg_chat_info_forward
+{
+	optional uint32 fromid	  = 1; // 发送信息的玩家编号
+	repeated uint32 toid	  = 2; // 目标玩家编号列表
+	repeated int32  online	  = 3; // 目标玩家的在线情况列表，1在线 0不在线
+	optional bytes  messagStr = 4; // 给目标玩家发送的字符串数据
+	optional bytes  fromname  = 5; // 发送玩家的昵称
+    repeated bytes  toname    = 6; // 目标玩家的昵称列表
+	optional uint64 time      = 7; // 服务器时间戳(秒)
+	optional int32  mtype	  = 8; // 消息类型
+}
+
+//百人场控制账号进入桌子请求
+message msg_brc_control_user_enter_table_req
+{
+	optional uint32 game_id		= 1; //游戏ID 
+	optional uint32 table_id	= 2; //桌子ID	
+}
+
+//百人场控制账号进入桌子返回
+message msg_brc_control_user_enter_table_rep
+{
+	optional uint32 result = 1; //进入桌子返回
+	repeated uint32 area 	=2;  //控制区域列表---各游戏区域定义不同
+	optional uint32 times	=3;	 //剩余控制次数	
+}
+
+//百人场控制账号离开桌子请求
+message msg_brc_control_user_leave_table_req
+{
+	optional uint32 game_id		= 1; //游戏ID 
+	optional uint32 table_id	= 2; //桌子ID	
+}
+
+//百人场控制账号离开桌子返回
+message msg_brc_control_user_leave_table_rep
+{
+	optional uint32 result 	= 1; //离开桌子返回
+}
+
+//百人场控制账号强制玩家下庄(包括当庄玩家和申请上庄玩家)
+message msg_brc_control_force_leave_banker_req
+{
+	optional uint32 uid		=1;	//玩家uid	
+}
+
+//百人场控制账号强制玩家下庄(包括当庄玩家和申请上庄玩家)
+message msg_brc_control_force_leave_banker_rep
+{
+	optional uint32 uid		=1;	//玩家uid
+	optional uint32 result	=2;	//强制玩家下庄返回
+}
+
+//百人场控制账号控制区域信息
+message msg_brc_control_area_info_req
+{
+	optional uint32 uid		=1;	 //玩家uid	
+	repeated uint32 area 	=2;  //控制区域列表---各游戏区域定义不同
+	optional uint32 times	=3;	 //控制次数	
+}
+
+//百人场控制账号控制区域信息返回
+message msg_brc_control_area_info_rep
+{
+	optional uint32 result	=1;	//控制区域信息返回
+	repeated uint32 area 	=2;  //控制区域列表---各游戏区域定义不同
+	optional uint32 times	=3;	 //控制次数	
+}
+
+//百人场控制账号机器人的下注信息,各区域总数
+message msg_brc_control_total_robot_bet_info
+{	
+	repeated int64 area_info 	=1;  //所有区域下注总和列表---各游戏区域定义不同
+}
+
+//百人场控制账号真实玩家的下注信息,各区域总数
+message msg_brc_control_total_player_bet_info
+{	
+	repeated int64 area_info 	=1;  //所有区域下注总和列表---各游戏区域定义不同
+}
+
+//百人场控制账号玩家的下注信息
+message brc_control_player_bet_info
+{	
+    optional uint32 uid				=1;	 //玩家uid
+	repeated int64  area_info 		=2;  //当前玩家所有区域下注总和列表---各游戏区域定义不同
+	optional int64	total_bet 		=3;  //当前玩家所有下注总和
+	optional int64	curr_day_win	=4;  //当前玩家当日在该房间游戏得总输赢,正数为赢,负数为输
+	optional uint32	win_number 		=5;  //玩家进入房间开始投注后，到迄今的游戏赢的次数
+	optional uint32	lose_number 	=6;  //玩家进入房间开始投注后，到迄今的游戏输的次数
+	optional int64	total_win		=7;  //当前玩家累计在该游戏的总输赢,正数为赢,负数为输
+	optional int64	coin			=8;  //当前玩家金币数量
+	optional bytes	name 			=9;	 //昵称	
+	optional uint32	ismaster		=10; //是否为控制玩家 0:否 1:是
+}
+
+//百人场控制账号单个玩家的下注信息
+message msg_brc_control_single_player_bet_info
+{	    
+	optional brc_control_player_bet_info  player_bet_info 		=1;  //单个玩家	
+}
+
+//百人场控制账号所有玩家的下注信息
+message msg_brc_control_all_player_bet_info
+{	    
+	repeated brc_control_player_bet_info  player_bet_list 		=1;  //所有玩家	
+}
+
+//百人场控制账号玩家的金币信息
+message brc_control_player_coin_info
+{	
+    optional uint32 uid				=1;	 //玩家uid	
+	optional int64	coin			=2;  //当前玩家金币数量
+	optional uint32 player_type		=3;	 //玩家类型 0:正常玩家 1:机器人	
+}
+
+//百人场控制账号申请上庄列表
+message msg_brc_control_apple_banker_list
+{	
+	optional brc_control_player_coin_info bank_info 	=1;  //当前上庄玩家信息
+	repeated brc_control_player_coin_info user_info 	=2;  //所有申请上庄玩家列表
+}
+
+//百人场控制游戏结算后信息,各区域赢取情况
+message msg_brc_control_game_end_info
+{	
+    optional uint32 uid			=1;	 //当前控制玩家uid	
+	repeated uint32 area_info 	=2;  //所有区域赢取情况 0:输 1:赢
+}
+
+//百人场控制游戏状态信息
+message msg_brc_control_game_status_info
+{	
+    optional uint32 status		=1;	 //当前游戏状态 	1:空闲 2:开始 3:结束
+	optional uint32 time 		=2;  //当前游戏状态倒计时
+}
+
+//百人场控制账号刷新控制区域信息---用于处于断线重连情况
+message msg_brc_control_flush_area_info
+{
+	repeated uint32 area 	=1;  //控制区域列表---各游戏区域定义不同
+	optional uint32 times	=2;	 //控制次数	
+}

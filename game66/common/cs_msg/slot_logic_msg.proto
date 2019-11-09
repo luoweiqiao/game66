@@ -1,0 +1,129 @@
+
+package net;
+import "base_msg_struct.proto";
+import "error_code.proto";
+
+//-------------水果机游戏消息---------------------------------------
+
+//老虎机图片
+message pos_pics
+{
+	repeated uint32 pic = 1; // 牌组
+}
+// 游戏摇奖
+message msg_slot_game_spin_req
+{
+	optional uint32	linenum        = 1;        //押注线号
+	optional uint32	betperline     = 2;        //每条线的押注
+}
+//游戏摇奖返回
+message msg_slot_game_spin_rep
+{
+	repeated pos_pics  pics			           = 1;	//图片
+	optional uint32    freetimes               = 2; //免费转的次数
+	optional int64	   winscore                = 3;	//用户赢得的金币
+	optional int64	   userscore               = 4;	//用户的金币
+	optional int64	   winjackpot_score        = 5;	//用户赢得彩金池
+	optional int64	   jackpot_score           = 6;	//总彩金池	
+	optional int64	   free_winscore           = 7;	//免费赢金币和
+}
+
+
+//游戏摇奖信息
+message msg_slot_game_play_info
+{	
+	optional uint32    freetimes               = 1; //免费转的次数
+	optional uint32    game_status			   = 2;	//游戏状态	
+	optional int64	   userscore               = 3;	//用户的金币
+	optional int64	   jackpot_score           = 4;	//总彩金池	
+	
+}
+
+message msg_slot_game_jackpot_score
+{
+	optional int64	   score           = 1;	//总彩金池	
+}
+
+//游戏异常返回
+message msg_slot_game_error_rep
+{		
+	optional uint32    result               = 1; //错误码
+}
+
+// 发送控制信息
+message msg_send_slot_master_ctrl_info
+{
+	optional uint32	  uid					= 1;		// uid
+	optional int64	  min_multiple          = 2;		// 最低倍数
+	optional int64	  max_multiple          = 3;		// 最高倍数
+	optional int64	  ran_min_multiple      = 4;		// 随机最低倍数
+	optional int64	  ran_max_multiple      = 5;		// 随机最高倍数
+	optional uint32   all_lost_count        = 6;		// 连输次数
+	optional uint32   lost_count            = 7;		// 连输次数
+	optional uint32   all_win_count         = 8;		// 连赢次数
+	optional uint32   win_count             = 9;		// 连赢次数
+	optional uint32	  free_spin             = 10;		// 免费次数
+	optional int64    jackpot_index			= 11;		// 彩金倍数 可写 1 或 2 或 3
+	optional uint32   all_pre_count         = 12;		// 执行次数
+	optional uint32   pre_count             = 13;		// 执行次数
+}
+
+// 发送控制信息
+message msg_send_slot_master_ctrl_info_req
+{
+	optional uint32 oper_type									= 1;	// 0 删除控制信息 1 添加控制信息 2 修改概率
+	repeated uint32 rand_pro									= 2;    // 随机概率
+	optional msg_send_slot_master_ctrl_info	  info              = 3;	// 控制信息
+}
+
+// 发送控制信息
+message msg_send_slot_master_ctrl_info_rep
+{
+	optional uint32    result									= 1;
+	//repeated uint32	   rand_pro									= 2;    // 随机概率
+}
+
+// 显示控制信息
+message msg_show_slot_master_ctrl_info_req
+{
+	optional uint32  uid			           = 1;	//uid
+}
+
+// 显示控制信息
+message msg_show_slot_master_ctrl_info_rep
+{
+	optional uint32    suid										= 1;	//超权uid
+	optional uint32    oper_type								= 2;	// 0 删除控制信息 1 添加控制信息 2 修改概率
+	repeated uint32	   rand_pro									= 3;    // 随机概率
+	optional msg_send_slot_master_ctrl_info	  info              = 4;	// 控制信息
+}
+
+// 更新显示信息
+message msg_update_slot_master_show_info_req
+{
+}
+
+// 更新显示信息
+message msg_update_slot_master_show_info
+{
+	optional uint32 uid				= 1; // uid	
+	optional bytes  nickname		= 2; // nickname
+	optional uint32 attac_line		= 3; // 押线
+	optional uint32 attac_score		= 4; // 押分
+	optional uint32 lost_count		= 5; // 输次数
+	optional uint32 win_count		= 6; // 赢次数
+	optional int64 cur_score		= 7; // 当前金币
+	optional uint32 ismaster		= 8; // ismaster
+}
+
+// 更新显示信息
+message msg_update_slot_master_show_info_rep
+{
+	optional uint32 type				= 1; // 0 刷新 1 添加 2 删除
+	repeated msg_update_slot_master_show_info info = 2; // 信息
+}
+
+//-----------------水果机游戏消息----------------------------------------------------------------
+
+
+

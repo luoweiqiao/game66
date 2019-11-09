@@ -1,0 +1,224 @@
+
+
+
+骰宝游戏 配置说明
+
+
+{"ucp":0,"cps":0,"par":200,"psp":1000,"pof":3000,"psr":5000,"rbw":5000,"rsp":5000,"mps":500000}
+
+ucp: 是否修改当前奖池 0不改 1改
+cps: 奖池数值
+par: 奖池增加比率
+psp: 奖池指定点数分配比例
+pof: 奖池1-5围骰分配比例
+psr: 奖池6围骰分配比例
+rbw: 机器人当庄赢的概率
+rsp: 机器人获取奖池概率
+mps: 最大奖池分数
+
+
+
+
+
+
+
+
+{
+    "basescore": 100000000,
+    "begintime": 1519886262,
+    "chessid": "11-1-1-1519886262",
+    "consume": 2,
+    "content": "{\"areainfo\":[{\"10948\":[{\"area\":2,\"fscore\":-4000000,\"jscore\":4000000,\"mult\":0}]}],\"banker\":0,\"diceinfo\":[{\"dice\":\"5,5,5\",\"type\":\"19,25,31,38,\"}]}\n",
+    "deal": 1,
+    "endtime": 1519886262,
+    "fee": 0,
+    "gid": 11,
+    "logtype": "gamelog",
+    "rid": 1,
+    "roomtype": 0,
+    "tid": 1,
+    "uids": [
+        {
+            "chair": 255,
+            "fee": 0,
+            "land": 0,
+            "newv": 227342741,
+            "oldv": 231342741,
+            "playerType": 0,
+            "safebox": 0,
+            "totalwinc": 0,
+            "uid": 10948,
+            "win": -4000000
+        }
+    ]
+}
+//详见
+
+    "content": "{\"areainfo\":[{\"10948\":[{\"area\":2,\"fscore\":-4000000,\"jscore\":4000000,\"mult\":0}]}],\"banker\":0,\"diceinfo\":[{\"dice\":\"5,5,5\",\"type\":\"19,25,31,38,\"}]}\n",
+
+
+
+	{
+    \"areainfo\":								区域信息
+	 [
+        {
+            \"10948\": [						用户uid
+                {
+                    \"area\": 2,				下注区域
+                    \"fscore\": -4000000,		下注分数
+                    \"jscore\": 4000000,		该区域分数
+                    \"mult\": 1					区域倍率
+                }
+            ]
+        }
+    ],
+	\"jackpotinfo\":							奖池信息
+	 [
+        {
+            \"10948\": [						用户uid
+                {
+                    \"area\": 2,				中奖区域
+                    \"ratio\": 200,				区域比例
+                    \"pscore\": 4000000,		区域分数
+                    \"wscore\": 1				区域赢分
+					\"tscore\": 1				奖池获奖分数
+                }
+            ]
+        }
+    ],
+    \"banker\": 0,								庄家uid
+    \"diceinfo\": [								骰子信息
+        {
+            \"dice\": \"5,
+            5,
+            5\",
+            \"type\": \"19,						中奖区域
+            25,
+            31,
+            38,
+            \"
+        }
+    ]
+
+	"jif":1										增加奖池前分数
+	"jia":2										增加奖池后分数
+	"jis":3										开奖池后分数
+}
+
+
+{\"areainfo\":[{\"10016\":[{\"area\":39,\"fscore\":360000,\"jscore\":2000,\"mult\":180}],\"10948\":[{\"area\":39,\"fscore\":3600000,\"jscore\":20000,\"mult\":180}]}],\"banker\":0,\"diceinfo\":[{\"dice\":\"6,6,6\",\"type\":\"19,26,32,39,\"}],\"jackpotinfo\":[{\"10016\":[{\"area\":39,\"pscore\":7920,\"ratio\":5000,\"tscore\":19800,\"wscore\":39600}],\"10948\":[{\"area\":39,\"pscore\":7920,\"ratio\":5000,\"tscore\":19800,\"wscore\":39600}]}],\"jia\":79200,\"jif\":0,\"jis\":39600}
+{
+    \"areainfo\": [
+        {
+            \"10016\": [
+                {
+                    \"area\": 39,
+                    \"fscore\": 360000,
+                    \"jscore\": 2000,
+                    \"mult\": 180
+                }
+            ],
+            \"10948\": [
+                {
+                    \"area\": 39,
+                    \"fscore\": 3600000,
+                    \"jscore\": 20000,
+                    \"mult\": 180
+                }
+            ]
+        }
+    ],
+    \"banker\": 0,
+    \"diceinfo\": [
+        {
+            \"dice\": \"6,
+            6,
+            6\",
+            \"type\": \"19,
+            26,
+            32,
+            39,
+            \"
+        }
+    ],
+    \"jackpotinfo\": [
+        {
+            \"10016\": [
+                {
+                    \"area\": 39,
+                    \"pscore\": 7920,
+                    \"ratio\": 5000,
+                    \"tscore\": 19800,
+                    \"wscore\": 39600
+                }
+            ],
+            \"10948\": [
+                {
+                    \"area\": 39,
+                    \"pscore\": 7920,
+                    \"ratio\": 5000,
+                    \"tscore\": 19800,
+                    \"wscore\": 39600
+                }
+            ]
+        }
+    ],
+    \"jia\": 79200,
+    \"jif\": 0,
+    \"jis\": 39600
+}
+
+
+
+区域说明
+
+	enum enDiceType
+	{
+		CT_ERROR            = 0,	   //错误类型
+
+		CT_SUM_SMALL        = 1,       //小
+		CT_SUM_BIG          = 2,       //大
+
+		CT_POINT_THREE      = 3,       //3点(实际无此压注项)
+		CT_POINT_FOUR       = 4,
+		CT_POINT_FIVE       = 5,
+		CT_POINT_SIX        = 6,
+		CT_POINT_SEVEN      = 7,
+		CT_POINT_EIGHT      = 8,
+		CT_POINT_NINE       = 9,
+		CT_POINT_TEN        = 10,
+		CT_POINT_ELEVEN     = 11,
+		CT_POINT_TWELVE     = 12,
+		CT_POINT_THIR_TEEN  = 13,
+		CT_POINT_FOUR_TEEN  = 14,
+		CT_POINT_FIF_TEEN   = 15,
+		CT_POINT_SIX_TEEN   = 16,
+		CT_POINT_SEVEN_TEEN = 17,
+		CT_POINT_EIGHT_TEEN = 18,       //18点(实际无此压注项)
+
+		CT_ANY_CICLE_DICE   = 19,       //任意围骰
+		CT_LIMIT_CICLE_DICE = 20,       //指定围骰
+
+		CT_ONE            = 21,			//一个1点
+		CT_TWO            = 22,			//一个2点
+		CT_THREE          = 23,			//一个3点
+		CT_FOUR           = 24,			//一个4点
+		CT_FIVE           = 25,			//一个5点
+		CT_SIX            = 26,			//一个6点
+
+		CT_TWICE_ONE      = 27,			//两个1点
+		CT_TWICE_TWO      = 28,			//两个2点
+		CT_TWICE_THREE    = 29,			//两个3点
+		CT_TWICE_FOUR     = 30,			//两个4点
+		CT_TWICE_FIVE     = 31,			//两个5点
+		CT_TWICE_SIX      = 32,			//两个6点
+
+		CT_TRIPLE_ONE     = 34,			//三个1点
+		CT_TRIPLE_TWO     = 35,			//三个2点
+		CT_TRIPLE_THREE   = 36,			//三个3点
+		CT_TRIPLE_FOUR    = 37,			//三个4点
+		CT_TRIPLE_FIVE    = 38,			//三个5点
+		CT_TRIPLE_SIX     = 39,			//三个6点
+	};
+
+

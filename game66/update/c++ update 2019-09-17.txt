@@ -1,0 +1,44 @@
+更新内容
+1、增加二八杠子游戏。
+2、捕鱼金币房间bug修复。
+
+database table change:
+
+USE `chess`;
+CREATE TABLE `game_twoeight`  (
+  `uid` int(11) NOT NULL COMMENT '用户ID',
+  `win` int(11) NOT NULL COMMENT '积分赢',
+  `lose` int(11) NOT NULL COMMENT '积分输',
+  `maxwin` bigint(20) NOT NULL COMMENT '积分最大赢',
+  `winc` int(11) NOT NULL COMMENT '财富币赢',
+  `losec` int(11) NOT NULL COMMENT '财富币输',
+  `maxwinc` bigint(20) NOT NULL COMMENT '财富币最大赢',
+  `maxcard` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '最大牌型',
+  `maxcardc` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '最大牌型',
+  `daywin` bigint(20) NOT NULL COMMENT '今日输赢',
+  `daywinc` bigint(20) NOT NULL COMMENT '今日输赢',
+  PRIMARY KEY (`uid`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+INSERT INTO `serverinfo` VALUES (181, '二八杠', 1, 2, 18, 1, '47.106.187.43', '172.18.201.102', 0, 7127, 0, 1, 1, 0, 0, '2019-07-17 10:44:59');
+
+
+update file 120.24.54.6
+/disk/ablitte/server/release/baccarat_server/baccaratServer
+/disk/ablitte/server/release/bainiu_server/bainiuServer
+/disk/ablitte/server/release/dice_server/diceServer
+/disk/ablitte/server/release/everycolor_server/everycolorServer
+/disk/ablitte/server/release/fight_server/fightServer
+/disk/ablitte/server/release/land_server/landServer
+/disk/ablitte/server/release/niuniu_server/niuniuServer
+/disk/ablitte/server/release/paijiu_server/paijiuServer
+/disk/ablitte/server/release/robniu_server/robniuServer
+/disk/ablitte/server/release/showhand_server/showhandServer
+/disk/ablitte/server/release/slot_server/slotServer
+/disk/ablitte/server/release/texas_server/texasServer
+/disk/ablitte/server/release/two_people_majiang_server/majiangServer
+/disk/ablitte/server/release/war_server/warServer
+/disk/ablitte/server/release/zajinhua_server/zajinhuaServer
+/disk/ablitte/server/release/fishing_server/fishingServer
+/disk/ablitte/server/release/twoeight_server/twoeightServer
+/disk/ablitte/server/release/lobby_server/lobbyServer
+

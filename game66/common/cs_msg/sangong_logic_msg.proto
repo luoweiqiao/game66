@@ -1,0 +1,120 @@
+
+package net;
+import "base_msg_struct.proto";
+import "error_code.proto";
+
+//-------------牛牛游戏消息---------------------------------------
+
+// 游戏状态
+message msg_sangong_game_info_free_rep
+{
+	optional uint32 time_leave 				= 1; //剩余时间
+	optional uint32 banker_id				= 2; //当前庄家	
+}
+message msg_sangong_game_info_play_rep
+{
+	repeated int64  all_jetton_score		= 1;	//全体总注	
+	repeated msg_cards table_cards			= 2;	//桌面扑克	
+	optional uint32 banker_id				= 3;	//当前庄家	
+	optional uint32 game_status				= 4;	//游戏状态	
+	repeated uint32 show_cards				= 5;	//摆牌状态
+	repeated uint32 player_status			= 6;	//玩家状态
+	optional uint32 time_leave 				= 7; 	//剩余时间
+	repeated uint32 apply_list				= 8;	//抢庄列表
+	repeated int64	turn_max_score 			= 9;	//下注限制
+	repeated uint32 card_types				= 10;   //牌型
+
+}
+// 游戏开始
+message msg_sangong_start_rep
+{
+	optional uint32 can_apply_banker = 1;// 能否抢庄
+	optional uint32 banker_id		 = 2;// 庄家位
+}
+// 申请庄家
+message msg_sangong_apply_banker
+{
+	optional uint32 score = 1;
+}
+message msg_sangong_apply_banker_rep
+{
+	optional uint32 chairid		= 1;
+	optional uint32 score 		= 2;
+	optional uint32 result		= 3;
+}
+message msg_sangong_banker_result_rep
+{
+	optional uint32 banker_id   = 1;
+	repeated uint32 apply_list  = 2;
+	repeated int64	turn_max_score = 3;
+	optional uint32 is_apply	= 4;//1抢庄，0连庄
+}
+
+// 用户下注
+message msg_sangong_place_jetton_req
+{
+	optional int64  jetton_score = 1; //加注数目	
+}
+message msg_sangong_place_jetton_rep
+{
+	optional int64  jetton_score = 1; //加注数目
+	optional uint32 result		 = 2; //加注返回
+}
+message msg_sangong_place_jetton_broadcast
+{
+	optional uint32 chairid				= 1;	//用户	
+	optional int64  jetton_score		= 2;	//加注数目		
+}
+// 发牌
+message msg_sangong_send_card_rep
+{
+	repeated uint32 cards = 1;
+}
+// 摆牌
+message msg_sangong_change_card
+{
+	repeated uint32 cards = 1;
+}
+message msg_sangong_change_card_rep
+{
+	optional uint32 oper_id 	= 1;
+	optional uint32 result  	= 2;
+	repeated uint32 cards   	= 3;
+	optional uint32 card_type 	= 4;	
+}
+
+// 游戏结束
+message msg_sangong_game_end
+{
+	optional uint32 	time_leave			= 1;	// 剩余时间
+	repeated msg_cards 	table_cards 		= 2;	// 桌面扑克
+	repeated uint32		card_types			= 3;	// 扑克牌型		
+	repeated int64		player_score		= 4;	// 玩家成绩
+	repeated int32		win_multiple		= 5;	// 输赢倍数
+	
+}
+//-----------------牛牛游戏消息----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

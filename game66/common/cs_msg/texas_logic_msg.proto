@@ -1,0 +1,162 @@
+
+package net;
+import "base_msg_struct.proto";
+import "error_code.proto";
+
+//-------------德州游戏消息---------------------------------------
+
+// 游戏状态
+message msg_texas_game_info_free_rep
+{
+	optional int64 cell_minscore = 1; //最小下注
+	optional int64 cell_maxscore = 2; //最大下注
+	optional int32 buyin_state   = 3; // 筹码状态，0 等待买入 10 自动买入
+}
+message msg_texas_game_info_play_rep
+{
+	//加注信息
+	optional int64	cell_score 		= 1;						//单元下注
+	optional int64	turn_max_score 	= 2;						//最大下注
+	optional int64	turn_less_score = 3;						//最小下注
+	optional int64	cell_max_score  = 4;						//最大下注
+	optional int64	add_less_score  = 5;						//加最小注
+	repeated int64	table_scores	= 6;						//下注数目
+	repeated int64	total_scores	= 7;						//累计下注
+	optional int64	center_score	= 8;						//中心筹码
+
+	//状态信息
+	optional uint32	d_user			= 9;						//D玩家
+	optional uint32 current_user	= 10;						//当前玩家
+	repeated uint32	play_status		= 11;						//游戏状态
+	optional uint32 balance_count	= 12;						//平衡次数
+
+	//扑克信息
+	repeated uint32	center_cards	= 13;						//扑克数目
+	repeated uint32	hand_cards		= 14;						//桌面扑克
+	optional uint32 oper_time	    = 15;						//操作时间
+	optional uint32 min_chipin_user = 16;						//小盲玩家
+	optional uint32 max_chipin_user = 17;						//大盲注玩家
+	repeated uint32	card_chairid	= 18;						//
+
+	optional int32 buyin_state      = 19;						// 筹码状态，0等待买入 10 自动买入
+	
+}
+// 游戏开始
+message msg_texas_start_rep
+{
+	optional uint32	current_user 	= 1;						//当前玩家
+	optional uint32 d_user		 	= 2;						//D玩家
+	optional uint32 max_chipin_user = 3;						//大盲注玩家	
+	optional int64  cell_score	 	= 4;						//单元下注
+	optional int64  turn_max_score 	= 5;						//最大下注
+	optional int64  turn_less_score = 6;						//最小下注
+	optional int64  add_less_score  = 7;						//加最小注
+	optional msg_cards card_datas   = 8;						//用户扑克
+	optional uint32 min_chipin_user = 9;						//小盲玩家
+	repeated uint32	card_chairid	= 10;						//
+
+}
+
+// 用户下注
+message msg_texas_addscore_req
+{
+	optional int64  add_score = 1; //加注数目	
+}
+message msg_texas_addscore_rep
+{
+	optional uint32	current_user 	= 1;						//当前用户
+	optional uint32	addscore_user 	= 2;						//加注用户
+	optional int64	addscore_count  = 3;						//加注数目
+	optional int64  turn_less_score = 4;						//最少加注
+	optional int64  turn_max_score  = 5;						//最大下注
+	optional int64	add_less_score	= 6;						//加最小注
+	repeated uint32	showhands		= 7;						//梭哈用户
+}
+// 用户放弃
+message msg_texas_giveup_req
+{
+	optional uint32 giveup_reason = 1;
+}
+message msg_texas_giveup_rep
+{
+	optional uint32 giveup_user					= 1;	//放弃用户		
+	optional int64  lost_score  				= 2;	//输掉金币	
+}
+// 发牌
+message msg_texas_sendcard_rep
+{
+	optional uint32	public_card		= 1;					//是否公牌
+	optional uint32 current_user 	= 2;					//当前用户
+	optional uint32	send_card_count = 3;					//发牌数目
+	repeated uint32	center_cards	= 4;					//中心扑克		
+
+}
+// 游戏结束
+message texas_win_chair
+{
+	repeated uint32 win_chair = 1;	
+}
+message msg_texas_game_end_rep
+{
+	optional uint32	total_end   	= 1;							//强退标志	
+	repeated int64	game_scores 	= 2;							//游戏得分
+	repeated msg_cards card_datas 	= 3;							//用户扑克
+	repeated msg_cards last_center_cardData = 4;					//最后扑克
+	repeated texas_win_chair  win_chairs = 5;						//边池
+}
+// buyin
+message msg_texas_buyin_req
+{
+	optional int64 score = 1; // buyin筹码
+}
+message msg_texas_buyin_rep
+{
+	optional int64   score  = 1; // buyin
+	optional uint32  result = 2; // 结果
+}
+
+// 下一局补充筹码
+message msg_texas_buyin_next_req
+{
+	optional int64  score  = 1; // 要补充的筹码，0表示每局结束后自动补齐至最大买入，-1表示取消自动买入
+}
+message msg_texas_buyin_next_rep
+{
+	optional int64  score  = 1; // 要补充的筹码，0表示每局结束后自动补齐至最大买入
+	optional uint32 result = 2; // 结果
+}
+
+// 成功补齐筹码
+message msg_texas_buyin_next_suc_rep
+{
+	optional int64 score  = 1; // 补充的筹码
+}
+
+// 亮牌
+message msg_texas_show_card_req
+{		
+	repeated uint32 cards 		 = 1;
+}
+message msg_texas_show_card_rep
+{
+	optional uint32 show_chairid = 1;
+	repeated uint32 cards 		 = 2;
+
+}
+
+message msg_texas_standup_table_rep
+{
+	optional uint32 reason = 1;
+}
+
+// 等待买入筹码的玩家站起
+message msg_texas_buyin_wait_standup_rep
+{
+	optional int32 reason = 1; // 1 成功  0 失败
+}
+
+//-----------------德州游戏消息----------------------------------------------------------------
+
+
+
+

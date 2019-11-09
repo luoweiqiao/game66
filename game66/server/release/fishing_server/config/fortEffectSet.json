@@ -1,0 +1,8 @@
+{
+	"explain":"火炮特效设置",
+	"fortEffectData":[
+		{"id":1,"name":"狂暴","fireCD":0.5,"useCD":50000,"workTime":30000,"explain":"减少开火的CD","paodan":1,"jiguang":0},
+		{"id":2,"name":"锁定","fireCD":1,"useCD":50000,"workTime":30000,"explain":"锁定倍数最大的鱼","paodan":1,"jiguang":1}
+	]
+	
+}

@@ -1,0 +1,577 @@
+
+package net;
+
+//备注：C表示客户端用，S表示服务器用，CS表示客户端与服务器通用
+
+
+// 玩家基本信息
+message base_info 
+{
+	optional uint32 uid				= 1;				// 游戏ID
+	optional bytes	name 			= 2;				// 昵称	
+	optional uint32 sex		    	= 3;				// 性别	
+	optional int64	diamond			= 4;				// 钻石
+	optional int64	coin 			= 5;				// 财富币	
+	optional int64 	score 			= 6;				// 积分
+	optional int64 	ingot			= 7;				// 元宝	
+	optional int64	cvalue 			= 8;				// 魅力值	
+	optional int64  safe_coin		= 9;				// 保险箱财富币
+	optional uint32 vip 			= 10;				// vip经验值
+	optional uint32 safeboxstate	= 11;				// (0未登录，1登录，2无密码)
+	optional uint32 clogin			= 12;				// 连续登陆天数
+	optional uint32 weeklogin		= 13;				// 本周累计登陆天数
+	optional uint32	reward			= 14;				// 奖励领取标记
+	optional uint32 bankrupt		= 15;				// 破产次数
+	optional uint32 head_icon		= 16;				// 头像ID
+	optional uint32 day_game_count  = 17;				// 今日游戏局数
+	optional uint32 login_ip		= 18;				// 登陆IP
+	optional bytes	city 			= 19;				// 城市
+	optional int64	recharge		= 20;				// 充值总金额
+	optional int64	converts		= 21;				// 总金额
+	optional uint32	batchid 		= 22;				// 标识id
+	optional uint32	lvscore 		= 23;				// 积分等级
+	optional uint32	lvcoin	 		= 24;				// 筹码等级
+	optional uint64	postime	 		= 25;				// 激活时间
+	optional uint32	userright 		= 26;				// 用户权限
+	optional int64	win	 		    = 27;				// 用户总输赢
+	optional uint32	posrmb   	    = 28;				// 最大充值额度
+	optional uint32	welcount   	    = 29;				// 福利局数
+	optional uint64	weltime   	    = 30;				// 福利时间
+	optional uint32	recharge_actwle = 31;				// 活跃福利---累计充值
+	optional uint64	converts_actwle = 32;				// 活跃福利---累计提现
+	optional uint64	rtime	 	    = 33;				// 注册时间
+	optional uint32 ispay 			= 34;				// 是否为充值玩家 0:表示未充值 1:充值
+}
+
+// 斗地主游戏信息(待删除)
+message land_info
+{
+	optional uint32 win 		= 1;	// 牌局赢
+	optional uint32 lose		= 2;	// 牌局输
+	optional uint32 land		= 3;   	// 地主次数
+	optional uint32 spring 		= 4;	// 春天次数
+	optional int64  maxwin		= 5;	// 最大赢
+	optional uint32 winc		= 6;
+	optional uint32 losec		= 7;
+	optional uint32 landc		= 8;
+	optional int64	maxwinc		= 9;
+	optional uint32 springc		= 10;
+}
+
+// 游戏信息
+message game_data_info
+{
+	optional uint32 game_type   = 1;
+	optional uint32 win 		= 2;
+	optional uint32 lose        = 3;
+	optional int64	maxwin 		= 4;
+	optional uint32 winc		= 5;
+	optional uint32 losec		= 6;
+	optional int64	maxwinc		= 7;
+	repeated uint32 maxcard		= 8;  // 最大牌型
+	repeated uint32 maxcardc	= 9;  // 最大牌型
+	optional int64  daywin		= 10;
+	optional int64  daywinc		= 11;
+	
+	optional uint32 land		= 12;   // 地主次数
+	optional uint32 spring 		= 13;	// 春天次数
+	optional uint32 landc		= 14;
+	optional uint32 springc		= 15;
+	optional int64	weekwinc	= 16;
+	optional int64	totalwinc	= 17;
+	optional int64	stockscore	= 18;
+	optional int64	gamecount	= 19;
+}
+
+// 游戏服务器信息
+message svr_info
+{
+	optional uint32 svrid 			= 1; // 游戏服务器ID	
+	optional uint32 state 			= 2; // 服务器状态	
+	optional uint32 game_type		= 3; // 游戏类型
+	optional uint32 game_subtype	= 4; // 游戏子类型	
+}
+// 游戏房间信息
+message room_info
+{
+	optional uint32 id 				= 1; // 房间ID
+	optional uint32 consume			= 2; // 消费类型
+	optional uint32 deal			= 3; // 发牌类型
+	optional uint64 enter_min		= 4; // 进入门槛
+	optional uint64 enter_max		= 5; // 进入限制
+	optional uint32 player_num		= 6; // 房间人数
+	optional uint32 basescore		= 7; // 底分
+	optional uint32 create_table    = 8; // 能否创建桌子
+	optional uint32 show_type		= 9; // 显示类型
+	optional uint32 show_pic		= 10;// 显示图片
+	optional uint64 jetton_min		= 11;// 最小下注
+	optional uint32 maxjettonrate	= 12;// 最大倍率
+	optional uint32 uproom			= 13;// 是否赶场，0不敢场 1强制赶场 2非强制敢场
+	optional uint32 exitchip		= 14;// 赶场筹码
+	optional bytes room_name		= 15;// 房间名
+}
+// 玩家信息
+message seat_info
+{
+	optional uint32 uid				= 1;				// 游戏ID
+	optional bytes	name 			= 2;				// 昵称	
+	optional uint32 sex		    	= 3;				// 性别		
+	optional int64	coin 			= 4;				// 财富币	
+	optional int64 	score 			= 5;				// 积分	
+	optional int64	cvalue 			= 6;				// 魅力值
+	optional uint32 chairid			= 7;				// 椅子位子	
+	optional uint32 head_icon		= 8;				// 头像ID
+	optional int64  buyin			= 9;				// buyin
+	optional bytes	city 			= 10;				// 城市
+	optional uint32 wincount		= 11;				// 赢的局数
+	optional int64 betscore			= 12;				// 下注分数
+	optional uint32 betcount		= 13;				// 下注局数
+	optional uint32 showuid			= 14;				// 游戏ID
+}
+message seat_face
+{
+	optional uint32 uid				= 1;				// 游戏ID
+	optional bytes	name 			= 2;				// 昵称		
+	optional uint32 head_icon		= 3;				// 头像ID
+	optional uint32 ready			= 4;				// 准备状态
+	optional uint32 chairid			= 5;				// 桌位ID
+}
+// 旁观者信息
+message looker_info
+{
+	optional uint32 uid				= 1;				// 游戏ID
+	optional bytes	name 			= 2;				// 昵称		
+	optional uint32 head_icon		= 3;				// 头像ID
+	optional uint32 sex		    	= 4;				// 性别	
+	optional int64  score			= 5;				// 积分	
+	optional int64  coin			= 6;				// 财富币
+	optional bytes	city 			= 7;				// 城市
+	optional uint32 wincount		= 8;				// 赢的局数
+	optional int64 betscore			= 9;				// 下注分数
+	optional uint32 betcount		= 10;				// 下注局数
+}
+
+// 斗地主桌子信息
+message land_table_info
+{
+	optional uint32 tableid 		= 1; // 桌子ID
+	optional bytes  tablename		= 2; // 桌子名字
+	optional uint32 is_passwd		= 3; // 是否带密码		
+	optional uint32 deal 			= 4; // 发牌方式
+	optional int64  basescore		= 5; // 底分
+	optional uint32 consume			= 6; // 消费类型
+	optional uint64 entermin		= 7; // 最小进入
+	optional uint32 duetime			= 8; // 过期时间
+	optional uint32 feetype			= 9; // 台费类型
+	optional int64  feevalue		= 10;// 台费比值
+	optional bytes	hostname		= 11;// 房主名字
+	optional uint32 show_hand_num   = 12;// 显示牌数
+	optional uint32 call_time		= 13;// 叫分时间
+	optional uint32 card_time		= 14;// 出牌时间
+}
+// 梭哈桌子信息
+message showhand_table_info
+{
+	optional uint32 tableid 		= 1;  // 桌子ID
+	optional bytes  tablename		= 2;  // 桌子名字
+	optional uint32 is_passwd		= 3;  // 是否带密码		
+	optional int64  basescore		= 4;  // 底分
+	optional uint32 consume			= 5;  // 消费类型
+	optional uint64 entermin		= 6;  // 最小进入
+	optional uint32 duetime			= 7;  // 过期时间
+	optional uint32 feetype			= 8;  // 台费类型
+	optional int64  feevalue		= 9;  // 台费比值
+	optional bytes	hostname		= 10; // 房主名字	
+	optional uint32 card_time		= 11; // 加注时间
+	optional uint32 table_state		= 12; // 桌子状态	
+	repeated seat_face players		= 13; // 玩家信息
+}
+// 百人桌子信息
+message bainiu_table_info
+{
+	optional uint32 tableid 		= 1;  // 桌子ID
+	optional bytes  tablename		= 2;  // 桌子名字
+	optional uint32 is_passwd		= 3;  // 是否带密码
+	optional int64  basescore		= 4;  // 底分
+	optional uint32 consume			= 5;  // 消费类型
+	optional uint64 entermin		= 6;  // 最小进入
+	optional uint32 duetime			= 7;  // 过期时间
+	optional uint32 feetype			= 8;  // 台费类型
+	optional int64  feevalue		= 9;  // 台费比值
+	optional bytes	hostname		= 10; // 房主名字	
+	optional uint32 card_time		= 11; // 加注时间
+	optional uint32 table_state		= 12; // 桌子状态
+	optional int64  sitdown			= 13; // 坐下条件
+	optional int64  apply_banker_condition	= 14; //申请条件
+	optional int64  apply_banker_maxscore	= 15; //最大申请条件
+	optional uint32 banker_max_time			= 16; // 坐庄次数
+	optional uint32 max_jetton_rate			= 17; //最大倍率
+}
+// 德州桌子信息
+message texas_table_info 
+{
+	optional uint32 tableid 		= 1;  // 桌子ID
+	optional bytes  tablename		= 2;  // 桌子名字
+	optional uint32 is_passwd		= 3;  // 是否带密码		
+	optional int64  basescore		= 4;  // 底分
+	optional uint32 consume			= 5;  // 消费类型
+	optional uint64 entermin		= 6;  // 最小进入
+	optional uint32 duetime			= 7;  // 过期时间
+	optional uint32 feetype			= 8;  // 台费类型
+	optional int64  feevalue		= 9;  // 台费比值
+	optional bytes	hostname		= 10; // 房主名字	
+	optional uint32 card_time		= 11; // 加注时间
+	optional uint32 table_state		= 12; // 桌子状态	
+	optional int64  sitdown			= 13; // 坐下条件
+	optional uint32 player_num		= 14; // 玩家人数
+}
+// 扎金花桌子信息
+message zajinhua_table_info
+{
+	optional uint32 tableid 		= 1;  // 桌子ID
+	optional bytes  tablename		= 2;  // 桌子名字
+	optional uint32 is_passwd		= 3;  // 是否带密码		
+	optional int64  basescore		= 4;  // 底分
+	optional uint32 consume			= 5;  // 消费类型
+	optional uint64 entermin		= 6;  // 最小进入
+	optional uint32 duetime			= 7;  // 过期时间
+	optional uint32 feetype			= 8;  // 台费类型
+	optional int64  feevalue		= 9;  // 台费比值
+	optional bytes	hostname		= 10; // 房主名字	
+	optional uint32 card_time		= 11; // 加注时间
+	optional uint32 table_state		= 12; // 桌子状态	
+	optional uint32 compare_round	= 13; // 可比牌轮次 
+	optional uint32 look_round		= 14; // 可看牌轮次
+	optional uint32 limit_round		= 15; // 轮次限制
+	repeated uint32 ming_multip		= 16; // 明注倍率
+	repeated uint32 blind_multip	= 17; // 暗注倍率
+	
+}
+// 牛牛桌子信息
+message niuniu_table_info
+{
+	optional uint32 tableid 		= 1;  // 桌子ID
+	optional bytes  tablename		= 2;  // 桌子名字
+	optional uint32 is_passwd		= 3;  // 是否带密码		
+	optional int64  basescore		= 4;  // 底分
+	optional uint32 consume			= 5;  // 消费类型
+	optional uint64 entermin		= 6;  // 最小进入
+	optional uint32 duetime			= 7;  // 过期时间
+	optional uint32 feetype			= 8;  // 台费类型
+	optional int64  feevalue		= 9;  // 台费比值
+	optional bytes	hostname		= 10; // 房主名字		
+	optional uint32 table_state		= 11; // 桌子状态	
+	optional uint32 seat_num		= 12; // 座位数
+	optional uint32 can_banker		= 13; // 是否抢庄
+	optional uint32 apply_banker_time = 14; // 抢庄时间
+	optional uint32 card_time		= 15;   // 加注时间
+	optional uint32 show_card_time  = 16;	// 摆牌时间
+
+}
+// 百家乐桌子信息
+message baccarat_table_info 
+{
+	optional uint32 tableid 		= 1;  // 桌子ID
+	optional bytes  tablename		= 2;  // 桌子名字
+	optional uint32 is_passwd		= 3;  // 是否带密码		
+	optional int64  basescore		= 4;  // 底分
+	optional uint32 consume			= 5;  // 消费类型
+	optional uint64 entermin		= 6;  // 最小进入
+	optional uint32 duetime			= 7;  // 过期时间
+	optional uint32 feetype			= 8;  // 台费类型
+	optional int64  feevalue		= 9;  // 台费比值
+	optional bytes	hostname		= 10; // 房主名字	
+	optional uint32 card_time		= 11; // 加注时间
+	optional uint32 table_state		= 12; // 桌子状态	
+	optional int64  sitdown			= 13; // 坐下条件
+	optional int64  apply_banker_condition	= 14; //申请条件
+	optional int64  apply_banker_maxscore	= 15; //最大申请条件
+	optional uint32 banker_max_time	= 16; // 坐庄次数	
+}
+
+// 三公桌子信息
+message sangong_table_info
+{
+	optional uint32 tableid 		= 1;  // 桌子ID
+	optional bytes  tablename		= 2;  // 桌子名字
+	optional uint32 is_passwd		= 3;  // 是否带密码		
+	optional int64  basescore		= 4;  // 底分
+	optional uint32 consume			= 5;  // 消费类型
+	optional uint64 entermin		= 6;  // 最小进入
+	optional uint32 duetime			= 7;  // 过期时间
+	optional uint32 feetype			= 8;  // 台费类型
+	optional int64  feevalue		= 9;  // 台费比值
+	optional bytes	hostname		= 10; // 房主名字		
+	optional uint32 table_state		= 11; // 桌子状态	
+	optional uint32 seat_num		= 12; // 座位数
+	optional uint32 can_banker		= 13; // 是否抢庄
+	optional uint32 apply_banker_time = 14; // 抢庄时间
+	optional uint32 card_time		= 15;   // 加注时间
+	optional uint32 show_card_time  = 16;	// 摆牌时间
+
+}
+// 牌九桌子信息
+message paijiu_table_info 
+{
+	optional uint32 tableid 		= 1;  // 桌子ID
+	optional bytes  tablename		= 2;  // 桌子名字
+	optional uint32 is_passwd		= 3;  // 是否带密码		
+	optional int64  basescore		= 4;  // 底分
+	optional uint32 consume			= 5;  // 消费类型
+	optional uint64 entermin		= 6;  // 最小进入
+	optional uint32 duetime			= 7;  // 过期时间
+	optional uint32 feetype			= 8;  // 台费类型
+	optional int64  feevalue		= 9;  // 台费比值
+	optional bytes	hostname		= 10; // 房主名字	
+	optional uint32 card_time		= 11; // 加注时间
+	optional uint32 table_state		= 12; // 桌子状态	
+	optional int64  sitdown			= 13; // 坐下条件
+	optional int64  apply_banker_condition	= 14; //申请条件
+	optional int64  apply_banker_maxscore	= 15; //最大申请条件
+	optional uint32 banker_max_time	= 16; // 坐庄次数	
+}
+// 时时彩桌子信息
+message everycolor_table_info
+{
+	optional int64  basescore				= 1;  // 底分
+	optional uint32 consume					= 2;  // 消费类型
+	optional uint32 feetype					= 3;  // 台费类型
+	optional int64  feevalue				= 4;  // 台费比值
+	optional uint32 table_state				= 5;  // 桌子状态
+	optional uint32 add_score_time			= 6;  // 压住时间
+	optional uint32 show_card_time			= 7;  // 开牌时间
+}
+
+// 骰子桌子信息
+message dice_table_info
+{
+	optional uint32 tableid 		= 1;  // 桌子ID
+	optional bytes  tablename		= 2;  // 桌子名字
+	optional uint32 is_passwd		= 3;  // 是否带密码
+	optional int64  basescore		= 4;  // 底分
+	optional uint32 consume			= 5;  // 消费类型
+	optional uint64 entermin		= 6;  // 最小进入
+	optional uint32 duetime			= 7;  // 过期时间
+	optional uint32 feetype			= 8;  // 台费类型
+	optional int64  feevalue		= 9;  // 台费比值
+	optional bytes	hostname		= 10; // 房主名字
+	optional uint32 free_time		= 11; // 空闲时间
+	optional uint32 card_time		= 12; // 加注时间
+	optional uint32 dispatch_time	= 13; // 发牌时间
+	optional uint32 table_state		= 14; // 桌子状态
+	optional int64  sitdown			= 15; // 坐下条件
+	optional int64  apply_banker_condition	= 16; //申请条件
+	optional int64  apply_banker_maxscore	= 17; //最大申请条件
+	optional uint32 banker_max_time			= 18; // 坐庄次数
+}
+// 麻将桌子信息
+message majiang_table_info
+{
+	optional uint32 tableid 		= 1; // 桌子ID
+	optional bytes  tablename		= 2; // 桌子名字
+	optional uint32 is_passwd		= 3; // 是否带密码		
+	optional uint32 deal 			= 4; // 发牌方式
+	optional int64  basescore		= 5; // 底分
+	optional uint32 consume			= 6; // 消费类型
+	optional uint64 entermin		= 7; // 最小进入
+	optional uint32 duetime			= 8; // 过期时间
+	optional uint32 feetype			= 9; // 台费类型
+	optional int64  feevalue		= 10;// 台费比值
+	optional bytes	hostname		= 11;// 房主名字
+	optional uint32 show_hand_num   = 12;// 显示牌数
+	optional uint32 call_time		= 13;// 叫分时间
+	optional uint32 card_time		= 14;// 出牌时间
+	optional uint32 play_type		= 15; // 玩法
+	optional uint32 seat_num		= 16; // 座位数	
+	repeated uint32 kind_cards		= 17; // 赖子牌
+
+}
+// 桌子信息
+message slot_table_info
+{
+	optional uint32 tableid 		= 1; // 桌子ID
+	optional bytes  tablename		= 2; // 桌子名字
+	optional uint32 is_passwd		= 3; // 是否带密码
+	optional bytes	hostname		= 4;// 房主名字
+	optional int64  basescore		= 5; // 底分
+	optional uint32 consume			= 6; // 消费类型
+	optional uint64 entermin		= 7; // 最小进入
+	optional uint32 duetime			= 8; // 过期时间
+	optional uint32 feetype			= 9; // 台费类型
+	optional int64  feevalue		= 10;// 台费比值
+	optional uint32 seat_num		= 11; // 座位数
+	optional uint32 jackpot_score 	= 12; // 
+}
+// 桌子信息
+message war_table_info
+{
+	optional uint32 tableid 		= 1;  // 桌子ID
+	optional bytes  tablename		= 2;  // 桌子名字
+	optional uint32 is_passwd		= 3;  // 是否带密码
+	optional int64  basescore		= 4;  // 底分
+	optional uint32 consume			= 5;  // 消费类型
+	optional uint64 entermin		= 6;  // 最小进入
+	optional uint32 duetime			= 7;  // 过期时间
+	optional uint32 feetype			= 8;  // 台费类型
+	optional int64  feevalue		= 9;  // 台费比值
+	optional bytes	hostname		= 10; // 房主名字	
+	optional uint32 card_time		= 11; // 加注时间
+	optional uint32 table_state		= 12; // 桌子状态
+	optional int64  sitdown			= 13; // 坐下条件
+}
+// 桌子信息
+message fight_table_info
+{
+	optional uint32 tableid 		= 1;  // 桌子ID
+	optional bytes  tablename		= 2;  // 桌子名字
+	optional uint32 is_passwd		= 3;  // 是否带密码
+	optional int64  basescore		= 4;  // 底分
+	optional uint32 consume			= 5;  // 消费类型
+	optional uint64 entermin		= 6;  // 最小进入
+	optional uint32 duetime			= 7;  // 过期时间
+	optional uint32 feetype			= 8;  // 台费类型
+	optional int64  feevalue		= 9;  // 台费比值
+	optional bytes	hostname		= 10; // 房主名字	
+	optional uint32 card_time		= 11; // 加注时间
+	optional uint32 table_state		= 12; // 桌子状态
+	optional int64  sitdown			= 13; // 坐下条件
+}
+
+// 桌子信息
+message robniu_table_info
+{
+	optional uint32 tableid 		= 1;  // 桌子ID
+	optional bytes  tablename		= 2;  // 桌子名字
+	optional uint32 is_passwd		= 3;  // 是否带密码		
+	optional int64  basescore		= 4;  // 底分
+	optional uint32 consume			= 5;  // 消费类型
+	optional uint64 entermin		= 6;  // 最小进入
+	optional uint32 duetime			= 7;  // 过期时间
+	optional uint32 feetype			= 8;  // 台费类型
+	optional int64  feevalue		= 9;  // 台费比值
+	optional bytes	hostname		= 10; // 房主名字		
+	optional uint32 table_state		= 11; // 桌子状态	
+	optional uint32 seat_num		= 12; // 座位数
+	optional uint32 can_banker		= 13; // 是否抢庄
+	optional uint32 apply_banker_time = 14; // 抢庄时间
+	optional uint32 card_time		= 15;   // 加注时间
+	optional uint32 show_card_time  = 16;	// 摆牌时间
+
+}
+
+// 桌子信息
+message table_face_info
+{
+	optional land_table_info  	   land 	  = 1;  // 斗地主桌子信息
+	optional showhand_table_info   showhand   = 2;  // 梭哈桌子信息
+	optional bainiu_table_info	   bainiu     = 3;  // 百牛桌子信息
+	optional texas_table_info	   texas 	  = 4;  // 德州桌子信息
+	optional zajinhua_table_info   zajinhua   = 5;  // 扎金花桌子信息
+	optional niuniu_table_info	   niuniu 	  = 6;  // 牛牛桌子信息
+	optional baccarat_table_info   baccarat   = 7;  // 百家乐桌子信息
+	optional sangong_table_info	   sangong    = 8;  // 三公桌子信息
+	optional paijiu_table_info	   paijiu     = 9;  // 牌九桌子信息
+	optional everycolor_table_info everycolor = 10; // 时时彩桌子信息
+	optional dice_table_info	   dice	      = 11; // 骰子桌子信息
+	optional majiang_table_info	   majiang    = 12; // 麻将桌子信息
+	optional slot_table_info       slot	      = 13; // 桌子信息
+	optional war_table_info		   war        = 14; // 桌子信息
+	optional fight_table_info      fight      = 15; // 桌子信息
+	optional robniu_table_info     robniu     = 16; // 桌子信息
+	optional fishing_table_info    fishing    = 17; // 捕鱼桌子信息
+	optional twoeight_table_info   twoeight   = 18; // 二八杠桌子信息
+	optional carcity_table_info    carcity    = 19; // 奔驰宝马桌子信息
+}
+
+// 捕鱼桌子信息
+message fishing_table_info
+{
+	optional uint32 tableid 		= 1;  // 桌子ID
+	optional bytes  tablename		= 2;  // 桌子名字		
+	optional int64  basescore		= 3;  // 底分
+	optional uint32 consume			= 4;  // 消费类型
+	optional uint64 entermin		= 5;  // 最小进入	
+	optional uint64 maplevel		= 6;  // 地图等级	
+	optional uint32 table_state		= 7;  // 桌子状态		
+}
+
+// 二八杠桌子信息
+message twoeight_table_info
+{
+    optional uint32 tableid 		       = 1;  // 桌子ID
+	optional bytes  tablename		       = 2;  // 桌子名字
+	optional uint32 is_passwd		       = 3;  // 是否带密码
+	optional int64  basescore		       = 4;  // 底分
+	optional uint32 consume			       = 5;  // 消费类型
+	optional uint64 entermin		       = 6;  // 最小进入
+	optional uint32 duetime			       = 7;  // 过期时间
+	optional uint32 feetype			       = 8;  // 台费类型
+	optional int64  feevalue		       = 9;  // 台费比值
+	optional bytes	hostname		       = 10; // 房主名字	
+	optional uint32 card_time		       = 11; // 加注时间
+	optional uint32 table_state		       = 12; // 桌子状态
+	optional int64  sitdown			       = 13; // 坐下条件
+	optional int64  apply_banker_condition = 14; // 申请条件
+	optional int64  apply_banker_maxscore  = 15; // 最大申请条件
+	optional uint32 banker_max_time		   = 16; // 坐庄次数
+	optional uint32 max_jetton_rate		   = 17; // 最大倍率	
+}
+
+// 奔驰宝马桌子信息
+message carcity_table_info
+{
+    optional uint32 tableid 		= 1;  // 桌子ID
+	optional bytes  tablename		= 2;  // 桌子名字
+	optional uint32 is_passwd		= 3;  // 是否带密码
+	optional int64  basescore		= 4;  // 底分
+	optional uint32 consume			= 5;  // 消费类型
+	optional uint64 entermin		= 6;  // 最小进入
+	optional uint32 duetime			= 7;  // 过期时间
+	optional uint32 feetype			= 8;  // 台费类型
+	optional int64  feevalue		= 9;  // 台费比值
+	optional bytes	hostname		= 10; // 房主名字	
+	optional uint32 card_time		= 11; // 加注时间
+	optional uint32 table_state		= 12; // 桌子状态
+}
+
+// 任务数据
+message mission_data
+{
+	optional uint32 	msid 	= 1;// 任务id
+	optional uint32 	rtimes 	= 2;// 达成次数
+	optional uint32 	ctimes 	= 3;// 循环次数
+	optional uint32     cptime  = 4;// 领奖时间	
+}
+// 物品
+message item
+{
+	optional uint32 item_id   = 1 ; // 物品id
+	optional uint32 item_num  = 2 ; // 物品数量
+}
+// 背包
+message item_bag
+{
+	repeated item   items	  = 1; // 物品信息	
+}
+message msg_cards
+{
+	repeated uint32 cards = 1; // 牌组
+}
+
+message player_num
+{
+	optional uint32 svrid 			= 1; // 游戏服务器ID
+	optional uint32 players         = 2; // 玩家数量
+	optional uint32 robots          = 3; // 机器人数量
+}
+
+
+
+
+
+
+
+
+
+
+

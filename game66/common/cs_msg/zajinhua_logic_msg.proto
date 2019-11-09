@@ -1,0 +1,160 @@
+
+package net;
+import "base_msg_struct.proto";
+import "error_code.proto";
+
+//-------------扎金花游戏消息---------------------------------------
+
+// 游戏状态
+message msg_zajinhua_game_info_free_rep
+{
+		
+}
+message msg_zajinhua_game_info_play_rep
+{
+	//加注信息
+	optional uint32	current_times  = 3;						//当前倍数
+	optional int64	user_max_score = 4;						//用户分数上限
+
+	//状态信息
+	optional uint32	banker_user	   = 5;						//庄家用户
+	optional uint32 current_user   = 6;						//当前玩家
+	repeated uint32 play_status	   = 7;						//游戏状态
+	repeated uint32 card_stat	   = 8;						//看牌状态
+	repeated int64	table_score	   = 9;						//下注数目
+
+	//扑克信息
+	repeated uint32 hand_card_data = 10;					//扑克数据
+
+	//状态信息
+	optional uint32 compare_state  = 11;					//比牌状态	
+	optional uint32 current_round  = 12;					//当前轮次
+	optional uint32 oper_time	   = 13;					//操作时间，准备开始状态和结算状态表示剩余时间
+	optional uint32 is_mingpai	   = 14;					//是否明牌
+	optional uint32	card_type	   = 15;	                //扑克牌型
+	optional uint32 game_status	   = 16;	                //游戏状态
+
+}
+
+// 游戏开始
+message msg_zajinhua_start_rep
+{
+	//用户信息
+	optional uint32	banker_user   	= 1;							//庄家用户
+	optional uint32 current_user  	= 2;							//当前玩家
+	optional int64  user_max_score 	= 3;							//最大下注
+	repeated uint32 play_status	    = 4;						    //玩家游戏状态
+	
+}
+
+// 用户下注
+message msg_zajinhua_addscore_req
+{
+	optional int64  add_score = 1; 								//加注数目
+	optional uint32 is_allin  = 2;								//是否allin
+
+}
+message msg_zajinhua_addscore_rep
+{
+	optional uint32 current_user	= 1;						//当前用户
+	optional uint32 add_score_user  = 2;						//加注用户
+	optional uint32 compare_state   = 3;						//比牌状态
+	optional int64 	add_score_count = 4;						//加注数目
+	optional uint32 current_times	= 5;						//当前倍数索引	
+	optional uint32 current_round	= 6;						//当前轮次
+	optional uint32 only_compare	= 7;						//仅剩比牌操作	
+	optional uint32 is_allin		= 8;						//是否allin
+
+}
+//用户放弃
+message msg_zajinhua_giveup_req
+{
+	optional uint32 giveup_reason = 1;
+}
+message msg_zajinhua_giveup_rep
+{
+	optional uint32 giveup_user	  = 1;	//放弃用户		
+}
+//比牌数据包
+message msg_zajinhua_compare_card_req
+{
+	optional uint32 compare_user  = 1;  //比牌用户
+}
+message msg_zajinhua_compare_card_rep 
+{
+	optional uint32 current_user = 1;					//当前用户
+	repeated uint32 compare_user = 2;					//比牌用户
+	optional uint32 lost_user    = 3;					//输牌用户
+};
+message msg_zajinhua_look_card_req
+{
+	optional uint32 chairid = 1;	
+}
+//看牌数据包
+message msg_zajinhua_look_card_rep
+{
+	optional uint32 look_card_user = 1;					//看牌用户
+	repeated uint32 card_data	   = 2;					//用户扑克
+	optional uint32	card_type	   = 3;	                //扑克牌型
+};
+//开牌
+message msg_zajinhua_open_card_req
+{
+	
+};
+//开牌数据包
+message msg_zajinhua_open_card
+{
+	optional uint32	winner = 1;							//胜利用户
+};
+
+// 游戏结束
+message msg_zajinhua_game_end_rep
+{	
+	repeated int64		game_score  	   = 1;			//游戏得分
+	repeated msg_cards	card_data		   = 2;			//用户扑克
+	repeated uint32	    compare_user 	   = 3;			//比牌用户
+	optional uint32 	end_state		   = 4;			//结束状态
+	repeated int64		special_score	   = 5;			//特殊奖励
+	repeated uint32	    card_types         = 6;	        //(赢家)扑克牌型
+}
+// 亮牌
+message msg_zajinhua_show_card_req
+{		
+}
+message msg_zajinhua_show_card_rep
+{
+	optional uint32 show_chairid = 1;
+	repeated uint32 cards 		 = 2;
+
+}
+
+//-----------------扎金花游戏消息----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,867 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="cmake_config">
+      <UniqueIdentifier>{268f9115-db09-4c0d-847c-703e3c5795db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame">
+      <UniqueIdentifier>{4a111d8f-cfdc-4d7c-a74b-864d0c29307f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers">
+      <UniqueIdentifier>{84437315-0ad9-47b7-a471-ef18675e5b9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\build">
+      <UniqueIdentifier>{26256357-a622-4366-8273-84fc87ee8d9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\document">
+      <UniqueIdentifier>{9694271b-93ea-4805-a133-81006d5d47f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\config">
+      <UniqueIdentifier>{d0dc8fdf-801e-468d-a7de-500ab931ab91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\crypt">
+      <UniqueIdentifier>{df326ba6-26ce-4d40-89fc-22f231bdf59e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\dbmysql">
+      <UniqueIdentifier>{c39ccd54-1b11-45cb-9146-823dfdd95266}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\framework">
+      <UniqueIdentifier>{0e29f307-a0d3-49e6-80ce-0ceccf123461}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\fundamental">
+      <UniqueIdentifier>{822a954e-b3f8-45e9-a08f-5e48d6c5e63a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\hash">
+      <UniqueIdentifier>{af1d37b3-1e14-4e0b-be0e-b5f38a128c28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\helper">
+      <UniqueIdentifier>{26e90779-5d8d-4f8a-ba74-ea7026d0591c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\json">
+      <UniqueIdentifier>{300721ea-6abe-4948-a370-67cd7ffbf75f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\luatinker">
+      <UniqueIdentifier>{ff38d781-8593-45d3-b337-555314d28750}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\math">
+      <UniqueIdentifier>{30e071ee-b4e8-4974-b3fa-4cff7a960f00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\network">
+      <UniqueIdentifier>{fbda67ca-2f90-4551-8dbb-5669ae4d58da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\packet">
+      <UniqueIdentifier>{23284d6d-3b2f-4160-84f9-767903c83f2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\tinyxml">
+      <UniqueIdentifier>{82dbf45f-bc07-40f0-b78a-8e6c323eff74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\utility">
+      <UniqueIdentifier>{47c10688-3ecb-43f3-a369-a54117925669}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\fund">
+      <UniqueIdentifier>{2993b696-2a36-4876-a8f1-4430e6c5e412}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\CMakeLists.txt" />
+    <Text Include="..\server_frame\build\CMakeLists.txt">
+      <Filter>server_frame\build</Filter>
+    </Text>
+    <Text Include="..\server_frame\document\svrlib使用说明.txt">
+      <Filter>server_frame\document</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\rebuild_frame.sh" />
+    <None Include="..\cmake_config\common_path.cmake">
+      <Filter>cmake_config</Filter>
+    </None>
+    <None Include="..\cmake_config\config.cmake">
+      <Filter>cmake_config</Filter>
+    </None>
+    <None Include="..\cmake_config\config_lib.cmake">
+      <Filter>cmake_config</Filter>
+    </None>
+    <None Include="..\cmake_config\macros.cmake">
+      <Filter>cmake_config</Filter>
+    </None>
+    <None Include="..\server_frame\build\rebuild.sh">
+      <Filter>server_frame\build</Filter>
+    </None>
+    <None Include="..\server_frame\include\network\makefile">
+      <Filter>server_frame\network</Filter>
+    </None>
+    <None Include="..\server_frame\src\json\json_internalarray.inl">
+      <Filter>server_frame\json</Filter>
+    </None>
+    <None Include="..\server_frame\src\json\json_internalmap.inl">
+      <Filter>server_frame\json</Filter>
+    </None>
+    <None Include="..\server_frame\src\json\json_valueiterator.inl">
+      <Filter>server_frame\json</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\server_frame\include\config\config.h">
+      <Filter>server_frame\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\config\csvreader.h">
+      <Filter>server_frame\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\config\xmlcfgreader.h">
+      <Filter>server_frame\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\crypt\aes.h">
+      <Filter>server_frame\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\crypt\base64.h">
+      <Filter>server_frame\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\crypt\blowfish.h">
+      <Filter>server_frame\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\crypt\crypt.h">
+      <Filter>server_frame\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\crypt\encrypt.h">
+      <Filter>server_frame\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\crypt\hmac_sha1.h">
+      <Filter>server_frame\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\crypt\mars.h">
+      <Filter>server_frame\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\crypt\md5.h">
+      <Filter>server_frame\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\crypt\serpent.h">
+      <Filter>server_frame\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\crypt\urlEncode.h">
+      <Filter>server_frame\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\crypt\xor256.h">
+      <Filter>server_frame\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\dbmysql\db_task.h">
+      <Filter>server_frame\dbmysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\dbmysql\db_wrap.h">
+      <Filter>server_frame\dbmysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\dbmysql\dbmysql.h">
+      <Filter>server_frame\dbmysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\dbmysql\hiredis.h">
+      <Filter>server_frame\dbmysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\dbmysql\hiredisop.h">
+      <Filter>server_frame\dbmysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\dbmysql\sql_join.h">
+      <Filter>server_frame\dbmysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\framework\application.h">
+      <Filter>server_frame\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\framework\cmdline.h">
+      <Filter>server_frame\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\framework\logger.h">
+      <Filter>server_frame\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\fundamental\bloomfilter.h">
+      <Filter>server_frame\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\fundamental\common.h">
+      <Filter>server_frame\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\fundamental\cyclebuffer.h">
+      <Filter>server_frame\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\fundamental\cyclebuffer_shm.h">
+      <Filter>server_frame\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\fundamental\hashtable.h">
+      <Filter>server_frame\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\fundamental\hashval.h">
+      <Filter>server_frame\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\fundamental\linkcache.h">
+      <Filter>server_frame\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\fundamental\multiprocesshashtable.h">
+      <Filter>server_frame\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\fundamental\noncopyable.h">
+      <Filter>server_frame\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\fundamental\ring_buff.h">
+      <Filter>server_frame\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\fundamental\variablehashtable.h">
+      <Filter>server_frame\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\fundamental\variablelengthhashtable.h">
+      <Filter>server_frame\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\hash\md4emule.h">
+      <Filter>server_frame\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\hash\md5.h">
+      <Filter>server_frame\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\hash\sha1.h">
+      <Filter>server_frame\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\helper\bufferStream.h">
+      <Filter>server_frame\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\helper\filehelper.h">
+      <Filter>server_frame\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\helper\fileStream.h">
+      <Filter>server_frame\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\helper\helper.h">
+      <Filter>server_frame\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\helper\numberStream.h">
+      <Filter>server_frame\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\helper\streamBase.h">
+      <Filter>server_frame\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\helper\stringStream.h">
+      <Filter>server_frame\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\json\autolink.h">
+      <Filter>server_frame\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\json\config.h">
+      <Filter>server_frame\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\json\features.h">
+      <Filter>server_frame\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\json\forwards.h">
+      <Filter>server_frame\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\json\json.h">
+      <Filter>server_frame\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\json\reader.h">
+      <Filter>server_frame\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\json\value.h">
+      <Filter>server_frame\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\json\writer.h">
+      <Filter>server_frame\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\lapi.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\lauxlib.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\lcode.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\ldebug.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\ldo.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\lfunc.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\lgc.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\llex.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\llimits.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\lmem.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\lobject.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\lopcodes.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\lparser.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\lstate.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\lstring.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\ltable.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\ltm.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\lua.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\lua_tinker.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\luaconf.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\luaConsole.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\lualib.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\luaTinker.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\lundump.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\lvm.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\luatinker\lzio.h">
+      <Filter>server_frame\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\math\box2.h">
+      <Filter>server_frame\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\math\mathFunctions.h">
+      <Filter>server_frame\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\math\point2.h">
+      <Filter>server_frame\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\math\point3.h">
+      <Filter>server_frame\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\math\rand_table.h">
+      <Filter>server_frame\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\math\rank.h">
+      <Filter>server_frame\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\math\rect.h">
+      <Filter>server_frame\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\base.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\cache.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\CCInnerDecoder.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\CCnet.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\CCReactor.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\CCSocketHandler.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\CCSocketServer.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\CCStreamDecoder.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\CCTcpHandler.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\hashtab.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\heap.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\heap_timer.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\ICC_Decoder.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\ICC_TCP_Server.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\ICHAT_PacketBase.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\idxobj.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\list.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\memcheck.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\mempool.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\MsgDecoder.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\myepoll.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\Network.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\NetworkObject.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\poller.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\protobuf_pkg.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\protocol_base.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\network\timerbase.h">
+      <Filter>server_frame\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\basicFunctions.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\basicTypes.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\comm_macro.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\cooling.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\curl_wrap.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\encode_utility.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\ipcutility.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\likelydef.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\profile_manager.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\singleton.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\stl_hash_map.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\stringFunctions.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\stringutility.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\stw_timer.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\thread.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\timeFunction.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\timer_mgr.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\utility\timeutility.h">
+      <Filter>server_frame\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\tinyxml\tinystr.h">
+      <Filter>server_frame\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\tinyxml\tinyxml.h">
+      <Filter>server_frame\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\packet\istreampacket.h">
+      <Filter>server_frame\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\packet\ostreampacket.h">
+      <Filter>server_frame\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\packet\streampacket.h">
+      <Filter>server_frame\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\include\svrlib.h">
+      <Filter>server_frame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\src\framework\configchecker.h">
+      <Filter>server_frame\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\src\framework\framework.h">
+      <Filter>server_frame\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\src\fundamental\randomgenerator.h">
+      <Filter>server_frame\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\src\fund\cache.h">
+      <Filter>server_frame\fund</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\src\fund\convert.h">
+      <Filter>server_frame\fund</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\src\fund\hashtable.h">
+      <Filter>server_frame\fund</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\src\fund\lruvariablelengthhashtable.h">
+      <Filter>server_frame\fund</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\src\fund\mylink.h">
+      <Filter>server_frame\fund</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\src\fund\nodealloc.h">
+      <Filter>server_frame\fund</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\src\fund\size.h">
+      <Filter>server_frame\fund</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\src\fund\statemachine.h">
+      <Filter>server_frame\fund</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\src\hash\md5_loc.h">
+      <Filter>server_frame\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\src\json\json_batchallocator.h">
+      <Filter>server_frame\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\server_frame\src\json\json_tool.h">
+      <Filter>server_frame\json</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\server_frame\include\network\base.cpp">
+      <Filter>server_frame\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\include\network\cache.cpp">
+      <Filter>server_frame\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\include\network\CCnet.cpp">
+      <Filter>server_frame\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\include\network\CCReactor.cpp">
+      <Filter>server_frame\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\include\network\CCSocketHandler.cpp">
+      <Filter>server_frame\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\include\network\CCSocketServer.cpp">
+      <Filter>server_frame\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\include\network\CCTcpHandler.cpp">
+      <Filter>server_frame\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\include\network\heap_timer.cpp">
+      <Filter>server_frame\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\include\network\idxobj.cpp">
+      <Filter>server_frame\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\include\network\memcheck.cpp">
+      <Filter>server_frame\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\include\network\mempool.cpp">
+      <Filter>server_frame\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\include\network\poller.cpp">
+      <Filter>server_frame\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\include\network\protobuf_pkg.cpp">
+      <Filter>server_frame\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\config\config.cpp">
+      <Filter>server_frame\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\config\csvreader.cpp">
+      <Filter>server_frame\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\config\xmlcfgreader.cpp">
+      <Filter>server_frame\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\crypt\aes.cpp">
+      <Filter>server_frame\crypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\crypt\base64.cpp">
+      <Filter>server_frame\crypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\crypt\blowFish.cpp">
+      <Filter>server_frame\crypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\crypt\crypt.cpp">
+      <Filter>server_frame\crypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\crypt\encrypt.cpp">
+      <Filter>server_frame\crypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\crypt\hmac_sha1.cpp">
+      <Filter>server_frame\crypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\crypt\mars.cpp">
+      <Filter>server_frame\crypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\crypt\md5.cpp">
+      <Filter>server_frame\crypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\crypt\serpent.cpp">
+      <Filter>server_frame\crypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\crypt\urlEncode.cpp">
+      <Filter>server_frame\crypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\dbmysql\db_task.cpp">
+      <Filter>server_frame\dbmysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\dbmysql\db_wrap.cpp">
+      <Filter>server_frame\dbmysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\dbmysql\dbmysql.cpp">
+      <Filter>server_frame\dbmysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\dbmysql\dbmysql_exception.cpp">
+      <Filter>server_frame\dbmysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\dbmysql\dbmysql_result.cpp">
+      <Filter>server_frame\dbmysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\dbmysql\dbmysql_statement.cpp">
+      <Filter>server_frame\dbmysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\dbmysql\dbmysql_transaction.cpp">
+      <Filter>server_frame\dbmysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\dbmysql\hiredisop.cpp">
+      <Filter>server_frame\dbmysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\dbmysql\test_client.cpp">
+      <Filter>server_frame\dbmysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\framework\framework.cpp">
+      <Filter>server_frame\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\framework\frameworkmain.cpp">
+      <Filter>server_frame\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\fundamental\bloomfilter.cpp">
+      <Filter>server_frame\fundamental</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\fundamental\linkcache.cpp">
+      <Filter>server_frame\fundamental</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\hash\md4emule.cpp">
+      <Filter>server_frame\hash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\hash\md5.cpp">
+      <Filter>server_frame\hash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\hash\sha1.cpp">
+      <Filter>server_frame\hash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\helper\bufferStream.cpp">
+      <Filter>server_frame\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\helper\filehelper.cpp">
+      <Filter>server_frame\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\helper\fileStream.cpp">
+      <Filter>server_frame\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\helper\helper.cpp">
+      <Filter>server_frame\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\helper\streamBase.cpp">
+      <Filter>server_frame\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\helper\stringStream.cpp">
+      <Filter>server_frame\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\json\json_reader.cpp">
+      <Filter>server_frame\json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\json\json_value.cpp">
+      <Filter>server_frame\json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\json\json_writer.cpp">
+      <Filter>server_frame\json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lapi.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lauxlib.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lbaselib.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lcode.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\ldblib.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\ldebug.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\ldo.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\ldump.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lfunc.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lgc.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\linit.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\liolib.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\llex.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lmathlib.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lmem.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\loadlib.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lobject.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lopcodes.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\loslib.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lparser.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lstate.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lstring.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lstrlib.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\ltable.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\ltablib.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\ltm.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lua_tinker.cpp">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\luaConsole.cpp">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lundump.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lvm.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\lzio.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\luatinker\print.c">
+      <Filter>server_frame\luatinker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\math\mathFunctions.cpp">
+      <Filter>server_frame\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\math\rand_table.cpp">
+      <Filter>server_frame\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\utility\basicFunctions.cpp">
+      <Filter>server_frame\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\utility\cooling.cpp">
+      <Filter>server_frame\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\utility\curl_wrap.cpp">
+      <Filter>server_frame\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\utility\encode_utility.cpp">
+      <Filter>server_frame\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\utility\ipcutility.cpp">
+      <Filter>server_frame\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\utility\profile_manager.cpp">
+      <Filter>server_frame\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\utility\stringFunctions.cpp">
+      <Filter>server_frame\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\utility\stringutility.cpp">
+      <Filter>server_frame\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\utility\stw_timer.cpp">
+      <Filter>server_frame\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\utility\thread.cpp">
+      <Filter>server_frame\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\utility\timeFunction.cpp">
+      <Filter>server_frame\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\utility\timer_mgr.cpp">
+      <Filter>server_frame\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\utility\timeutility.cpp">
+      <Filter>server_frame\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\tinyxml\tinystr.cpp">
+      <Filter>server_frame\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\tinyxml\tinyxml.cpp">
+      <Filter>server_frame\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\tinyxml\tinyxmlerror.cpp">
+      <Filter>server_frame\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\server_frame\src\tinyxml\tinyxmlparser.cpp">
+      <Filter>server_frame\tinyxml</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

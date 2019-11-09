@@ -1,0 +1,10 @@
+Svrlib使用补充说明
+　　　
+三 启动的命令行参数
+　　　假定可执行程序名为 demo.out
+./demo.out -bf 以前台方式启动
+./demo.out -gensh 生成check脚本，然后退出程序。check脚本会检查进程是否已启动，如果没有，则启动之。此脚本运行的前提条件是可执行程序名有后缀。
+./demo.out -cron 将check脚本加入crontab中，然后退出程序。以后check脚本每分钟执行一次。
+其他参数则以daemon方式启动。
+　　　
+信号处理：SIGUSR1  退出，SIGUSR2 重新加载配置

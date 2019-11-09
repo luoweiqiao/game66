@@ -1,0 +1,743 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1C91D935-677C-4536-8D9C-72C050C555C2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>project</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\work\game66\server\servers\common\src;D:\work\game66\server\server_frame\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="..\..\servers\baccarat_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\bainiu_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\common\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\dice_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\everycolor_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\fight_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\fishing_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\game_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\land_robot_ai_ex\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\land_robot_ai_ex\src\change.log" />
+    <Text Include="..\..\servers\land_robot_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\lobby_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\majiang_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\niuniu_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\paijiu_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\robniu_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\sangong_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\showhand_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\slot_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\texas_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\twoeight_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\war_server\build\CMakeLists.txt" />
+    <Text Include="..\..\servers\zajinhua_server\build\CMakeLists.txt" />
+    <Text Include="..\..\server_frame\document\svrlib使用说明.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\common\cs_msg\baccarat_logic_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\bainiu_logic_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\base_msg_struct.proto" />
+    <None Include="..\..\..\common\cs_msg\client_logic_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\dice_logic_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\error_code.proto" />
+    <None Include="..\..\..\common\cs_msg\everycolor_logic_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\fight_logic_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\fishing_logic_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\land_logic_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\majiang_logic_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\msg_define.proto" />
+    <None Include="..\..\..\common\cs_msg\niuniu_logic_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\paijiu_logic_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\robniu_logic_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\sangong_logic_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\servers_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\showhand_logic_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\slot_logic_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\texas_logic_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\war_logic_msg.proto" />
+    <None Include="..\..\..\common\cs_msg\zajinhua_logic_msg.proto" />
+    <None Include="..\..\cmake_config\common_path.cmake" />
+    <None Include="..\..\cmake_config\config.cmake" />
+    <None Include="..\..\cmake_config\config_lib.cmake" />
+    <None Include="..\..\cmake_config\macros.cmake" />
+    <None Include="..\..\release\fishing_server\config\baseLineData.json" />
+    <None Include="..\..\release\fishing_server\config\fishRes.json" />
+    <None Include="..\..\release\fishing_server\config\fortEffectSet.json" />
+    <None Include="..\..\release\fishing_server\config\level1.json" />
+    <None Include="..\..\release\fishing_server\config\level2.json" />
+    <None Include="..\..\release\fishing_server\config\level3.json" />
+    <None Include="..\..\release\fishing_server\config\paoSet.json" />
+    <None Include="..\..\release\fishing_server\config\readLevel.json" />
+    <None Include="..\..\release\fishing_server\config\zidanSet.json" />
+    <None Include="..\..\release\fishing_server\restart_game.sh" />
+    <None Include="..\..\release\fishing_server\stop.sh" />
+    <None Include="..\..\release\restart_all.sh" />
+    <None Include="..\..\release\stop_all.sh" />
+    <None Include="..\..\servers\baccarat_server\build\rebuild.sh" />
+    <None Include="..\..\servers\bainiu_server\build\rebuild.sh" />
+    <None Include="..\..\servers\common\build\rebuild.sh" />
+    <None Include="..\..\servers\dice_server\build\rebuild.sh" />
+    <None Include="..\..\servers\everycolor_server\build\rebuild.sh" />
+    <None Include="..\..\servers\fight_server\build\rebuild.sh" />
+    <None Include="..\..\servers\fishing_server\build\rebuild.sh" />
+    <None Include="..\..\servers\game_server\build\rebuild.sh" />
+    <None Include="..\..\servers\land_robot_ai_ex\build\rebuild.sh" />
+    <None Include="..\..\servers\land_robot_server\build\rebuild.sh" />
+    <None Include="..\..\servers\land_robot_server\src\ddz_lib_level.vcxproj.filters" />
+    <None Include="..\..\servers\lobby_server\build\rebuild.sh" />
+    <None Include="..\..\servers\majiang_server\build\rebuild.sh" />
+    <None Include="..\..\servers\niuniu_server\build\rebuild.sh" />
+    <None Include="..\..\servers\paijiu_server\build\rebuild.sh" />
+    <None Include="..\..\servers\robniu_server\build\rebuild.sh" />
+    <None Include="..\..\servers\sangong_server\build\rebuild.sh" />
+    <None Include="..\..\servers\showhand_server\build\rebuild.sh" />
+    <None Include="..\..\servers\slot_server\build\rebuild.sh" />
+    <None Include="..\..\servers\texas_server\build\rebuild.sh" />
+    <None Include="..\..\servers\twoeight_server\build\rebuild.sh" />
+    <None Include="..\..\servers\war_server\build\rebuild.sh" />
+    <None Include="..\..\servers\zajinhua_server\build\rebuild.sh" />
+    <None Include="..\..\server_frame\include\network\makefile" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\frame\server_frame\src\config\config.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\config\csvreader.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\config\xmlcfgreader.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\aes.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\base64.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\blowFish.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\crypt.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\encrypt.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\hmac_sha1.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\mars.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\md5.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\serpent.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\urlEncode.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\dbmysql.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\dbmysql_exception.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\dbmysql_result.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\dbmysql_statement.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\dbmysql_transaction.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\db_task.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\db_wrap.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\hiredisop.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\test_client.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\framework\framework.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\framework\frameworkmain.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\fundamental\bloomfilter.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\fundamental\linkcache.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\hash\md4emule.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\hash\md5.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\hash\sha1.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\helper\bufferStream.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\helper\filehelper.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\helper\fileStream.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\helper\helper.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\helper\streamBase.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\helper\stringStream.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\math\mathFunctions.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\math\rand_table.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\tinyxml\tinystr.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\tinyxml\tinyxml.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\tinyxml\tinyxmlparser.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\basicFunctions.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\cooling.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\curl_wrap.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\encode_utility.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\ipcutility.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\profile_manager.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\stringFunctions.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\stringutility.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\stw_timer.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\thread.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\timeFunction.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\timer_mgr.cpp" />
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\timeutility.cpp" />
+    <ClCompile Include="..\..\servers\baccarat_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\baccarat_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\baccarat_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\baccarat_server\src\robot_oper_mgr.cpp" />
+    <ClCompile Include="..\..\servers\bainiu_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\bainiu_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\bainiu_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\bainiu_server\src\robot_oper_mgr.cpp" />
+    <ClCompile Include="..\..\servers\common\src\center_log.cpp" />
+    <ClCompile Include="..\..\servers\common\src\common_logic.cpp" />
+    <ClCompile Include="..\..\servers\common\src\data_cfg_mgr.cpp" />
+    <ClCompile Include="..\..\servers\common\src\dbmysql_mgr.cpp" />
+    <ClCompile Include="..\..\servers\common\src\db_operator.cpp" />
+    <ClCompile Include="..\..\servers\common\src\pb\baccarat_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\bainiu_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\base_msg_struct.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\client_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\dice_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\error_code.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\everycolor_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\fight_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\fishing_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\land_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\majiang_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\msg_define.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\niuniu_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\paijiu_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\robniu_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\sangong_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\servers_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\showhand_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\slot_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\texas_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\war_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\pb\zajinhua_logic_msg.pb.cc" />
+    <ClCompile Include="..\..\servers\common\src\player_base.cpp" />
+    <ClCompile Include="..\..\servers\common\src\player_mgr.cpp" />
+    <ClCompile Include="..\..\servers\common\src\poker\baccarat_logic.cpp" />
+    <ClCompile Include="..\..\servers\common\src\poker\niuniu_logic.cpp" />
+    <ClCompile Include="..\..\servers\common\src\poker\paijiu_logic.cpp" />
+    <ClCompile Include="..\..\servers\common\src\poker\poker_logic.cpp" />
+    <ClCompile Include="..\..\servers\common\src\poker\sangong_logic.cpp" />
+    <ClCompile Include="..\..\servers\common\src\redis_mgr.cpp" />
+    <ClCompile Include="..\..\servers\dice_server\src\dice_logic.cpp" />
+    <ClCompile Include="..\..\servers\dice_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\dice_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\dice_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\everycolor_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\everycolor_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\everycolor_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\fight_server\src\fight_logic.cpp" />
+    <ClCompile Include="..\..\servers\fight_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\fight_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\fight_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\fight_server\src\robot_oper_mgr.cpp" />
+    <ClCompile Include="..\..\servers\fishing_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\fishing_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\fishing_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\game_server\src\active_welfare_mgr.cpp" />
+    <ClCompile Include="..\..\servers\game_server\src\async_dbcallback.cpp" />
+    <ClCompile Include="..\..\servers\game_server\src\exception.cpp" />
+    <ClCompile Include="..\..\servers\game_server\src\fish_info_mgr.cpp" />
+    <ClCompile Include="..\..\servers\game_server\src\GameCommonLogic.cpp" />
+    <ClCompile Include="..\..\servers\game_server\src\game_net_mgr.cpp" />
+    <ClCompile Include="..\..\servers\game_server\src\game_player.cpp" />
+    <ClCompile Include="..\..\servers\game_server\src\game_room.cpp" />
+    <ClCompile Include="..\..\servers\game_server\src\game_room_mgr.cpp" />
+    <ClCompile Include="..\..\servers\game_server\src\game_server_config.cpp" />
+    <ClCompile Include="..\..\servers\game_server\src\game_table.cpp" />
+    <ClCompile Include="..\..\servers\game_server\src\gobal_event_mgr.cpp" />
+    <ClCompile Include="..\..\servers\game_server\src\lobby_mgr.cpp" />
+    <ClCompile Include="..\..\servers\game_server\src\msg_lobby_handle.cpp" />
+    <ClCompile Include="..\..\servers\game_server\src\new_register_welfare_mgr.cpp" />
+    <ClCompile Include="..\..\servers\game_server\src\robot.cpp" />
+    <ClCompile Include="..\..\servers\game_server\src\robot_mgr.cpp" />
+    <ClCompile Include="..\..\servers\land_robot_ai_ex\src\AIUtils.cpp" />
+    <ClCompile Include="..\..\servers\land_robot_ai_ex\src\CardsEvaluating.cpp" />
+    <ClCompile Include="..\..\servers\land_robot_ai_ex\src\LordRobotAi.cpp" />
+    <ClCompile Include="..\..\servers\land_robot_ai_ex\src\OGLordRbtAIClv.cpp" />
+    <ClCompile Include="..\..\servers\land_robot_ai_ex\src\OGLordRobot.cpp" />
+    <ClCompile Include="..\..\servers\land_robot_ai_ex\src\OGLordRobotAI.cpp" />
+    <ClCompile Include="..\..\servers\land_robot_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\land_robot_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\land_robot_server\src\land_logic.cpp" />
+    <ClCompile Include="..\..\servers\land_robot_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\lobby_server\src\async_dbcallback.cpp" />
+    <ClCompile Include="..\..\servers\lobby_server\src\exception.cpp" />
+    <ClCompile Include="..\..\servers\lobby_server\src\game_net_mgr.cpp" />
+    <ClCompile Include="..\..\servers\lobby_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\lobby_server\src\gobal_event_mgr.cpp" />
+    <ClCompile Include="..\..\servers\lobby_server\src\gobal_robot_mgr.cpp" />
+    <ClCompile Include="..\..\servers\lobby_server\src\lobby_server_config.cpp" />
+    <ClCompile Include="..\..\servers\lobby_server\src\mission_mgr.cpp" />
+    <ClCompile Include="..\..\servers\lobby_server\src\msg_client_handle.cpp" />
+    <ClCompile Include="..\..\servers\lobby_server\src\msg_php_handle.cpp" />
+    <ClCompile Include="..\..\servers\lobby_server\src\msg_server_handle.cpp" />
+    <ClCompile Include="..\..\servers\lobby_server\src\player.cpp" />
+    <ClCompile Include="..\..\servers\lobby_server\src\robot.cpp" />
+    <ClCompile Include="..\..\servers\lobby_server\src\server_mgr.cpp" />
+    <ClCompile Include="..\..\servers\majiang_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\majiang_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\majiang_server\src\majiang_config.cpp" />
+    <ClCompile Include="..\..\servers\majiang_server\src\majiang_logic.cpp" />
+    <ClCompile Include="..\..\servers\majiang_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\niuniu_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\niuniu_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\niuniu_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\niuniu_server\src\niuniu_logic.cpp" />
+    <ClCompile Include="..\..\servers\niuniu_server\src\robot_oper_mgr.cpp" />
+    <ClCompile Include="..\..\servers\paijiu_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\paijiu_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\paijiu_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\paijiu_server\src\paijiu_logic.cpp" />
+    <ClCompile Include="..\..\servers\paijiu_server\src\robot_oper_mgr.cpp" />
+    <ClCompile Include="..\..\servers\robniu_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\robniu_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\robniu_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\robniu_server\src\robniu_logic.cpp" />
+    <ClCompile Include="..\..\servers\robniu_server\src\robot_oper_mgr.cpp" />
+    <ClCompile Include="..\..\servers\sangong_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\sangong_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\sangong_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\showhand_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\showhand_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\showhand_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\showhand_server\src\show_hand_logic.cpp" />
+    <ClCompile Include="..\..\servers\slot_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\slot_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\slot_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\slot_server\src\slot_logic.cpp" />
+    <ClCompile Include="..\..\servers\texas_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\texas_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\texas_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\texas_server\src\texas_logic.cpp" />
+    <ClCompile Include="..\..\servers\twoeight_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\twoeight_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\twoeight_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\twoeight_server\src\robot_oper_mgr.cpp" />
+    <ClCompile Include="..\..\servers\twoeight_server\src\twoeight_logic.cpp" />
+    <ClCompile Include="..\..\servers\war_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\war_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\war_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\war_server\src\robot_oper_mgr.cpp" />
+    <ClCompile Include="..\..\servers\war_server\src\war_logic.cpp" />
+    <ClCompile Include="..\..\servers\zajinhua_server\src\game_imple_table.cpp" />
+    <ClCompile Include="..\..\servers\zajinhua_server\src\game_server.cpp" />
+    <ClCompile Include="..\..\servers\zajinhua_server\src\msg_imple_handle.cpp" />
+    <ClCompile Include="..\..\servers\zajinhua_server\src\zajinhua_logic.cpp" />
+    <ClCompile Include="..\..\server_frame\include\network\base.cpp" />
+    <ClCompile Include="..\..\server_frame\include\network\cache.cpp" />
+    <ClCompile Include="..\..\server_frame\include\network\CCnet.cpp" />
+    <ClCompile Include="..\..\server_frame\include\network\CCReactor.cpp" />
+    <ClCompile Include="..\..\server_frame\include\network\CCSocketHandler.cpp" />
+    <ClCompile Include="..\..\server_frame\include\network\CCSocketServer.cpp" />
+    <ClCompile Include="..\..\server_frame\include\network\CCTcpHandler.cpp" />
+    <ClCompile Include="..\..\server_frame\include\network\heap_timer.cpp" />
+    <ClCompile Include="..\..\server_frame\include\network\idxobj.cpp" />
+    <ClCompile Include="..\..\server_frame\include\network\memcheck.cpp" />
+    <ClCompile Include="..\..\server_frame\include\network\mempool.cpp" />
+    <ClCompile Include="..\..\server_frame\include\network\poller.cpp" />
+    <ClCompile Include="..\..\server_frame\include\network\protobuf_pkg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\frame\server_frame\src\framework\configchecker.h" />
+    <ClInclude Include="..\..\..\frame\server_frame\src\framework\framework.h" />
+    <ClInclude Include="..\..\..\frame\server_frame\src\fundamental\randomgenerator.h" />
+    <ClInclude Include="..\..\..\frame\server_frame\src\fund\cache.h" />
+    <ClInclude Include="..\..\..\frame\server_frame\src\fund\convert.h" />
+    <ClInclude Include="..\..\..\frame\server_frame\src\fund\hashtable.h" />
+    <ClInclude Include="..\..\..\frame\server_frame\src\fund\lruvariablelengthhashtable.h" />
+    <ClInclude Include="..\..\..\frame\server_frame\src\fund\mylink.h" />
+    <ClInclude Include="..\..\..\frame\server_frame\src\fund\nodealloc.h" />
+    <ClInclude Include="..\..\..\frame\server_frame\src\fund\size.h" />
+    <ClInclude Include="..\..\..\frame\server_frame\src\fund\statemachine.h" />
+    <ClInclude Include="..\..\..\frame\server_frame\src\hash\md5_loc.h" />
+    <ClInclude Include="..\..\servers\baccarat_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\baccarat_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\baccarat_server\src\robot_oper_mgr.h" />
+    <ClInclude Include="..\..\servers\bainiu_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\bainiu_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\bainiu_server\src\robot_oper_mgr.h" />
+    <ClInclude Include="..\..\servers\common\src\center_log.h" />
+    <ClInclude Include="..\..\servers\common\src\common_logic.h" />
+    <ClInclude Include="..\..\servers\common\src\data_cfg_mgr.h" />
+    <ClInclude Include="..\..\servers\common\src\dbmysql_mgr.h" />
+    <ClInclude Include="..\..\servers\common\src\db_operator.h" />
+    <ClInclude Include="..\..\servers\common\src\db_struct_define.h" />
+    <ClInclude Include="..\..\servers\common\src\game_define.h" />
+    <ClInclude Include="..\..\servers\common\src\master_city.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\baccarat_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\bainiu_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\base_msg_struct.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\client_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\dice_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\error_code.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\everycolor_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\fight_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\fishing_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\land_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\majiang_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\msg_define.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\niuniu_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\paijiu_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\robniu_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\sangong_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\servers_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\showhand_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\slot_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\texas_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\war_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\pb\zajinhua_logic_msg.pb.h" />
+    <ClInclude Include="..\..\servers\common\src\player_base.h" />
+    <ClInclude Include="..\..\servers\common\src\player_mgr.h" />
+    <ClInclude Include="..\..\servers\common\src\poker\baccarat_logic.h" />
+    <ClInclude Include="..\..\servers\common\src\poker\niuniu_logic.h" />
+    <ClInclude Include="..\..\servers\common\src\poker\paijiu_logic.h" />
+    <ClInclude Include="..\..\servers\common\src\poker\poker_logic.h" />
+    <ClInclude Include="..\..\servers\common\src\poker\sangong_logic.h" />
+    <ClInclude Include="..\..\servers\common\src\redis_mgr.h" />
+    <ClInclude Include="..\..\servers\dice_server\src\dice_logic.h" />
+    <ClInclude Include="..\..\servers\dice_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\dice_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\everycolor_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\everycolor_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\fight_server\src\fight_logic.h" />
+    <ClInclude Include="..\..\servers\fight_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\fight_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\fight_server\src\robot_oper_mgr.h" />
+    <ClInclude Include="..\..\servers\fishing_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\fishing_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\game_server\src\active_welfare_mgr.h" />
+    <ClInclude Include="..\..\servers\game_server\src\async_dbcallback.h" />
+    <ClInclude Include="..\..\servers\game_server\src\fish_info_mgr.h" />
+    <ClInclude Include="..\..\servers\game_server\src\GameCommonLogic.h" />
+    <ClInclude Include="..\..\servers\game_server\src\game_net_mgr.h" />
+    <ClInclude Include="..\..\servers\game_server\src\game_player.h" />
+    <ClInclude Include="..\..\servers\game_server\src\game_room.h" />
+    <ClInclude Include="..\..\servers\game_server\src\game_room_mgr.h" />
+    <ClInclude Include="..\..\servers\game_server\src\game_server_config.h" />
+    <ClInclude Include="..\..\servers\game_server\src\game_table.h" />
+    <ClInclude Include="..\..\servers\game_server\src\gobal_event_mgr.h" />
+    <ClInclude Include="..\..\servers\game_server\src\lobby_mgr.h" />
+    <ClInclude Include="..\..\servers\game_server\src\msg_lobby_handle.h" />
+    <ClInclude Include="..\..\servers\game_server\src\new_register_welfare_mgr.h" />
+    <ClInclude Include="..\..\servers\game_server\src\robot.h" />
+    <ClInclude Include="..\..\servers\game_server\src\robot_mgr.h" />
+    <ClInclude Include="..\..\servers\game_server\src\stdafx.h" />
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\AIUtils.h" />
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\CardsEvaluating.h" />
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\DDZ_BP_MeldGroup.h" />
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\ddz_interface.h" />
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\OGLordRbtAIClv.h" />
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\OGLordRbtAIClvDepd.h" />
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\OGLordRobot.h" />
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\OGLordRobotAI.h" />
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\Robot.h" />
+    <ClInclude Include="..\..\servers\land_robot_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\land_robot_server\src\land_logic.h" />
+    <ClInclude Include="..\..\servers\land_robot_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\lobby_server\src\async_dbcallback.h" />
+    <ClInclude Include="..\..\servers\lobby_server\src\game_net_mgr.h" />
+    <ClInclude Include="..\..\servers\lobby_server\src\gobal_event_mgr.h" />
+    <ClInclude Include="..\..\servers\lobby_server\src\gobal_robot_mgr.h" />
+    <ClInclude Include="..\..\servers\lobby_server\src\lobby_server_config.h" />
+    <ClInclude Include="..\..\servers\lobby_server\src\mission_mgr.h" />
+    <ClInclude Include="..\..\servers\lobby_server\src\msg_client_handle.h" />
+    <ClInclude Include="..\..\servers\lobby_server\src\msg_php_handle.h" />
+    <ClInclude Include="..\..\servers\lobby_server\src\msg_server_handle.h" />
+    <ClInclude Include="..\..\servers\lobby_server\src\player.h" />
+    <ClInclude Include="..\..\servers\lobby_server\src\robot.h" />
+    <ClInclude Include="..\..\servers\lobby_server\src\robot_city.h" />
+    <ClInclude Include="..\..\servers\lobby_server\src\server_mgr.h" />
+    <ClInclude Include="..\..\servers\lobby_server\src\stdafx.h" />
+    <ClInclude Include="..\..\servers\majiang_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\majiang_server\src\majiang_config.h" />
+    <ClInclude Include="..\..\servers\majiang_server\src\majiang_logic.h" />
+    <ClInclude Include="..\..\servers\majiang_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\niuniu_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\niuniu_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\niuniu_server\src\niuniu_logic.h" />
+    <ClInclude Include="..\..\servers\niuniu_server\src\robot_oper_mgr.h" />
+    <ClInclude Include="..\..\servers\paijiu_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\paijiu_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\paijiu_server\src\paijiu_logic.h" />
+    <ClInclude Include="..\..\servers\paijiu_server\src\robot_oper_mgr.h" />
+    <ClInclude Include="..\..\servers\robniu_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\robniu_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\robniu_server\src\robniu_logic.h" />
+    <ClInclude Include="..\..\servers\robniu_server\src\robot_oper_mgr.h" />
+    <ClInclude Include="..\..\servers\sangong_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\sangong_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\showhand_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\showhand_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\showhand_server\src\show_hand_logic.h" />
+    <ClInclude Include="..\..\servers\slot_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\slot_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\slot_server\src\slot_logic.h" />
+    <ClInclude Include="..\..\servers\texas_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\texas_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\texas_server\src\texas_logic.h" />
+    <ClInclude Include="..\..\servers\twoeight_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\twoeight_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\twoeight_server\src\robot_oper_mgr.h" />
+    <ClInclude Include="..\..\servers\twoeight_server\src\twoeight_logic.h" />
+    <ClInclude Include="..\..\servers\war_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\war_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\war_server\src\robot_oper_mgr.h" />
+    <ClInclude Include="..\..\servers\war_server\src\war_logic.h" />
+    <ClInclude Include="..\..\servers\zajinhua_server\src\game_imple_table.h" />
+    <ClInclude Include="..\..\servers\zajinhua_server\src\msg_imple_handle.h" />
+    <ClInclude Include="..\..\servers\zajinhua_server\src\zajinhua_logic.h" />
+    <ClInclude Include="..\..\server_frame\include\config\config.h" />
+    <ClInclude Include="..\..\server_frame\include\config\csvreader.h" />
+    <ClInclude Include="..\..\server_frame\include\config\xmlcfgreader.h" />
+    <ClInclude Include="..\..\server_frame\include\crypt\aes.h" />
+    <ClInclude Include="..\..\server_frame\include\crypt\base64.h" />
+    <ClInclude Include="..\..\server_frame\include\crypt\blowfish.h" />
+    <ClInclude Include="..\..\server_frame\include\crypt\crypt.h" />
+    <ClInclude Include="..\..\server_frame\include\crypt\encrypt.h" />
+    <ClInclude Include="..\..\server_frame\include\crypt\hmac_sha1.h" />
+    <ClInclude Include="..\..\server_frame\include\crypt\mars.h" />
+    <ClInclude Include="..\..\server_frame\include\crypt\md5.h" />
+    <ClInclude Include="..\..\server_frame\include\crypt\serpent.h" />
+    <ClInclude Include="..\..\server_frame\include\crypt\urlEncode.h" />
+    <ClInclude Include="..\..\server_frame\include\crypt\xor256.h" />
+    <ClInclude Include="..\..\server_frame\include\dbmysql\dbmysql.h" />
+    <ClInclude Include="..\..\server_frame\include\dbmysql\db_task.h" />
+    <ClInclude Include="..\..\server_frame\include\dbmysql\db_wrap.h" />
+    <ClInclude Include="..\..\server_frame\include\dbmysql\hiredis.h" />
+    <ClInclude Include="..\..\server_frame\include\dbmysql\hiredisop.h" />
+    <ClInclude Include="..\..\server_frame\include\dbmysql\sql_join.h" />
+    <ClInclude Include="..\..\server_frame\include\framework\application.h" />
+    <ClInclude Include="..\..\server_frame\include\framework\cmdline.h" />
+    <ClInclude Include="..\..\server_frame\include\framework\logger.h" />
+    <ClInclude Include="..\..\server_frame\include\fundamental\bloomfilter.h" />
+    <ClInclude Include="..\..\server_frame\include\fundamental\common.h" />
+    <ClInclude Include="..\..\server_frame\include\fundamental\cyclebuffer.h" />
+    <ClInclude Include="..\..\server_frame\include\fundamental\cyclebuffer_shm.h" />
+    <ClInclude Include="..\..\server_frame\include\fundamental\hashtable.h" />
+    <ClInclude Include="..\..\server_frame\include\fundamental\hashval.h" />
+    <ClInclude Include="..\..\server_frame\include\fundamental\linkcache.h" />
+    <ClInclude Include="..\..\server_frame\include\fundamental\multiprocesshashtable.h" />
+    <ClInclude Include="..\..\server_frame\include\fundamental\noncopyable.h" />
+    <ClInclude Include="..\..\server_frame\include\fundamental\ring_buff.h" />
+    <ClInclude Include="..\..\server_frame\include\fundamental\variablehashtable.h" />
+    <ClInclude Include="..\..\server_frame\include\fundamental\variablelengthhashtable.h" />
+    <ClInclude Include="..\..\server_frame\include\hash\md4emule.h" />
+    <ClInclude Include="..\..\server_frame\include\hash\md5.h" />
+    <ClInclude Include="..\..\server_frame\include\hash\sha1.h" />
+    <ClInclude Include="..\..\server_frame\include\helper\bufferStream.h" />
+    <ClInclude Include="..\..\server_frame\include\helper\filehelper.h" />
+    <ClInclude Include="..\..\server_frame\include\helper\fileStream.h" />
+    <ClInclude Include="..\..\server_frame\include\helper\helper.h" />
+    <ClInclude Include="..\..\server_frame\include\helper\numberStream.h" />
+    <ClInclude Include="..\..\server_frame\include\helper\streamBase.h" />
+    <ClInclude Include="..\..\server_frame\include\helper\stringStream.h" />
+    <ClInclude Include="..\..\server_frame\include\json\autolink.h" />
+    <ClInclude Include="..\..\server_frame\include\json\config.h" />
+    <ClInclude Include="..\..\server_frame\include\json\features.h" />
+    <ClInclude Include="..\..\server_frame\include\json\forwards.h" />
+    <ClInclude Include="..\..\server_frame\include\json\json.h" />
+    <ClInclude Include="..\..\server_frame\include\json\reader.h" />
+    <ClInclude Include="..\..\server_frame\include\json\value.h" />
+    <ClInclude Include="..\..\server_frame\include\json\writer.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\lapi.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\lauxlib.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\lcode.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\ldebug.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\ldo.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\lfunc.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\lgc.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\llex.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\llimits.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\lmem.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\lobject.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\lopcodes.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\lparser.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\lstate.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\lstring.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\ltable.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\ltm.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\lua.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\luaconf.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\luaConsole.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\lualib.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\luaTinker.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\lua_tinker.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\lundump.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\lvm.h" />
+    <ClInclude Include="..\..\server_frame\include\luatinker\lzio.h" />
+    <ClInclude Include="..\..\server_frame\include\math\box2.h" />
+    <ClInclude Include="..\..\server_frame\include\math\mathFunctions.h" />
+    <ClInclude Include="..\..\server_frame\include\math\point2.h" />
+    <ClInclude Include="..\..\server_frame\include\math\point3.h" />
+    <ClInclude Include="..\..\server_frame\include\math\rand_table.h" />
+    <ClInclude Include="..\..\server_frame\include\math\rank.h" />
+    <ClInclude Include="..\..\server_frame\include\math\rect.h" />
+    <ClInclude Include="..\..\server_frame\include\network\base.h" />
+    <ClInclude Include="..\..\server_frame\include\network\cache.h" />
+    <ClInclude Include="..\..\server_frame\include\network\CCInnerDecoder.h" />
+    <ClInclude Include="..\..\server_frame\include\network\CCnet.h" />
+    <ClInclude Include="..\..\server_frame\include\network\CCReactor.h" />
+    <ClInclude Include="..\..\server_frame\include\network\CCSocketHandler.h" />
+    <ClInclude Include="..\..\server_frame\include\network\CCSocketServer.h" />
+    <ClInclude Include="..\..\server_frame\include\network\CCStreamDecoder.h" />
+    <ClInclude Include="..\..\server_frame\include\network\CCTcpHandler.h" />
+    <ClInclude Include="..\..\server_frame\include\network\hashtab.h" />
+    <ClInclude Include="..\..\server_frame\include\network\heap.h" />
+    <ClInclude Include="..\..\server_frame\include\network\heap_timer.h" />
+    <ClInclude Include="..\..\server_frame\include\network\ICC_Decoder.h" />
+    <ClInclude Include="..\..\server_frame\include\network\ICC_TCP_Server.h" />
+    <ClInclude Include="..\..\server_frame\include\network\ICHAT_PacketBase.h" />
+    <ClInclude Include="..\..\server_frame\include\network\idxobj.h" />
+    <ClInclude Include="..\..\server_frame\include\network\list.h" />
+    <ClInclude Include="..\..\server_frame\include\network\memcheck.h" />
+    <ClInclude Include="..\..\server_frame\include\network\mempool.h" />
+    <ClInclude Include="..\..\server_frame\include\network\MsgDecoder.h" />
+    <ClInclude Include="..\..\server_frame\include\network\myepoll.h" />
+    <ClInclude Include="..\..\server_frame\include\network\Network.h" />
+    <ClInclude Include="..\..\server_frame\include\network\NetworkObject.h" />
+    <ClInclude Include="..\..\server_frame\include\network\poller.h" />
+    <ClInclude Include="..\..\server_frame\include\network\protobuf_pkg.h" />
+    <ClInclude Include="..\..\server_frame\include\network\protocol_base.h" />
+    <ClInclude Include="..\..\server_frame\include\network\timerbase.h" />
+    <ClInclude Include="..\..\server_frame\include\packet\istreampacket.h" />
+    <ClInclude Include="..\..\server_frame\include\packet\ostreampacket.h" />
+    <ClInclude Include="..\..\server_frame\include\packet\streampacket.h" />
+    <ClInclude Include="..\..\server_frame\include\svrlib.h" />
+    <ClInclude Include="..\..\server_frame\include\tinyxml\tinystr.h" />
+    <ClInclude Include="..\..\server_frame\include\tinyxml\tinyxml.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\basicFunctions.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\basicTypes.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\comm_macro.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\cooling.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\curl_wrap.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\encode_utility.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\ipcutility.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\likelydef.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\profile_manager.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\singleton.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\stl_hash_map.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\stringFunctions.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\stringutility.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\stw_timer.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\thread.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\timeFunction.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\timer_mgr.h" />
+    <ClInclude Include="..\..\server_frame\include\utility\timeutility.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

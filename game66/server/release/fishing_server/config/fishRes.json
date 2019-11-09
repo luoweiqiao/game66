@@ -1,0 +1,60 @@
+{
+	"explain":"鱼的资源",
+	"fdata":[
+		{"id":1,"fx":0,"name":"黄色小丑","res":"fish_1_%d.png","sFrame":1,"eFrame":9,"R":35,"life":100,"gold":3,"minM":2,"maxM":2,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":0,"fixP":{"x":-10,"y":0}},
+		{"id":2,"fx":0,"name":"绿色小丑","res":"fish_2_%d.png","sFrame":1,"eFrame":10,"R":35,"life":100,"gold":3,"minM":2,"maxM":2,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":0,"fixP":{"x":-10,"y":0}},
+		{"id":3,"fx":0,"name":"斑马小丑","res":"fish_3_%d.png","sFrame":1,"eFrame":10,"R":35,"life":100,"gold":3,"minM":2,"maxM":2,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":0,"fixP":{"x":-10,"y":-5}},
+		{"id":4,"fx":0,"name":"蓝斑小丑","res":"fish_4_%d.png","sFrame":1,"eFrame":8,"R":35,"life":100,"gold":3,"minM":2,"maxM":2,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":0,"fixP":{"x":-10,"y":0}},
+		{"id":5,"fx":0,"name":"粉色大头","res":"fish_5_%d.png","sFrame":1,"eFrame":9,"R":35,"life":100,"gold":3,"minM":3,"maxM":3,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":0,"fixP":{"x":-18,"y":0}},
+		{"id":6,"fx":0,"name":"蓝尾金鱼","res":"fish_6_%d.png","sFrame":1,"eFrame":6,"R":35,"life":100,"gold":3,"minM":3,"maxM":3,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":3,"fixP":{"x":-18,"y":0}},
+		{"id":7,"fx":0,"name":"蓝色诱饵","res":"fish_7_%d.png","sFrame":1,"eFrame":13,"R":35,"life":100,"gold":3,"minM":3,"maxM":3,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":0,"fixP":{"x":0,"y":0}},
+		{"id":8,"fx":0,"name":"粉色蝴蝶","res":"fish_8_%d.png","sFrame":1,"eFrame":10,"R":35,"life":100,"gold":3,"minM":3,"maxM":3,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":13,"fixP":{"x":-15,"y":0}},
+		{"id":9,"fx":0,"name":"深蓝鲇鱼","res":"fish_9_%d.png","sFrame":1,"eFrame":10,"R":35,"life":100,"gold":3,"minM":3,"maxM":3,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":0,"fixP":{"x":-15,"y":0}},
+		{"id":10,"fx":0,"name":"绿色鲇鱼","res":"fish_11_%d.png","sFrame":1,"eFrame":9,"R":35,"life":100,"gold":3,"minM":4,"maxM":4,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":13,"fixP":{"x":-20,"y":0}},
+		{"id":11,"fx":0,"name":"绿色河豚","res":"fish_12_%d.png","sFrame":1,"eFrame":12,"R":35,"life":100,"gold":3,"minM":4,"maxM":4,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":4,"fixP":{"x":0,"y":0}},
+		{"id":12,"fx":0,"name":"蓝色剑鱼","res":"fish_13_%d.png","sFrame":1,"eFrame":10,"R":35,"life":100,"gold":3,"minM":5,"maxM":5,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":5,"fixP":{"x":-10,"y":0}},
+		{"id":13,"fx":0,"name":"水母","res":"fish_14_%d.png","sFrame":1,"eFrame":10,"R":50,"life":100,"gold":3,"minM":5,"maxM":5,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":5,"fixP":{"x":-20,"y":0}},
+		{"id":14,"fx":0,"name":"蓝色蝙蝠","res":"fish_15_%d.png","sFrame":1,"eFrame":13,"R":50,"life":100,"gold":3,"minM":5,"maxM":5,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":0,"fixP":{"x":-55,"y":0}},
+		{"id":15,"fx":0,"name":"银色肉肉","res":"fish_16_%d.png","sFrame":1,"eFrame":13,"R":80,"life":100,"gold":3,"minM":50,"maxM":50,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":6,"fixP":{"x":-60,"y":0}},
+		{"id":16,"fx":0,"name":"金色肉肉","res":"fish_17_%d.png","sFrame":1,"eFrame":13,"R":80,"life":100,"gold":3,"minM":80,"maxM":80,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":6,"fixP":{"x":-70,"y":0}},
+		{"id":17,"fx":0,"name":"美人鱼","res":"fish_18_%d.png","sFrame":1,"eFrame":16,"R":80,"life":100,"gold":3,"minM":120,"maxM":120,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":7,"fixP":{"x":-80,"y":0}},
+		{"id":18,"fx":0,"name":"金色蝙蝠","res":"fish_19_%d.png","sFrame":1,"eFrame":13,"R":80,"life":100,"gold":3,"minM":50,"maxM":50,"shx":-10,"shy":-100,"seabed":0,"boomID":[11],"dies":7,"fixP":{"x":-80,"y":0}},
+		{"id":19,"fx":0,"name":"金色大龟","res":"fish_20_%d.png","sFrame":1,"eFrame":12,"R":80,"life":100,"gold":3,"minM":60,"maxM":60,"shx":-10,"shy":-100,"seabed":0,"boomID":[11],"dies":8,"fixP":{"x":0,"y":0}},
+		{"id":20,"fx":0,"name":"金色大猪","res":"fish_21_%d.png","sFrame":1,"eFrame":7,"R":100,"life":100,"gold":3,"minM":70,"maxM":70,"shx":-10,"shy":-100,"seabed":0,"boomID":[11],"dies":8,"fixP":{"x":0,"y":0}},
+		{"id":21,"fx":0,"name":"金色灯笼","res":"fish_23_%d.png","sFrame":1,"eFrame":10,"R":100,"life":100,"gold":3,"minM":80,"maxM":80,"shx":-10,"shy":-100,"seabed":0,"boomID":[11],"dies":8,"fixP":{"x":-50,"y":0}},
+		{"id":22,"fx":0,"name":"蓝色灯笼","res":"fish_24_%d.png","sFrame":1,"eFrame":10,"R":100,"life":100,"gold":3,"minM":30,"maxM":30,"shx":-10,"shy":-100,"seabed":0,"boomID":[11],"dies":8,"fixP":{"x":-50,"y":0}},
+		
+		{"id":23,"fx":0,"name":"黄色宝箱鲨鱼BOSS","res":"fish_27_%d.png","sFrame":1,"eFrame":10,"R":100,"life":100,"gold":3,"minM":100,"maxM":100,"shx":-10,"shy":-100,"seabed":0,"boomID":[1],"dies":0,"fixP":{"x":-60,"y":0}},
+		{"id":24,"fx":0,"name":"闪电蓝色小龙BOSS","res":"fish_28_%d.png","sFrame":1,"eFrame":10,"R":100,"life":100,"gold":3,"minM":150,"maxM":150,"shx":-10,"shy":-100,"seabed":0,"boomID":[1],"dies":0,"fixP":{"x":-60,"y":0}},
+		{"id":25,"fx":0,"name":"财宝金色龙龟BOSS","res":"fish_29_%d.png","sFrame":1,"eFrame":10,"R":100,"life":100,"gold":3,"minM":200,"maxM":200,"shx":-10,"shy":-100,"seabed":0,"boomID":[1],"dies":0,"fixP":{"x":0,"y":0}},
+		{"id":26,"fx":0,"name":"蓝色娜迦BOSS","res":"fish_30_%d.png","sFrame":1,"eFrame":8,"R":100,"life":100,"gold":3,"minM":250,"maxM":250,"shx":-10,"shy":-100,"seabed":0,"boomID":[1],"dies":0,"fixP":{"x":-10,"y":0}},
+
+	
+		{"id":27,"fx":180,"name":"蓝色小蝌蚪","res":"fish01_0%d.png","sFrame":0,"eFrame":7,"R":35,"life":100,"gold":3,"minM":7,"maxM":7,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":0,"fixP":{"x":20,"y":0}},
+		{"id":28,"fx":180,"name":"红色小蝴蝶","res":"fish02_0%d.png","sFrame":0,"eFrame":7,"R":35,"life":100,"gold":3,"minM":8,"maxM":8,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":0,"fixP":{"x":8,"y":0}},
+		{"id":29,"fx":180,"name":"蓝色有毒小丑","res":"fish03_0%d.png","sFrame":0,"eFrame":7,"R":35,"life":100,"gold":3,"minM":9,"maxM":9,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":0,"fixP":{"x":8,"y":0}},
+		{"id":30,"fx":180,"name":"蓝色胖胖小丑","res":"fish04_0%d.png","sFrame":0,"eFrame":7,"R":35,"life":100,"gold":3,"minM":10,"maxM":10,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":12,"fixP":{"x":0,"y":0}},
+		{"id":31,"fx":180,"name":"有毒比目鱼","res":"fish05_0%d.png","sFrame":0,"eFrame":7,"R":40,"life":100,"gold":3,"minM":12,"maxM":12,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":12,"fixP":{"x":20,"y":0}},
+		{"id":32,"fx":180,"name":"海底蜗牛","res":"fish06_0%d.png","sFrame":0,"eFrame":7,"R":50,"life":100,"gold":3,"minM":15,"maxM":15,"shx":-2,"shy":-10,"seabed":1,"boomID":[0],"dies":12,"fixP":{"x":0,"y":0}},
+		{"id":33,"fx":90,"name":"蓝色水母","res":"fish09_0%d.png","sFrame":0,"eFrame":7,"R":50,"life":100,"gold":3,"minM":18,"maxM":18,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":12,"fixP":{"x":0,"y":-40}},
+		{"id":34,"fx":180,"name":"橘色可爱小海龟","res":"fish10_0%d.png","sFrame":0,"eFrame":7,"R":50,"life":100,"gold":3,"minM":20,"maxM":20,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":11,"fixP":{"x":0,"y":0}},
+		{"id":35,"fx":180,"name":"蓝色甲壳魔鬼","res":"fish12_0%d.png","sFrame":0,"eFrame":7,"R":80,"life":100,"gold":3,"minM":25,"maxM":25,"shx":-2,"shy":-10,"seabed":1,"boomID":[0],"dies":11,"fixP":{"x":40,"y":0}},
+		{"id":36,"fx":180,"name":"蓝色突眼鲨","res":"fish14_0%d.png","sFrame":0,"eFrame":7,"R":80,"life":100,"gold":3,"minM":30,"maxM":30,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":11,"fixP":{"x":50,"y":0}},
+		{"id":37,"fx":180,"name":"炫彩虎斑","res":"fish18_0%d.png","sFrame":0,"eFrame":7,"R":80,"life":100,"gold":3,"minM":35,"maxM":35,"shx":-10,"shy":-100,"seabed":0,"boomID":[0],"dies":11,"fixP":{"x":60,"y":0}},
+		{"id":38,"fx":180,"name":"金色甲壳魔鬼","res":"fish105_0%d.png","sFrame":0,"eFrame":7,"R":80,"life":100,"gold":3,"minM":40,"maxM":40,"shx":-2,"shy":-10,"seabed":1,"boomID":[1],"dies":11,"fixP":{"x":30,"y":0}},
+		{"id":39,"fx":90,"name":"金色水母","res":"fish106_0%d.png","sFrame":0,"eFrame":7,"R":100,"life":100,"gold":3,"minM":45,"maxM":45,"shx":-10,"shy":-100,"seabed":0,"boomID":[1],"dies":11,"fixP":{"x":0,"y":-30}},
+		
+	
+		{"id":40,"fx":0,"name":"波塞顿宝盒","res":"--","sFrame":0,"eFrame":0,"R":200,"life":200,"gold":3,"minM":150,"maxM":200,"shx":-10,"shy":-100,"seabed":0,"boomID":[12,1],"dies":11,"fixP":{"x":0,"y":0}},
+		{"id":41,"fx":0,"name":"恐龙骷髅","res":"--","sFrame":0,"eFrame":0,"R":200,"life":200,"gold":3,"minM":300,"maxM":300,"shx":-10,"shy":-100,"seabed":0,"boomID":[12,1],"dies":11,"fixP":{"x":0,"y":0}},
+		{"id":42,"fx":0,"name":"机械龙虾","res":"--","sFrame":0,"eFrame":0,"R":200,"life":200,"gold":3,"minM":350,"maxM":350,"shx":-10,"shy":-100,"seabed":0,"boomID":[12,1],"dies":11,"fixP":{"x":0,"y":0}},
+		{"id":43,"fx":0,"name":"机械鱼","res":"--","sFrame":0,"eFrame":0,"R":200,"life":200,"gold":3,"minM":400,"maxM":400,"shx":-10,"shy":-100,"seabed":0,"boomID":[12,1],"dies":11,"fixP":{"x":0,"y":0}},
+		{"id":44,"fx":0,"name":"蓝色电鳗","res":"--","sFrame":0,"eFrame":0,"R":200,"life":200,"gold":3,"minM":100,"maxM":150,"shx":-10,"shy":-100,"seabed":0,"boomID":[1],"dies":10,"fixP":{"x":0,"y":0}}
+	
+	
+	]
+	
+	
+	
+	
+}

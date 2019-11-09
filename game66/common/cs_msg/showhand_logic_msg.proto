@@ -1,0 +1,104 @@
+
+package net;
+import "base_msg_struct.proto";
+import "error_code.proto";
+
+//-------------梭哈游戏消息---------------------------------------
+
+// 游戏状态
+message msg_showhand_game_info_rep
+{
+	//游戏属性
+	optional int64	cell_score 		= 1;						//基础积分
+
+	//加注信息
+	optional int64	draw_max_score  = 2;						//最大下注
+	optional int64  turn_max_score  = 3;						//最大下注
+	optional int64	turn_less_score = 4;						//最小下注
+	repeated int64	user_score 		= 5;						//用户下注
+	repeated int64  table_score		= 6;						//桌面下注
+
+	//状态信息
+	optional uint32	show_hand		= 7;						//梭哈标志
+	optional uint32	cur_user		= 8;						//当前玩家
+	repeated uint32 play_status		= 9;						//游戏状态
+
+	//扑克信息	
+	repeated msg_cards hand_card_data = 10;						//桌面扑克
+	optional uint32 wait_time		= 11;						//剩余时间 
+	//历史积分
+	repeated int64	history_score	= 12;						//历史输赢
+
+}
+// 游戏开始
+message msg_showhand_start_rep
+{
+	//游戏属性
+	optional int64	cell_score			= 1;	//单元下注
+	
+	//下注信息
+	optional int64	draw_max_score 		= 2;	//最大下注
+	optional int64	turn_max_score 		= 3;	//最大下注
+	optional int64	turn_less_score 	= 4;	//最小下注
+
+	//用户信息
+	optional uint32	cur_user			= 5;	//当前玩家
+
+	//扑克数据	
+	repeated msg_cards table_card_data  = 6;	//桌面扑克
+	//历史积分
+	repeated int64	history_score		= 7;	//历史输赢
+}
+// 玩家放弃
+message msg_showhand_giveup_req
+{
+	optional uint32 give_up = 1;
+}
+message msg_showhand_giveup_rep
+{
+	optional uint32	giveup_user		= 1;						//放弃用户
+	optional uint32 cur_user		= 2;						//当前用户
+	optional int64	draw_max_score  = 3;						//最大下注
+	optional int64	turn_max_score  = 4;						//最大下注
+}
+// 玩家下注
+message msg_showhand_addscore_req
+{
+	optional int64  score = 1; // 加注数目
+}
+
+message msg_showhand_addscore_rep
+{
+	optional uint32	cur_user 		 = 1;						//当前用户
+	optional uint32	add_score_user   = 2;						//加注用户
+	optional int64	turn_less_score  = 3;						//最少加注
+	optional int64	user_score_count = 4;						//加注数目
+	optional uint32	show_hand		 = 5;						//梭哈标志
+}
+// 发送扑克
+message msg_showhand_sendcard_rep
+{
+	//游戏信息
+	optional uint32	cur_user 		= 1;						// 当前用户
+	optional uint32 start_chairid	= 2;						// 开始用户
+	optional int64	turn_max_score  = 3;						// 最大下注
+
+	//扑克信息
+	repeated msg_cards card_data  	= 4;						// 新发扑克
+}
+
+// 游戏结束
+message msg_showhand_game_over_rep
+{
+	repeated msg_cards card_data  = 1; // 用户扑克
+	repeated int64 game_score	  = 2; // 游戏积分
+	//历史积分
+	repeated int64	history_score = 3; // 历史输赢
+	repeated msg_cards hand_card_data  = 4; // 用户扑克
+}
+
+//-----------------梭哈游戏消息-----------------------------------
+
+
+
+

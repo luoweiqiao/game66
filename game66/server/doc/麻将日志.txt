@@ -1,0 +1,243 @@
+
+
+
+out: {
+
+p 椅子号
+oc 操作码
+i 操作顺序
+c 操作扑克
+a 过的动作
+}
+
+
+
+end 游戏结束
+{
+p 椅子
+f 放炮
+c 胡的牌
+s 分数
+}
+
+gsta 游戏开始手牌
+{
+	p 椅子
+	c 牌数据
+
+
+	weave 	组牌
+	{
+		pu 提供用户
+		cc 中心牌
+		pc 0 暗杠 1 明杠
+		wk 种类
+	}
+
+
+}
+gend 游戏结束手牌
+{
+	p 椅子
+	c 牌数据
+
+
+	weave 	组牌
+	{
+		pu 提供用户
+		cc 中心牌
+		pc 0 暗杠 1 明杠
+		wk 种类
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+	enum emOPERATE_CODE
+	{
+		OPERATE_CODE_NULL = 0,		// 没有类型
+		OPERATE_CODE_OUT_CARD,		// 出牌类型
+		OPERATE_CODE_EAT_LEFT,		// 左吃类型
+		OPERATE_CODE_EAT_CENTER,	// 中吃类型
+		OPERATE_CODE_EAT_RIGHT,		// 右吃类型
+		OPERATE_CODE_PENG,			// 碰牌类型
+		OPERATE_CODE_MING_GANG,		// 明杠类型
+		OPERATE_CODE_AN_GANG,		// 暗杠类型
+		OPERATE_CODE_SEND_CARD,		// 发牌类型
+		OPERATE_CODE_LISTEN,		// 听牌类型
+		OPERATE_CODE_CHI_HU,		// 吃胡类型
+		OPERATE_CODE_HU_TYPE,		// 胡牌类型
+		OPERATE_CODE_HU_SCORE,		// 胡牌分数
+		OPERATE_CODE_LAW,			// 非法类型
+	};
+
+
+
+
+
+	//动作标志
+	enum emACTION_TYPE
+	{
+		ACTION_NULL  		= 0,	 // 没有类型
+		ACTION_EAT_LEFT 	= 1<<1,	 // 左吃类型
+		ACTION_EAT_CENTER   = 1<<2,  // 中吃类型
+		ACTION_EAT_RIGHT	= 1<<3,  // 右吃类型
+		ACTION_PENG			= 1<<4,  // 碰牌类型
+		ACTION_GANG			= 1<<5,  // 杠牌类型
+		ACTION_LISTEN		= 1<<6,  // 听牌类型
+		ACTION_CHI_HU		= 1<<7,  // 吃胡类型
+		ACTION_QIPAI_HU		= 1<<8,  // 起手胡
+		ACTION_NEED_TAIL	= 1<<9,  // 要海底
+		ACTION_GANG_TING	= 1<<10, // 杠听(仅长沙麻将)
+
+	};
+
+
+
+
+		//特殊牌标记
+	enum emPOKER_FLAG
+	{
+		emPOKER_COLOR_WAN 	= 0,
+		emPOKER_COLOR_SUO 	= 1,
+		emPOKER_COLOR_TONG	= 2,
+		emPOKER_COLOR_ZI    = 3,
+
+
+		emPOKER_WAN1		= 0x01,
+		emPOKER_SUO1 		= 0x11,
+		emPOKER_TONG1		= 0x21,
+		emPOKER_DONG		= 0x31,
+		emPOKER_NAN			= 0x32,
+		emPOKER_XI			= 0x33,
+		emPOKER_BEI			= 0x34,
+		emPOKER_ZHONG		= 0x35,
+		emPOKER_FA		    = 0x36,
+		emPOKER_BAI			= 0x37,
+
+	};
+
+
+
+		//大胡类型
+	enum emHU_TYPE
+	{
+		HUTYPE_NULL				= 0,		// 非胡
+		HUTYPE_JI_HU			= 1,		// 基本胡
+		HUTYPE_THIRTEEN			= 2,		// 13乱
+		HUTYPE_JIANG_JIANG  	= 3,		// 将将胡
+		HUTYPE_HONGZHONG		= 4,		// 起手4红中
+		HUTYPE_SUPER_QI_DUI 	= 5,		// 豪华七小对
+		HUTYPE_SUPER2_QI_DUI	= 6,		// 双豪华七小对
+		HUTYPE_SUPER3_QI_DUI	= 7,		// 三豪华七小对
+
+		/*----- 国标麻将番种-------------------------------------*/
+		// 88 (番) - 8 (种)
+		HUTYPE_DA_SI_XI			= 8,		// 大四喜(不计圈风刻,门风刻,碰碰胡,幺九刻)
+		HUTYPE_DA_SAN_YUAN		= 9,		// 大三元(不计双箭刻,箭刻)
+		HUTYPE_SI_GANG			= 10,		// 四杠()
+		HUTYPE_LIAN_QI_DUI		= 11,		// 连七对(不计七对,清一色,门清,单调) --
+		HUTYPE_BAI_WAN_DAN		= 12,		// 百万石(不计清一色)
+		HUTYPE_TIAN_HU			= 13,		// 天胡 --
+		HUTYPE_DI_HU			= 14,		// 地胡 --
+		HUTYPE_REN_HU			= 15,		// 人胡 --
+
+		// 64 (番) - 5 (种)
+		HUTYPE_XIAO_SI_XI		= 16,		// 小四喜(不计三风刻)
+		HUTYPE_XIAO_SAN_YUAN	= 17,		// 小三元(不计双箭刻,箭刻,幺九刻)
+		HUTYPE_ZI_YI_SE			= 18,		// 字一色(不计碰碰胡,混幺九,全带幺,幺九刻)
+		HUTYPE_SI_AN_KE			= 19,		// 四暗刻(不计门清,碰碰胡,三暗刻,双安刻,不求人)
+		HUTYPE_YISE_SHUANG_LONG	= 20,		// 一色双龙会(不计平胡,七对,清一色,一般高,老少副)
+
+		// 48 (番) - 2 (种)
+		HUTYPE_YISE_SITONGSHUN	= 21,		// 一色四同顺(不计一色三高,一般高,四归一,一色三通顺)
+		HUTYPE_YISE_SIJIEGAO	= 22,		// 一色四节高(不计一色三通顺,一色三节高,碰碰胡)
+
+		// 32 (番) - 3 (种)
+		HUTYPE_YISE_SIBUGAO		= 23,		// 一色四步高(不计一色三步高,老少副,连六)
+		HUTYPE_SAN_GANG			= 24,		// 三杠(不计双明杠,双暗杠,明杠,暗杠)
+		HUTYPE_HUN_YAOJIU		= 25,		// 混幺九(不计碰碰胡,幺九刻,全带幺)
+
+		// 24 (番) - 4 (种)
+		HUTYPE_QI_DUI			= 26,		// 七对 --
+		HUTYPE_QING_YI_SE		= 27,		// 清一色 --
+		HUTYPE_YISE_SANTONGSHUN	= 28,		// 一色三同顺(不计一色三节高,一般高)
+		HUTYPE_YISE_SANJIEGAO	= 29,		// 一色三节高(不计一色三同顺)
+
+		// 16 (番) - 4 (种)
+		HUTYPE_QING_LONG		= 30,		// 清龙(不计连六,老少副)
+		HUTYPE_YISE_SANBUGAO	= 31,		// 一色三步高
+		HUTYPE_SAN_ANKE			= 32,		// 三暗刻(不计双暗刻)
+		HUTYPE_TIAN_TING		= 33,		// 天听 --
+
+		// 12 (番) - 3 (种)
+		HUTYPE_DAYU_WU			= 34,		// 大于五
+		HUTYPE_XIAOYU_WU		= 35,		// 小于五
+		HUTYPE_SAN_FENGKE		= 36,		// 三风刻(不计幺九刻)
+
+		// 8 (番) - 4 (种)
+		HUTYPE_MIAOSHOUHUICHUN	= 37,		// 妙手回春
+		HUTYPE_HAI_DI_LAO_YUE	= 38,		// 海底捞月 --
+		HUTYPE_GANG_FLOWER		= 39,		// 杠上开花 --
+		HUTYPE_QIANG_GANG_HU	= 40,		// 抢杠胡 --
+
+		// 6 (番) - 5 (种)
+		HUTYPE_PENG_PENG		= 41,		// 碰碰胡 --
+		HUTYPE_HUN_YISE			= 42,		// 混一色
+		HUTYPE_QUAN_QIU_REN		= 43,		// 全求人(不计单调将) --
+		HUTYPE_SHUANG_ANGANG	= 44,		// 双暗杠(不计双暗刻,暗杠)
+		HUTYPE_SHUANG_JIANKE	= 45,		// 双箭刻
+
+		// 4 (番) - 5 (种)
+		HUTYPE_QUANDAIYAO		= 46,		// 全带幺
+		HUTYPE_BUQIUREN			= 47,		// 不求人(不计门清,自摸)
+		HUTYPE_SHUANG_MINGGANG	= 48,		// 双明杠(不计明杠)
+		HUTYPE_HU_JUEZHANG		= 49,		// 胡绝张(不计抢杠胡)
+		HUTYPE_LI_ZHI			= 50,		// 立直(不计报听,门清) --
+
+		// 2 (番) - 9 (种)
+		HUTYPE_JIAN_KE			= 51,		// 箭刻(不计幺九刻)
+		HUTYPE_QUAN_FENGKE		= 52,		// 圈风刻(不计幺九刻) --
+		HUTYPE_MEN_FENGKE		= 53,		// 门风刻(不计幺九刻) --
+		HUTYPE_MEN_QING			= 54,		// 门前清(没有吃碰明杠) --
+		HUTYPE_PING_HU			= 55,		// 平胡 --
+		HUTYPE_SI_GUI_YI		= 56,		// 四归一 --
+		HUTYPE_SHUANG_ANKE		= 57,		// 双暗刻
+		HUTYPE_AN_GANG			= 58,		// 暗杠
+		HUTYPE_DUAN_YAOJIU		= 59,		// 断幺九
+
+		// 1 (番) - 12 (种)
+		HUTYPE_ERWUBA_JIANG		= 60,		// 二五八将
+		HUTYPE_YAOJIU_TOU		= 61,		// 幺九头
+		HUTYPE_BAO_TING			= 62,		// 报听 --
+		HUTYPE_YIBAN_GAO		= 63,		// 一般高 --
+		HUTYPE_LIAN_LIU			= 64,		// 连六 --
+		HUTYPE_LAOSHAO_FU		= 65,		// 老少副 --
+		HUTYPE_YAOJIU_KE		= 66,		// 幺九刻
+		HUTYPE_MING_GANG		= 67,		// 明杠
+		HUTYPE_BIAN_ZHANG		= 68,		// 边张 --
+		HUTYPE_KAN_ZHANG		= 69,		// 坎张 --
+		HUTYPE_DANDIAO_JIANG	= 70,		// 单调将
+		HUTYPE_ZI_MO			= 71,		// 自摸 --
+
+		HUTYPE_MAX_TYPE			= 72,		// 最大类型
+	};
+
+
+
+
+
+
+
+
+

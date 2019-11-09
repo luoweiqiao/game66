@@ -1,0 +1,4 @@
+
+update file 120.24.54.6
+/disk/ablitte/server/release/lobby_server/lobbyServer
+

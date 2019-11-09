@@ -1,0 +1,41 @@
+execution mysql structured query language:
+
+USE `chess_sysdata`;
+
+DROP TABLE IF EXISTS `user_control_cfg`;
+
+CREATE TABLE `user_control_cfg` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `suid` int(11) NOT NULL COMMENT '超权id',
+  `snickname` varchar(50) NOT NULL COMMENT '超权账号昵称',
+  `sdeviceid` varchar(64) NOT NULL COMMENT '当前机器码',
+  `tuid` int(11) NOT NULL DEFAULT '0' COMMENT '跟踪id',
+  `cgid` text NOT NULL COMMENT '控制游戏id',
+  `skey` char(32) NOT NULL COMMENT '授权key',
+  `aname` varchar(20) NOT NULL COMMENT '操作管理员名字',
+  `utime` int(11) NOT NULL DEFAULT '0' COMMENT '操作时间',
+  PRIMARY KEY (`id`),
+  KEY `suid` (`suid`) USING BTREE,
+  KEY `tuid` (`tuid`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='点杀精准控制配置表';
+
+
+update file 120.24.54.6
+
+/disk/ablitte/server/release/baccarat_server/baccaratServer
+/disk/ablitte/server/release/bainiu_server/bainiuServer
+/disk/ablitte/server/release/dice_server/diceServer
+/disk/ablitte/server/release/everycolor_server/everycolorServer
+/disk/ablitte/server/release/fight_server/fightServer
+/disk/ablitte/server/release/land_server/landServer
+/disk/ablitte/server/release/niuniu_server/niuniuServer
+/disk/ablitte/server/release/paijiu_server/paijiuServer
+/disk/ablitte/server/release/robniu_server/robniuServer
+/disk/ablitte/server/release/showhand_server/showhandServer
+/disk/ablitte/server/release/slot_server/slotServer
+/disk/ablitte/server/release/texas_server/texasServer
+/disk/ablitte/server/release/two_people_majiang_server/majiangServer
+/disk/ablitte/server/release/war_server/warServer
+/disk/ablitte/server/release/zajinhua_server/zajinhuaServer
+/disk/ablitte/server/release/lobby_server/lobbyServer
+

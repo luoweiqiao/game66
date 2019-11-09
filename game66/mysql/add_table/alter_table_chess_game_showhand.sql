@@ -1,0 +1,1 @@
+alter table chess.game_showhand add column totalwinc bigint(20) DEFAULT 0 COMMENT '¿€º∆ ‰”Æ≥Ô¬Î';

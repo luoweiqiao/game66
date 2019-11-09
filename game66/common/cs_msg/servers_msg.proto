@@ -1,0 +1,454 @@
+
+package net;
+import "base_msg_struct.proto";
+import "error_code.proto";
+import "dice_logic_msg.proto";
+
+// 注册服务器
+message msg_register_svr
+{
+	optional uint32 svrid  	   	 = 1;		// 服务器ID
+	optional uint32 game_type  	 = 2;		// 游戏类型
+	optional uint32 robot	   	 = 3;		// 是否开启机器人
+	optional uint32 game_subtype = 4;		// 游戏子类型
+}
+// 注册返回
+message msg_register_svr_rep
+{
+	optional uint32 result = 1;			// 返回结果
+}
+// 游戏服务器上报大厅信息
+message msg_report_svr_info
+{
+	optional uint32 onlines = 1;		// 在线人数	
+	optional uint32 robots  = 2;		// 在线机器人
+		
+}
+// 返回大厅
+message msg_leave_svr
+{
+	optional uint32 uid 	 = 1;
+	optional uint32 goto_svr = 2; 		// 是否跳转游戏服务器	
+}
+// 通知网络状态
+message msg_notify_net_state
+{
+	optional uint32 uid   = 1;
+	optional uint32 state = 2;//(0断线，1连接)
+}
+// 进入游戏服务器
+message msg_enter_into_game_svr
+{
+	optional uint32				player_type		= 1;	// 玩家类型(机器人，玩家)
+	optional base_info  		base_data 		= 2;	// 基本信息
+	optional game_data_info     game_data 		= 3;	// 游戏数据
+	optional uint32				ctrl_flag		= 4;	// 是否可以精准控制 0:不可以 1:可以	
+}
+
+// 修改游戏数值
+message msg_notify_change_account_data
+{
+	optional uint32 uid 			= 1;
+	optional int64	diamond			= 2;				// 钻石
+	optional int64	coin 			= 3;				// 财富币	
+	optional int64 	score 			= 4;				// 积分
+	optional int64 	ingot			= 5;				// 元宝	
+	optional int64	cvalue 			= 6;				// 魅力值	
+	optional uint32 oper_type		= 7;				// 操作类型
+	optional uint32 sub_type		= 8;				// 操作子类
+	optional int64	safe_coin		= 9;				// 保险箱
+	optional bytes  chessid			= 10;				// 游戏id
+	
+}
+
+
+// 修改游戏数值
+message msg_update_lobby_change_account_data
+{
+	optional uint32 uid 			= 1;
+	optional int64	diamond			= 2;				// 钻石
+	optional int64	coin 			= 3;				// 财富币	
+	optional int64 	score 			= 4;				// 积分
+	optional int64 	ingot			= 5;				// 元宝	
+	optional int64	cvalue 			= 6;				// 魅力值	
+	optional uint32 oper_type		= 7;				// 操作类型
+	optional uint32 sub_type		= 8;				// 操作子类
+	optional int64	safe_coin		= 9;				// 保险箱
+	optional bytes  chessid			= 10;				// 游戏id
+}
+
+// 修改信息通知
+message msg_notify_change_playerinfo
+{
+	optional uint32 safebox			= 1;	// 保险箱状态
+	optional bytes	name			= 2;	// 名字
+}
+// 通知停服
+message msg_notify_stop_service
+{
+	optional uint32 btime = 1; // 开始时间
+	optional uint32 etime = 2; // 结束时间		
+}
+// 上报斗地主游戏战报
+message land_game_result
+{
+	optional uint32 is_spring		= 1;	// 是否春天
+	optional uint32 is_land			= 2;	// 是否地主
+	optional uint32 deal			= 3; 	// 发牌类型
+	optional uint64 enter_min		= 4; 	// 进入门槛	
+	optional uint32 basescore		= 5; 	// 底分		
+	optional uint32 press_count		= 6; 	// 压制次数
+	optional uint32 bankrupt_count  = 7;	// 被破产人数
+}
+message msg_report_game_result
+{
+	optional uint32 			uid         = 1;
+	optional uint32 			consume		= 2;
+	optional uint32 			game_type   = 3;
+	optional uint32 			roomid	    = 4;
+	optional int64				win_score   = 5;
+	optional int64				ex_win_score= 6;
+	optional int64				bet_score	= 7;
+	optional int32				branker		= 8;
+	optional int32				welcount	= 9;
+	optional uint64				weltime 	= 10;
+	optional land_game_result   land	    = 11; // 斗地主战报	
+
+}
+message msg_report_fee_log
+{
+	optional uint32				uid 	 = 1;
+	optional int64				fee_win  = 2;
+	optional int64				fee_lose = 3;	
+}
+message msg_leave_robot
+{
+	optional uint32 uid = 1;
+}
+// 刷新数值
+message msg_flush_change_account_data
+{
+	optional uint32 uid 			= 1;
+	optional int64	diamond			= 2;				// 钻石
+	optional int64	coin 			= 3;				// 财富币	
+	optional int64 	score 			= 4;				// 积分
+	optional int64 	ingot			= 5;				// 元宝	
+	optional int64	cvalue 			= 6;				// 魅力值		
+	optional int64	safe_coin		= 7;				// 保险箱	
+}
+
+// 更新数值
+message msg_update_change_account_data
+{
+	optional uint32 uid 			= 1;
+	optional int64	diamond			= 2;				// 钻石
+	optional int64	coin 			= 3;				// 财富币	
+	optional int64 	score 			= 4;				// 积分
+	optional int64 	ingot			= 5;				// 元宝	
+	optional int64	cvalue 			= 6;				// 魅力值		
+	optional int64	safe_coin		= 7;				// 保险箱
+	optional uint32 oper_type		= 8;				// 操作类型
+	optional uint32 sub_type		= 9;				// 操作子类
+}
+
+// 改变房间参数
+message msg_change_room_param
+{
+	optional uint32 gametype 		= 1;				// gametype
+	optional uint32	roomid			= 2;				// roomid
+	optional bytes	param 			= 3;				// 特殊参数
+}
+
+// 控制玩家
+message msg_contorl_player
+{
+	optional uint32 gametype 		= 1;				// gametype
+	optional uint32	roomid			= 2;				// roomid
+	optional uint32	uid				= 3;				// uid
+	optional uint32	operatetype		= 4;				// 操作类型 1添加  0取消
+	optional uint32	gamecount		= 5;				// 控制局数
+	optional int64	id				= 6;				// 
+
+}
+message msg_contorl_multi_player
+{
+	optional uint32 gametype 		= 1;				// gametype
+	optional uint32	roomid			= 2;				// roomid
+	optional uint32	uid				= 3;				// uid
+	optional uint32	operatetype		= 4;				// 操作类型 1添加  0取消
+	optional uint32	gamecount		= 5;				// 控制局数
+	optional uint64	gametime		= 6;				// 控制时间
+	optional int64	totalscore		= 7;				// 赢总分数
+	optional int64	id				= 8;				// 
+}
+
+message msg_dice_control_req
+{
+	optional uint32 gametype 		= 1;				// gametype
+	optional uint32	roomid			= 2;				// roomid
+	optional dice_control_req dice	= 3;
+}
+
+message msg_majiang_config_hand_card
+{
+	optional uint32 gametype 		= 1;				// gametype
+	optional uint32	roomid			= 2;				// roomid
+	optional bytes	hand_card		= 3;
+}
+
+message msg_update_server_room_robot
+{
+	optional uint32 gametype 		= 1;				// gametype
+	optional uint32	roomid			= 2;				// roomid
+	optional uint32 robot			= 3;
+}
+
+message msg_reload_robot_online_cfg
+{
+	optional uint32 optype	 		= 1;				// optype 1 add 2 delete
+	optional uint32 gametype 		= 2;				// gametype
+	optional uint32 roomid   		= 3;				// 
+	optional uint32 leveltype  		= 4;				// 
+	optional uint32 batchid 		= 5;				// 
+	optional uint32 logintype 		= 6;				// 
+	optional uint32 entertimer 		= 7;				// 
+	optional uint32 leavetimer 		= 8;				// 
+	repeated uint32 online          = 9;
+}
+
+message msg_update_new_player_novice_welfare_right
+{
+	optional uint32 uid      		= 1;				// uid
+	optional uint32	userright		= 2;				// userright
+	optional uint32	posrmb  		= 3;				// posrmb
+	optional uint64	postime  		= 4;				// postime
+}
+
+message msg_update_new_player_novice_welfare_value
+{
+	optional uint32 id              = 1;				// id
+	optional uint32 minpayrmb       = 2;				// minpayrmb
+	optional uint32 maxpayrmb       = 3;				// maxpayrmb
+	optional uint32 maxwinscore     = 4;				// maxwinscore
+	optional uint32	welfarecount	= 5;				// welfarecount
+	optional uint32	welfarepro		= 6;				// welfarepro
+	optional uint32	postime 		= 7;				// postime
+	optional uint32	lift_odds 		= 8;				// lift_odds
+}
+
+//----------------------DISPATCH消息定义------------------
+//大厅服务器注册
+message msg_register_dispatch
+{
+	optional uint32 svrid  	   	 = 1;		// 服务器ID
+	optional uint32 svr_type  	 = 2;		// svr类型
+	optional uint32 game_type    = 3;		// 游戏类型
+}
+
+//大厅服务器注册返回
+message msg_register_dispatch_rep
+{
+	optional uint32 result = 1;			// 返回结果
+}
+
+//通知gamesvrs有新的大厅服务器
+message msg_notify_gamesvrs_new_lobby
+{
+	optional uint32 lobby_svrid = 1;  
+}
+
+//退休lobbysvr
+message msg_retire_lobbysvr
+{
+	optional uint32 svrid = 1;  
+}
+//退休gamesvr
+message msg_retire_gamesvr
+{
+	optional uint32 svrid = 1;  
+}
+//上报在线玩家
+message msg_report_onlines
+{
+	optional uint32 player_size = 1;
+	optional uint32 robot_size = 2;
+}
+//lobbySvr通过dispathSvr转发消息
+message msg_broadcast_other_lobby
+{
+	optional uint32       type        = 1;   // 转发类型（广播，单播）
+	optional uint32       svrid       = 2;   // 要发往大厅的svrid(广播为0)
+	optional bytes        data        = 3;   // 消息
+	optional uint32       cmd         = 4;   // 消息类型
+}
+
+
+//dispatchSvr向lobbySvr传递消息
+message msg_broadcast_info
+{
+	optional bytes     data     = 1;   // 消息
+	optional uint32    cmd      = 2;   // 消息类型
+}
+
+
+// 停止夺宝
+message msg_stop_snatch_coin
+{
+	optional uint32 gametype 		= 1;				// gametype
+	optional uint32	roomid			= 2;				// roomid
+	optional uint32	stop			= 3;				// 1停止 0开启
+}
+
+// 机器人夺宝
+message msg_robot_snatch_coin
+{
+	optional uint32 gametype 		= 1;				// gametype
+	optional uint32	roomid			= 2;				// roomid
+	optional uint32	snatchtype		= 3;				// snatchtype
+	optional uint32	robotcount		= 4;				// robotcount
+	optional uint32	cardcount		= 5;				// cardcount
+
+}
+
+// 自动杀分配置和玩家修改
+message msg_auto_kill_user_cfg
+{
+	optional bytes updatejson 		= 1;				// 修改json字符串
+}
+
+// 刷新活跃福利配置
+message msg_flush_active_welfare_cfg
+{
+	optional bytes updatejson 		= 1;				// 修改json字符串
+}
+
+// 重置玩家活跃福利信息
+message msg_reset_active_welfare_info
+{
+	optional bytes updatejson 		= 1;				// 修改json字符串
+}
+
+// 刷新新注册玩家福利配置
+message msg_flush_new_register_welfare_cfg
+{
+	optional bytes updatejson 		= 1;				// 修改json字符串
+}
+
+message msg_stop_conctrl_player
+{
+	optional uint32 uid 			= 1;				// uid	
+}
+
+message msg_syn_ctrl_user_cfg
+{
+	repeated uint32  vec_suid = 1;
+	optional uint32  opertype = 2;
+
+	optional uint32  tag_suid = 3;
+	optional bytes  tag_sdeviceid = 4;
+	optional uint32  tag_tuid = 5;
+	repeated uint32  tag_cgid = 6;
+	optional bytes  tag_skey= 7;
+}
+
+
+// 通知游戏服修改房间库存配置
+message msg_change_room_stock_cfg
+{
+	optional int32 roomid			     = 1;  // 房间id
+	optional int64 stock_max			 = 2;  // 库存上限
+	optional int32 stock_conversion_rate = 3;  // 库存转换率
+	optional int64 jackpot_min			 = 4;  // 奖池最低触发值
+	optional int32 jackpot_max_rate	     = 5;  // 奖池触发最大金额比例
+	optional int32 jackpot_rate		     = 6;  // 奖池派送概率
+	optional int32 jackpot_coefficient	 = 7;  // 奖池系数
+    optional int32 jackpot_extract_rate  = 8;  // 奖池抽取率
+	optional int64 add_stock             = 9;  // 增加实时库存
+	optional int64 kill_points_line      = 10; // 杀分警戒线
+	optional int32 player_win_rate       = 11; // 玩家赢概率
+	optional int64 add_jackpot           = 12; // 增加实时奖池
+}
+
+message msg_syn_lucky_cfg
+{
+	optional uint32  uid = 1;	
+}
+
+message msg_syn_fish_cfg
+{
+	optional uint32  id				= 1;	
+	optional uint32  prize_min		= 2;
+	optional uint32  prize_max		= 3;
+	optional uint32  kill_rate		= 4;
+}
+
+message msg_reset_lucky_cfg
+{
+	optional uint32  uid = 1;	
+}
+
+
+//----------------PHP消息定义------------------------
+// 通知修改保险箱密码
+//send:{uid:110,pwd:'123456'}
+//recv:{ret:1}
+
+// 通知转发字符串到前端 
+//>>uint32 >> string  // 用户ID,字符串
+//send:{uid:110,msg:'xxx'}
+//recv:{ret:1}
+// 系统公告
+
+// 踢出玩家
+//send:{uid:110}
+//recv:{ret:1}
+
+// 修改数值(只能加数值，不能减数值)
+//send:{uid:110,diamond:0,coin:0,score:0,ingot:0,cvalue:0,safecoin:0,ptype:0,sptype:0}
+//recv:{ret:1}
+
+// 修改玩家名字
+//send:{uid:110,name:'xxx'}
+//recv:{ret:1}
+
+//服务器停服
+//{"svrid":["1","12","13"],"content":"q adsfa","btime":1465819920,"etime":1465819920}
+
+//`gid`'游戏id',`tid` '桌子id',`roomtype` '房间类型',`consume` '消费类型',`deal` '发牌类型',`basescore` '底注',`fee` '台费',`begintime`  
+//'开始时间',`endtime`  '结束时间',`uids`  '用户货币详情',`content` '牌局详情',
+
+//uids = {"uid":用户id,"oldv":打之前身上携带,"newv":打之后身上携带,"safebox":保险箱,"win":赢多少}
+//content = {"uid":牌....(0表示不出),"uid":牌....(0表示不出)........}
+
+// 修改机器人配置
+//send:{}
+//recv:{ret:1}
+// 修改vip等级
+//send:{"uid":用户id,"vip":等级}
+//recv:{ret:1}
+
+//服务器退休
+//send:{"svrid":["1","2","3"]}
+//recv:{"ret":1}
+
+//服务器列表
+//send:{}
+//recv: {"svrinfo":[{"svrid":1,"status":2,"playernum":3,"robotnum":4}]} 
+//status 0：正常 1：停服中  2：退休中
+
+
+// 修改房间库存配置
+//recv:{"gametype":1,"roomid":1,"stock_max":0,"stock_conversion_rate":0,"jackpot_min":0,"jackpot_max_rate":0,"jackpot_rate":0,"jackpot_coefficient":0,"jackpot_extract_rate":0,"add_stock":0,"kill_points_line":0,"player_win_rate":0,"add_jackpot":0}
+//send:{ret:1}
+
+
+
+
+
+
+
+
+
+
+
+

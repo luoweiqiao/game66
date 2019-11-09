@@ -1,0 +1,60 @@
+execution mysql structured query language:
+
+USE `chess_sysdata`;
+
+DROP TABLE IF EXISTS `new_register_welfare_cfg`;
+
+CREATE TABLE `new_register_welfare_cfg` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '编号',
+  `game_list` varchar(255) DEFAULT '[]' COMMENT '游戏ID列表',
+  `must_win` int(11) DEFAULT NULL COMMENT '必胜局数',
+  `total_win` int(11) DEFAULT NULL COMMENT '总获胜局数',
+  `min_win_coin` int(11) DEFAULT NULL COMMENT '最低盈利',
+  `max_win_coin` int(11) DEFAULT NULL COMMENT '最高盈利',
+  `total_win_rate` int(11) DEFAULT NULL COMMENT '总获胜局数触发概率',
+  `period_day` int(11) DEFAULT NULL COMMENT '有效期天数',
+  KEY `id` (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT '新账号福利配置表';
+
+insert  into `new_register_welfare_cfg`(`id`,`game_list`,`must_win`,`total_win`,`min_win_coin`,`max_win_coin`,`total_win_rate`,`period_day`) values (1,'[1,2,5,12]',80,27,4200,4300,10000,3);
+
+USE `chess_log`;
+
+DROP TABLE IF EXISTS `new_register_welfare_log`;
+
+CREATE TABLE `new_register_welfare_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) DEFAULT NULL COMMENT '玩家ID',
+  `gid` int(11) DEFAULT NULL COMMENT '游戏ID',
+  `curr_must_win` int(11) DEFAULT NULL COMMENT '当前累计的必赢局数',
+  `curr_total_win` int(11) DEFAULT NULL COMMENT '当前累计的总获胜局数',
+  `curr_win_coin` bigint(20) DEFAULT NULL COMMENT '当前局的赢取金额',
+  `total_win_coin` bigint(20) DEFAULT NULL COMMENT '福利期间的累计赢取金额',
+  `status` int(11) DEFAULT NULL COMMENT '0:表示未完成 1:表示完成',
+  `ctime` int(11) DEFAULT NULL COMMENT '记录时间',
+  KEY `id` (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=340 DEFAULT CHARSET=utf8 COMMENT '新账号福利日志表';
+
+ALTER TABLE `chess_sysdata`.`newuser_welfare` 
+ADD COLUMN `lift_odds` smallint(5) UNSIGNED NOT NULL DEFAULT 0 COMMENT '每次提升概率(万分比)' AFTER `postime`;
+
+update file 120.24.54.6
+
+/disk/ablitte/server/release/baccarat_server/baccaratServer
+/disk/ablitte/server/release/bainiu_server/bainiuServer
+/disk/ablitte/server/release/dice_server/diceServer
+/disk/ablitte/server/release/everycolor_server/everycolorServer
+/disk/ablitte/server/release/fight_server/fightServer
+/disk/ablitte/server/release/land_server/landServer
+/disk/ablitte/server/release/niuniu_server/niuniuServer
+/disk/ablitte/server/release/paijiu_server/paijiuServer
+/disk/ablitte/server/release/robniu_server/robniuServer
+/disk/ablitte/server/release/showhand_server/showhandServer
+/disk/ablitte/server/release/slot_server/slotServer
+/disk/ablitte/server/release/texas_server/texasServer
+/disk/ablitte/server/release/two_people_majiang_server/majiangServer
+/disk/ablitte/server/release/war_server/warServer
+/disk/ablitte/server/release/zajinhua_server/zajinhuaServer
+/disk/ablitte/server/release/lobby_server/lobbyServer
+
+

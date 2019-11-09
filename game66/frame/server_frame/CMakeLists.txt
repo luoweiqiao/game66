@@ -1,0 +1,244 @@
+cmake_minimum_required(VERSION 3.3)
+project(server_frame)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
+INCLUDE_DIRECTORIES(include)
+INCLUDE_DIRECTORIES(include/config)
+INCLUDE_DIRECTORIES(include/crypt)
+INCLUDE_DIRECTORIES(include/dbmysql)
+INCLUDE_DIRECTORIES(include/framework)
+INCLUDE_DIRECTORIES(include/fundamental)
+INCLUDE_DIRECTORIES(include/hash)
+INCLUDE_DIRECTORIES(include/json)
+INCLUDE_DIRECTORIES(include/helper)
+INCLUDE_DIRECTORIES(include/luatinker)
+INCLUDE_DIRECTORIES(include/math)
+INCLUDE_DIRECTORIES(include/network)
+INCLUDE_DIRECTORIES(include/packet)
+INCLUDE_DIRECTORIES(include/tinyxml)
+INCLUDE_DIRECTORIES(include/utility)
+
+
+set(SOURCE_FILES
+    include/config/config.h
+    include/config/csvreader.h
+    include/config/xmlcfgreader.h
+    include/crypt/aes.h
+    include/crypt/base64.h
+    include/crypt/blowfish.h
+    include/crypt/crypt.h
+    include/crypt/encrypt.h
+    include/crypt/hmac_sha1.h
+    include/crypt/mars.h
+    include/crypt/md5.h
+    include/crypt/serpent.h
+    include/crypt/urlEncode.h
+    include/crypt/xor256.h
+    include/dbmysql/db_task.h
+    include/dbmysql/db_wrap.h
+    include/dbmysql/dbmysql.h
+    include/dbmysql/hiredis.h
+    include/dbmysql/hiredisop.h
+    include/dbmysql/sql_join.h
+    include/framework/application.h
+    include/framework/cmdline.h
+    include/framework/logger.h
+    include/fundamental/bloomfilter.h
+    include/fundamental/common.h
+    include/fundamental/cyclebuffer.h
+    include/fundamental/cyclebuffer_shm.h
+    include/fundamental/hashtable.h
+    include/fundamental/hashval.h
+    include/fundamental/linkcache.h
+    include/fundamental/multiprocesshashtable.h
+    include/fundamental/noncopyable.h
+    include/fundamental/ring_buff.h
+    include/fundamental/variablehashtable.h
+    include/fundamental/variablelengthhashtable.h
+    include/hash/md4emule.h
+    include/hash/md5.h
+    include/hash/sha1.h
+    include/helper/bufferStream.h
+    include/helper/filehelper.h
+    include/helper/fileStream.h
+    include/helper/helper.h
+    include/helper/numberStream.h
+    include/helper/streamBase.h
+    include/helper/stringStream.h
+    include/json/autolink.h
+    include/json/config.h
+    include/json/features.h
+    include/json/forwards.h
+    include/json/json.h
+    include/json/reader.h
+    include/json/value.h
+    include/json/writer.h
+    include/luatinker/lapi.h
+    include/luatinker/lauxlib.h
+    include/luatinker/lcode.h
+    include/luatinker/ldebug.h
+    include/luatinker/ldo.h
+    include/luatinker/lfunc.h
+    include/luatinker/lgc.h
+    include/luatinker/llex.h
+    include/luatinker/llimits.h
+    include/luatinker/lmem.h
+    include/luatinker/lobject.h
+    include/luatinker/lopcodes.h
+    include/luatinker/lparser.h
+    include/luatinker/lstate.h
+    include/luatinker/lstring.h
+    include/luatinker/ltable.h
+    include/luatinker/ltm.h
+    include/luatinker/lua.h
+    include/luatinker/lua_tinker.h
+    include/luatinker/luaconf.h
+    include/luatinker/luaConsole.h
+    include/luatinker/lualib.h
+    include/luatinker/luaTinker.h
+    include/luatinker/lundump.h
+    include/luatinker/lvm.h
+    include/luatinker/lzio.h
+    include/math/box2.h
+    include/math/mathFunctions.h
+    include/math/point2.h
+    include/math/point3.h
+    include/math/rand_table.h
+    include/math/rank.h
+    include/math/rect.h
+    include/network/IOCPServer.h
+    include/network/Network.h
+    include/network/NetworkObject.h
+    include/network/timerbase.h
+    include/packet/istreampacket.h
+    include/packet/ostreampacket.h
+    include/packet/protobuf_pkg.h
+    include/packet/streampacket.h
+    include/tinyxml/tinystr.h
+    include/tinyxml/tinyxml.h
+    include/utility/basicFunctions.h
+    include/utility/basicTypes.h
+    include/utility/comm_macro.h
+    include/utility/cooling.h
+    include/utility/curl_wrap.h
+    include/utility/encode_utility.h
+    include/utility/ipcutility.h
+    include/utility/likelydef.h
+    include/utility/profile_manager.h
+    include/utility/singleton.h
+    include/utility/stl_hash_map.h
+    include/utility/stringFunctions.h
+    include/utility/stringutility.h
+    include/utility/stw_timer.h
+    include/utility/thread.h
+    include/utility/timeFunction.h
+    include/utility/timer_mgr.h
+    include/utility/timeutility.h
+    include/svrlib.h
+    src/config/config.cpp
+    src/config/csvreader.cpp
+    src/config/xmlcfgreader.cpp
+    src/crypt/aes.cpp
+    src/crypt/base64.cpp
+    src/crypt/blowFish.cpp
+    src/crypt/crypt.cpp
+    src/crypt/encrypt.cpp
+    src/crypt/hmac_sha1.cpp
+    src/crypt/mars.cpp
+    src/crypt/md5.cpp
+    src/crypt/serpent.cpp
+    src/crypt/urlEncode.cpp
+    src/dbmysql/db_task.cpp
+    src/dbmysql/db_wrap.cpp
+    src/dbmysql/dbmysql.cpp
+    src/dbmysql/dbmysql_exception.cpp
+    src/dbmysql/dbmysql_result.cpp
+    src/dbmysql/dbmysql_statement.cpp
+    src/dbmysql/dbmysql_transaction.cpp
+    src/dbmysql/hiredisop.cpp
+    src/dbmysql/test_client.cpp
+    src/framework/configchecker.h
+    src/framework/framework.cpp
+    src/framework/framework.h
+    src/framework/frameworkmain.cpp
+    src/fund/cache.h
+    src/fund/convert.h
+    src/fund/hashtable.h
+    src/fund/lruvariablelengthhashtable.h
+    src/fund/mylink.h
+    src/fund/nodealloc.h
+    src/fund/size.h
+    src/fund/statemachine.h
+    src/fundamental/bloomfilter.cpp
+    src/fundamental/linkcache.cpp
+    src/fundamental/randomgenerator.h
+    src/hash/md4emule.cpp
+    src/hash/md5.cpp
+    src/hash/md5_loc.h
+    src/hash/sha1.cpp
+    src/helper/bufferStream.cpp
+    src/helper/filehelper.cpp
+    src/helper/fileStream.cpp
+    src/helper/helper.cpp
+    src/helper/streamBase.cpp
+    src/helper/stringStream.cpp
+    src/json/json_batchallocator.h
+    src/json/json_reader.cpp
+    src/json/json_tool.h
+    src/json/json_value.cpp
+    src/json/json_writer.cpp
+    src/luatinker/lapi.c
+    src/luatinker/lauxlib.c
+    src/luatinker/lbaselib.c
+    src/luatinker/lcode.c
+    src/luatinker/ldblib.c
+    src/luatinker/ldebug.c
+    src/luatinker/ldo.c
+    src/luatinker/ldump.c
+    src/luatinker/lfunc.c
+    src/luatinker/lgc.c
+    src/luatinker/linit.c
+    src/luatinker/liolib.c
+    src/luatinker/llex.c
+    src/luatinker/lmathlib.c
+    src/luatinker/lmem.c
+    src/luatinker/loadlib.c
+    src/luatinker/lobject.c
+    src/luatinker/lopcodes.c
+    src/luatinker/loslib.c
+    src/luatinker/lparser.c
+    src/luatinker/lstate.c
+    src/luatinker/lstring.c
+    src/luatinker/lstrlib.c
+    src/luatinker/ltable.c
+    src/luatinker/ltablib.c
+    src/luatinker/ltm.c
+    src/luatinker/lua_tinker.cpp
+    src/luatinker/luaConsole.cpp
+    src/luatinker/lundump.c
+    src/luatinker/lvm.c
+    src/luatinker/lzio.c
+    src/luatinker/print.c
+    src/math/mathFunctions.cpp
+    src/math/rand_table.cpp
+    src/packet/protobuf_pkg.cpp
+    src/tinyxml/tinystr.cpp
+    src/tinyxml/tinyxml.cpp
+    src/tinyxml/tinyxmlerror.cpp
+    src/tinyxml/tinyxmlparser.cpp
+    src/utility/basicFunctions.cpp
+    src/utility/cooling.cpp
+    src/utility/curl_wrap.cpp
+    src/utility/encode_utility.cpp
+    src/utility/ipcutility.cpp
+    src/utility/profile_manager.cpp
+    src/utility/stringFunctions.cpp
+    src/utility/stringutility.cpp
+    src/utility/stw_timer.cpp
+    src/utility/thread.cpp
+    src/utility/timeFunction.cpp
+    src/utility/timer_mgr.cpp
+    src/utility/timeutility.cpp)
+
+add_executable(server_frame ${SOURCE_FILES})

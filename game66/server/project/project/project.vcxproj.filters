@@ -1,0 +1,2053 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="servers">
+      <UniqueIdentifier>{aba3bb2b-0271-49ab-9c41-99a7bbf9e809}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\baccarat_server">
+      <UniqueIdentifier>{2d94b3a3-4f87-4bc9-88e8-5c5fa6c4fe4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\bainiu_server">
+      <UniqueIdentifier>{c44b72cc-8154-4452-b701-efe21abcfcfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\common">
+      <UniqueIdentifier>{a57e8efc-f0e0-4626-8820-37b0f4f8dbff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\dice_server">
+      <UniqueIdentifier>{dc8047b4-05dd-4285-a85e-361458e77231}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\game_server">
+      <UniqueIdentifier>{f2404d17-435f-4342-a181-cbdda8a0abbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\lobby_server">
+      <UniqueIdentifier>{070e040d-1282-4b42-8365-776a2c9a6fc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\niuniu_server">
+      <UniqueIdentifier>{08ac802c-8a9f-4788-a1e0-8fcba1df56b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\paijiu_server">
+      <UniqueIdentifier>{66405ae8-a84e-4217-8e69-4ac414046c2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\sangong_server">
+      <UniqueIdentifier>{355ad311-35f6-43f3-b38a-e4fcb7505150}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\showhand_server">
+      <UniqueIdentifier>{6a059005-e455-48f5-a185-99c274399877}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\texas_server">
+      <UniqueIdentifier>{eacadfb5-ac6e-41f1-a66a-33a0eee139d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\zajinhua_server">
+      <UniqueIdentifier>{a1701555-7559-4a18-8704-f8aef57a931a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\baccarat_server\build">
+      <UniqueIdentifier>{b7124ae8-d442-4c6d-9fa0-acf5eb96f6a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\baccarat_server\src">
+      <UniqueIdentifier>{e360e086-13af-4615-a42a-f33603a8e3c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\bainiu_server\build">
+      <UniqueIdentifier>{084f6443-d6a9-4361-9fc7-c8e85d819682}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\bainiu_server\src">
+      <UniqueIdentifier>{f62c64f7-a90b-4b7a-9626-f542686c267d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\common\build">
+      <UniqueIdentifier>{8e870c35-0b62-45ca-a29e-c75ef3f94d57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\common\src">
+      <UniqueIdentifier>{51720644-d4d5-4185-b48f-a1be7b134594}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\common\src\pb">
+      <UniqueIdentifier>{57f330b3-c13c-4385-ac1e-3995e3b9527b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\common\src\poker">
+      <UniqueIdentifier>{cece98c5-ce23-46f5-b4ee-12245f7db214}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\dice_server\build">
+      <UniqueIdentifier>{11ee330a-0794-4e1a-8dcb-14aaa8689542}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\dice_server\src">
+      <UniqueIdentifier>{9a5e6b86-ef89-4f64-bfc0-5c8d80ddb41f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\game_server\build">
+      <UniqueIdentifier>{755ffc08-a90a-4660-8ac6-e2f7ca1cd095}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\game_server\src">
+      <UniqueIdentifier>{87333004-528e-44ea-85dc-b7f38095a2ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\lobby_server\build">
+      <UniqueIdentifier>{dc354c1c-6dfd-4b3b-9fdc-f1fb73d3efab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\lobby_server\src">
+      <UniqueIdentifier>{6f9674b9-3ca8-4950-be4b-464f631b81af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\zajinhua_server\build">
+      <UniqueIdentifier>{33462f3b-5f77-4334-915e-08e2610c8f2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\zajinhua_server\src">
+      <UniqueIdentifier>{d163c9f7-1370-49aa-bef1-9b26a5ef16cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\texas_server\build">
+      <UniqueIdentifier>{ab85d869-5087-4f76-885c-9750701e1f72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\texas_server\src">
+      <UniqueIdentifier>{f0bad8f9-b8e1-47fa-92ce-e825cc984317}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\showhand_server\build">
+      <UniqueIdentifier>{a97ed3dc-ea29-4108-af68-b28a5fc26ccc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\showhand_server\src">
+      <UniqueIdentifier>{3f18c72e-3e7b-434f-b434-1001adac3b2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\sangong_server\build">
+      <UniqueIdentifier>{73a947b1-ef38-4455-9f0c-7ef5f052f4d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\sangong_server\src">
+      <UniqueIdentifier>{6b48a426-9e6c-4519-a055-56f7bc04cd2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\paijiu_server\build">
+      <UniqueIdentifier>{62f2c243-9800-4aaa-a670-ea971323fa60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\paijiu_server\src">
+      <UniqueIdentifier>{401d2c6d-925f-4ffe-941c-0b115defb079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\niuniu_server\build">
+      <UniqueIdentifier>{2e4f6b44-29fb-43b2-85fd-baacf3a32ec9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\niuniu_server\src">
+      <UniqueIdentifier>{69d6255c-db84-474b-a297-aeed39202092}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame">
+      <UniqueIdentifier>{92f08ca1-2453-4e92-972b-7c14062d2780}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\include">
+      <UniqueIdentifier>{bec9e569-1edc-46e6-9960-54462a0684a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\document">
+      <UniqueIdentifier>{55332d36-1567-49a8-9442-c449389e6450}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\include\config">
+      <UniqueIdentifier>{71b2e918-3159-473b-a46a-d27f393d2435}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\include\crypt">
+      <UniqueIdentifier>{e34d23e7-e29b-49ed-9626-4a11dd134713}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\include\dbmysql">
+      <UniqueIdentifier>{e8e5a041-156b-4a66-ba4b-26de15283333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\include\framework">
+      <UniqueIdentifier>{856dca0d-8a9a-45c2-bda8-14f6665d0622}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\include\fundamental">
+      <UniqueIdentifier>{da663852-e9d5-47fe-b903-57a814520ff1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\include\hash">
+      <UniqueIdentifier>{631f29f1-f220-49e3-afab-abf953dcff8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\include\helper">
+      <UniqueIdentifier>{004cbad5-85a9-4ce9-8447-6a7f754d1b34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\include\json">
+      <UniqueIdentifier>{8a734183-8245-4475-ab8f-bd887109ce5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\include\luatinker">
+      <UniqueIdentifier>{b1c21ac6-2ea2-4375-92f1-f3b6b9e9ebe0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\include\math">
+      <UniqueIdentifier>{f5222022-abde-4d14-a0a9-bcff505cc5b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\include\network">
+      <UniqueIdentifier>{717d357b-bb79-49d7-acc0-62da4b54e974}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\include\packet">
+      <UniqueIdentifier>{2fb70d86-a6a7-4c52-971a-419ab85f21e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\include\tinyxml">
+      <UniqueIdentifier>{ec9aaf51-1195-4487-81fc-9afad5abccd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_frame\include\utility">
+      <UniqueIdentifier>{29470955-3a11-4b8a-a622-332440f7b44f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cs_msg">
+      <UniqueIdentifier>{0a28ff21-a423-4f4b-b71e-d0755f7065e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cmake_config">
+      <UniqueIdentifier>{912903ff-c815-4df4-bbfc-8b851bd504d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\everycolor_server">
+      <UniqueIdentifier>{30ff6857-13c0-4fc9-81ab-1ba7514c37ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\everycolor_server\build">
+      <UniqueIdentifier>{d7b4f46f-eb41-4623-b5ac-9d2699eff7f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\everycolor_server\src">
+      <UniqueIdentifier>{f73653ee-206a-45f4-8667-9139fd7fc88c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\majiang_server">
+      <UniqueIdentifier>{bf80b040-25c2-4575-91a4-a153956b1ea5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\majiang_server\build">
+      <UniqueIdentifier>{2197e895-1427-4883-9a17-1b77f5a833e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\majiang_server\src">
+      <UniqueIdentifier>{982303a3-f2ab-4e02-8922-374294378693}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\slot_server">
+      <UniqueIdentifier>{d9304f3f-7264-4fb2-acf7-1d8b6c20804d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\slot_server\build">
+      <UniqueIdentifier>{cc522267-7127-49fd-a290-1450adbad1af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\slot_server\src">
+      <UniqueIdentifier>{2b4787dc-3238-4ad4-bb08-6c652b6eaf2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\war_server">
+      <UniqueIdentifier>{73f4c547-708a-4a74-8d48-c3569bf966c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\war_server\build">
+      <UniqueIdentifier>{b511ec45-0cd7-49a2-a22b-bbf3fb5768c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\war_server\src">
+      <UniqueIdentifier>{5061d73b-cbd2-479b-87ff-1fdea800a38d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\land_robot_server">
+      <UniqueIdentifier>{648c241b-5b9a-4b69-be4b-f153f6acd940}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\land_robot_server\src">
+      <UniqueIdentifier>{18d5c586-1afc-4430-863b-d73909eb4e5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\land_robot_server\build">
+      <UniqueIdentifier>{d9b4237d-7474-40ed-a5a4-e6afdb4ea56e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\land_robot_ai_ex">
+      <UniqueIdentifier>{8f205f26-1962-4f8a-ba73-bae057ecd4fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\land_robot_ai_ex\build">
+      <UniqueIdentifier>{25867725-6439-4925-b878-7d81d7f3200b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\land_robot_ai_ex\src">
+      <UniqueIdentifier>{922025a4-008b-472c-9e04-651234dbacde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\fight_server">
+      <UniqueIdentifier>{0c1dd0e0-4913-49f7-9585-405a7d739696}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\fight_server\src">
+      <UniqueIdentifier>{264fe3cb-8225-4ebf-80d2-7241724dae44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\fight_server\build">
+      <UniqueIdentifier>{44ff9a06-e822-42a6-904b-de0b65c3c2cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="frame">
+      <UniqueIdentifier>{a177db7e-d436-4fa3-b65d-77145110eff2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="frame\src">
+      <UniqueIdentifier>{d9bbbad1-3243-4665-a9d8-f6a3fd550b15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\robniu_server">
+      <UniqueIdentifier>{84216827-46d8-4716-a5f2-9069cb81c72f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\robniu_server\build">
+      <UniqueIdentifier>{6327986e-e7b8-42d3-b391-88a131549ffa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\robniu_server\src">
+      <UniqueIdentifier>{aeb2deb6-144c-4adf-ac7a-760e2b7fa66a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\fishing_server">
+      <UniqueIdentifier>{4c4a090c-6348-41a0-961e-029af84d6607}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\fishing_server\build">
+      <UniqueIdentifier>{0543dc41-2164-4ba8-bc0e-0c6901c1b48c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\fishing_server\src">
+      <UniqueIdentifier>{a6be2aa5-bc49-436c-a2bd-65c74d3d582f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="release">
+      <UniqueIdentifier>{ec4658dd-7098-4074-b191-53f170953b7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="release\fishing_server">
+      <UniqueIdentifier>{1404f5db-2893-49c5-b9c0-d2bfa7f37057}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="release\fishing_server\config">
+      <UniqueIdentifier>{f651c5ca-da37-400c-ad96-4a40200ac8c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\twoeight_server">
+      <UniqueIdentifier>{20547b4e-9891-4846-b27d-f80270372a17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\twoeight_server\build">
+      <UniqueIdentifier>{e9683a61-e940-4544-804c-24aa11eb5cc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servers\twoeight_server\src">
+      <UniqueIdentifier>{f694a407-c226-4d57-80ae-3ae4194a1bd4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\servers\baccarat_server\build\CMakeLists.txt">
+      <Filter>servers\baccarat_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\bainiu_server\build\CMakeLists.txt">
+      <Filter>servers\bainiu_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\common\build\CMakeLists.txt">
+      <Filter>servers\common\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\dice_server\build\CMakeLists.txt">
+      <Filter>servers\dice_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\game_server\build\CMakeLists.txt">
+      <Filter>servers\game_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\lobby_server\build\CMakeLists.txt">
+      <Filter>servers\lobby_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\zajinhua_server\build\CMakeLists.txt">
+      <Filter>servers\zajinhua_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\texas_server\build\CMakeLists.txt">
+      <Filter>servers\texas_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\showhand_server\build\CMakeLists.txt">
+      <Filter>servers\showhand_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\sangong_server\build\CMakeLists.txt">
+      <Filter>servers\sangong_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\paijiu_server\build\CMakeLists.txt">
+      <Filter>servers\paijiu_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\niuniu_server\build\CMakeLists.txt">
+      <Filter>servers\niuniu_server\build</Filter>
+    </Text>
+    <Text Include="..\..\server_frame\document\svrlib使用说明.txt">
+      <Filter>server_frame\document</Filter>
+    </Text>
+    <Text Include="..\..\servers\everycolor_server\build\CMakeLists.txt">
+      <Filter>servers\everycolor_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\majiang_server\build\CMakeLists.txt">
+      <Filter>servers\majiang_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\slot_server\build\CMakeLists.txt">
+      <Filter>servers\slot_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\war_server\build\CMakeLists.txt">
+      <Filter>servers\war_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\land_robot_server\build\CMakeLists.txt">
+      <Filter>servers\land_robot_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\land_robot_ai_ex\build\CMakeLists.txt">
+      <Filter>servers\land_robot_ai_ex\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\land_robot_ai_ex\src\change.log">
+      <Filter>servers\land_robot_ai_ex\src</Filter>
+    </Text>
+    <Text Include="..\..\servers\fight_server\build\CMakeLists.txt">
+      <Filter>servers\fight_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\robniu_server\build\CMakeLists.txt">
+      <Filter>servers\robniu_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\fishing_server\build\CMakeLists.txt">
+      <Filter>servers\fishing_server\build</Filter>
+    </Text>
+    <Text Include="..\..\servers\twoeight_server\build\CMakeLists.txt">
+      <Filter>servers\twoeight_server\build</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\servers\baccarat_server\build\rebuild.sh">
+      <Filter>servers\baccarat_server\build</Filter>
+    </None>
+    <None Include="..\..\servers\bainiu_server\build\rebuild.sh">
+      <Filter>servers\bainiu_server\build</Filter>
+    </None>
+    <None Include="..\..\servers\common\build\rebuild.sh">
+      <Filter>servers\common\build</Filter>
+    </None>
+    <None Include="..\..\servers\dice_server\build\rebuild.sh">
+      <Filter>servers\dice_server\build</Filter>
+    </None>
+    <None Include="..\..\servers\game_server\build\rebuild.sh">
+      <Filter>servers\game_server\build</Filter>
+    </None>
+    <None Include="..\..\servers\lobby_server\build\rebuild.sh">
+      <Filter>servers\lobby_server\build</Filter>
+    </None>
+    <None Include="..\..\servers\zajinhua_server\build\rebuild.sh">
+      <Filter>servers\zajinhua_server\build</Filter>
+    </None>
+    <None Include="..\..\servers\texas_server\build\rebuild.sh">
+      <Filter>servers\texas_server\build</Filter>
+    </None>
+    <None Include="..\..\servers\showhand_server\build\rebuild.sh">
+      <Filter>servers\showhand_server\build</Filter>
+    </None>
+    <None Include="..\..\servers\sangong_server\build\rebuild.sh">
+      <Filter>servers\sangong_server\build</Filter>
+    </None>
+    <None Include="..\..\servers\paijiu_server\build\rebuild.sh">
+      <Filter>servers\paijiu_server\build</Filter>
+    </None>
+    <None Include="..\..\servers\niuniu_server\build\rebuild.sh">
+      <Filter>servers\niuniu_server\build</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\baccarat_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\bainiu_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\base_msg_struct.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\client_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\dice_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\error_code.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\land_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\msg_define.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\niuniu_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\paijiu_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\sangong_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\servers_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\showhand_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\texas_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\zajinhua_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\cmake_config\common_path.cmake">
+      <Filter>cmake_config</Filter>
+    </None>
+    <None Include="..\..\cmake_config\config.cmake">
+      <Filter>cmake_config</Filter>
+    </None>
+    <None Include="..\..\cmake_config\config_lib.cmake">
+      <Filter>cmake_config</Filter>
+    </None>
+    <None Include="..\..\cmake_config\macros.cmake">
+      <Filter>cmake_config</Filter>
+    </None>
+    <None Include="..\..\server_frame\include\network\makefile">
+      <Filter>server_frame\include\network</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\everycolor_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\servers\everycolor_server\build\rebuild.sh">
+      <Filter>servers\everycolor_server\build</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\majiang_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\servers\majiang_server\build\rebuild.sh">
+      <Filter>servers\majiang_server\build</Filter>
+    </None>
+    <None Include="..\..\servers\slot_server\build\rebuild.sh">
+      <Filter>servers\slot_server\build</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\slot_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\servers\war_server\build\rebuild.sh">
+      <Filter>servers\war_server\build</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\war_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\servers\land_robot_server\build\rebuild.sh">
+      <Filter>servers\land_robot_server\build</Filter>
+    </None>
+    <None Include="..\..\servers\land_robot_server\src\ddz_lib_level.vcxproj.filters">
+      <Filter>servers\land_robot_server\src</Filter>
+    </None>
+    <None Include="..\..\servers\land_robot_ai_ex\build\rebuild.sh">
+      <Filter>servers\land_robot_ai_ex\build</Filter>
+    </None>
+    <None Include="..\..\servers\fight_server\build\rebuild.sh">
+      <Filter>servers\fight_server\build</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\fight_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\servers\robniu_server\build\rebuild.sh">
+      <Filter>servers\robniu_server\build</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\robniu_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\servers\fishing_server\build\rebuild.sh">
+      <Filter>servers\fishing_server\build</Filter>
+    </None>
+    <None Include="..\..\..\common\cs_msg\fishing_logic_msg.proto">
+      <Filter>cs_msg</Filter>
+    </None>
+    <None Include="..\..\release\restart_all.sh">
+      <Filter>release</Filter>
+    </None>
+    <None Include="..\..\release\stop_all.sh">
+      <Filter>release</Filter>
+    </None>
+    <None Include="..\..\release\fishing_server\restart_game.sh">
+      <Filter>release\fishing_server</Filter>
+    </None>
+    <None Include="..\..\release\fishing_server\stop.sh">
+      <Filter>release\fishing_server</Filter>
+    </None>
+    <None Include="..\..\release\fishing_server\config\baseLineData.json">
+      <Filter>release\fishing_server\config</Filter>
+    </None>
+    <None Include="..\..\release\fishing_server\config\fishRes.json">
+      <Filter>release\fishing_server\config</Filter>
+    </None>
+    <None Include="..\..\release\fishing_server\config\fortEffectSet.json">
+      <Filter>release\fishing_server\config</Filter>
+    </None>
+    <None Include="..\..\release\fishing_server\config\level1.json">
+      <Filter>release\fishing_server\config</Filter>
+    </None>
+    <None Include="..\..\release\fishing_server\config\level2.json">
+      <Filter>release\fishing_server\config</Filter>
+    </None>
+    <None Include="..\..\release\fishing_server\config\level3.json">
+      <Filter>release\fishing_server\config</Filter>
+    </None>
+    <None Include="..\..\release\fishing_server\config\paoSet.json">
+      <Filter>release\fishing_server\config</Filter>
+    </None>
+    <None Include="..\..\release\fishing_server\config\readLevel.json">
+      <Filter>release\fishing_server\config</Filter>
+    </None>
+    <None Include="..\..\release\fishing_server\config\zidanSet.json">
+      <Filter>release\fishing_server\config</Filter>
+    </None>
+    <None Include="..\..\servers\twoeight_server\build\rebuild.sh">
+      <Filter>servers\twoeight_server\build</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\servers\baccarat_server\src\game_imple_table.cpp">
+      <Filter>servers\baccarat_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\baccarat_server\src\game_server.cpp">
+      <Filter>servers\baccarat_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\baccarat_server\src\msg_imple_handle.cpp">
+      <Filter>servers\baccarat_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\bainiu_server\src\game_imple_table.cpp">
+      <Filter>servers\bainiu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\bainiu_server\src\game_server.cpp">
+      <Filter>servers\bainiu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\bainiu_server\src\msg_imple_handle.cpp">
+      <Filter>servers\bainiu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\center_log.cpp">
+      <Filter>servers\common\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\common_logic.cpp">
+      <Filter>servers\common\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\data_cfg_mgr.cpp">
+      <Filter>servers\common\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\db_operator.cpp">
+      <Filter>servers\common\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\dbmysql_mgr.cpp">
+      <Filter>servers\common\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\player_base.cpp">
+      <Filter>servers\common\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\player_mgr.cpp">
+      <Filter>servers\common\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\redis_mgr.cpp">
+      <Filter>servers\common\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\poker\baccarat_logic.cpp">
+      <Filter>servers\common\src\poker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\poker\niuniu_logic.cpp">
+      <Filter>servers\common\src\poker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\poker\paijiu_logic.cpp">
+      <Filter>servers\common\src\poker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\poker\poker_logic.cpp">
+      <Filter>servers\common\src\poker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\poker\sangong_logic.cpp">
+      <Filter>servers\common\src\poker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\baccarat_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\bainiu_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\base_msg_struct.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\client_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\dice_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\error_code.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\land_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\msg_define.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\niuniu_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\paijiu_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\sangong_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\servers_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\showhand_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\texas_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\zajinhua_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\dice_server\src\game_imple_table.cpp">
+      <Filter>servers\dice_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\dice_server\src\game_server.cpp">
+      <Filter>servers\dice_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\dice_server\src\msg_imple_handle.cpp">
+      <Filter>servers\dice_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\game_server\src\async_dbcallback.cpp">
+      <Filter>servers\game_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\game_server\src\exception.cpp">
+      <Filter>servers\game_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\game_server\src\game_net_mgr.cpp">
+      <Filter>servers\game_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\game_server\src\game_player.cpp">
+      <Filter>servers\game_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\game_server\src\game_room.cpp">
+      <Filter>servers\game_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\game_server\src\game_room_mgr.cpp">
+      <Filter>servers\game_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\game_server\src\game_server_config.cpp">
+      <Filter>servers\game_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\game_server\src\game_table.cpp">
+      <Filter>servers\game_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\game_server\src\gobal_event_mgr.cpp">
+      <Filter>servers\game_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\game_server\src\lobby_mgr.cpp">
+      <Filter>servers\game_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\game_server\src\msg_lobby_handle.cpp">
+      <Filter>servers\game_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\game_server\src\robot.cpp">
+      <Filter>servers\game_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\game_server\src\robot_mgr.cpp">
+      <Filter>servers\game_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\lobby_server\src\async_dbcallback.cpp">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\lobby_server\src\exception.cpp">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\lobby_server\src\game_net_mgr.cpp">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\lobby_server\src\game_server.cpp">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\lobby_server\src\gobal_event_mgr.cpp">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\lobby_server\src\gobal_robot_mgr.cpp">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\lobby_server\src\lobby_server_config.cpp">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\lobby_server\src\mission_mgr.cpp">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\lobby_server\src\msg_client_handle.cpp">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\lobby_server\src\msg_php_handle.cpp">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\lobby_server\src\msg_server_handle.cpp">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\lobby_server\src\player.cpp">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\lobby_server\src\robot.cpp">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\lobby_server\src\server_mgr.cpp">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\zajinhua_server\src\game_imple_table.cpp">
+      <Filter>servers\zajinhua_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\zajinhua_server\src\game_server.cpp">
+      <Filter>servers\zajinhua_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\zajinhua_server\src\msg_imple_handle.cpp">
+      <Filter>servers\zajinhua_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\texas_server\src\game_imple_table.cpp">
+      <Filter>servers\texas_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\texas_server\src\game_server.cpp">
+      <Filter>servers\texas_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\texas_server\src\msg_imple_handle.cpp">
+      <Filter>servers\texas_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\showhand_server\src\game_imple_table.cpp">
+      <Filter>servers\showhand_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\showhand_server\src\game_server.cpp">
+      <Filter>servers\showhand_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\showhand_server\src\msg_imple_handle.cpp">
+      <Filter>servers\showhand_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\sangong_server\src\game_imple_table.cpp">
+      <Filter>servers\sangong_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\sangong_server\src\game_server.cpp">
+      <Filter>servers\sangong_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\sangong_server\src\msg_imple_handle.cpp">
+      <Filter>servers\sangong_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\paijiu_server\src\game_imple_table.cpp">
+      <Filter>servers\paijiu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\paijiu_server\src\game_server.cpp">
+      <Filter>servers\paijiu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\paijiu_server\src\msg_imple_handle.cpp">
+      <Filter>servers\paijiu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\niuniu_server\src\game_imple_table.cpp">
+      <Filter>servers\niuniu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\niuniu_server\src\game_server.cpp">
+      <Filter>servers\niuniu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\niuniu_server\src\msg_imple_handle.cpp">
+      <Filter>servers\niuniu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\server_frame\include\network\base.cpp">
+      <Filter>server_frame\include\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\server_frame\include\network\cache.cpp">
+      <Filter>server_frame\include\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\server_frame\include\network\CCnet.cpp">
+      <Filter>server_frame\include\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\server_frame\include\network\CCReactor.cpp">
+      <Filter>server_frame\include\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\server_frame\include\network\CCSocketHandler.cpp">
+      <Filter>server_frame\include\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\server_frame\include\network\CCSocketServer.cpp">
+      <Filter>server_frame\include\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\server_frame\include\network\CCTcpHandler.cpp">
+      <Filter>server_frame\include\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\server_frame\include\network\heap_timer.cpp">
+      <Filter>server_frame\include\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\server_frame\include\network\idxobj.cpp">
+      <Filter>server_frame\include\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\server_frame\include\network\memcheck.cpp">
+      <Filter>server_frame\include\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\server_frame\include\network\mempool.cpp">
+      <Filter>server_frame\include\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\server_frame\include\network\poller.cpp">
+      <Filter>server_frame\include\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\server_frame\include\network\protobuf_pkg.cpp">
+      <Filter>server_frame\include\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\everycolor_server\src\game_imple_table.cpp">
+      <Filter>servers\everycolor_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\everycolor_server\src\game_server.cpp">
+      <Filter>servers\everycolor_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\everycolor_server\src\msg_imple_handle.cpp">
+      <Filter>servers\everycolor_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\everycolor_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\majiang_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\majiang_server\src\game_imple_table.cpp">
+      <Filter>servers\majiang_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\majiang_server\src\game_server.cpp">
+      <Filter>servers\majiang_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\majiang_server\src\majiang_config.cpp">
+      <Filter>servers\majiang_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\majiang_server\src\majiang_logic.cpp">
+      <Filter>servers\majiang_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\majiang_server\src\msg_imple_handle.cpp">
+      <Filter>servers\majiang_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\dice_server\src\dice_logic.cpp">
+      <Filter>servers\dice_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\zajinhua_server\src\zajinhua_logic.cpp">
+      <Filter>servers\zajinhua_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\slot_server\src\game_imple_table.cpp">
+      <Filter>servers\slot_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\slot_server\src\game_server.cpp">
+      <Filter>servers\slot_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\slot_server\src\msg_imple_handle.cpp">
+      <Filter>servers\slot_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\slot_server\src\slot_logic.cpp">
+      <Filter>servers\slot_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\showhand_server\src\show_hand_logic.cpp">
+      <Filter>servers\showhand_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\texas_server\src\texas_logic.cpp">
+      <Filter>servers\texas_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\war_server\src\game_imple_table.cpp">
+      <Filter>servers\war_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\war_server\src\game_server.cpp">
+      <Filter>servers\war_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\war_server\src\msg_imple_handle.cpp">
+      <Filter>servers\war_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\war_server\src\war_logic.cpp">
+      <Filter>servers\war_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\bainiu_server\src\robot_oper_mgr.cpp">
+      <Filter>servers\bainiu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\baccarat_server\src\robot_oper_mgr.cpp">
+      <Filter>servers\baccarat_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\paijiu_server\src\robot_oper_mgr.cpp">
+      <Filter>servers\paijiu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\war_server\src\robot_oper_mgr.cpp">
+      <Filter>servers\war_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\land_robot_server\src\game_imple_table.cpp">
+      <Filter>servers\land_robot_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\land_robot_server\src\game_server.cpp">
+      <Filter>servers\land_robot_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\land_robot_server\src\land_logic.cpp">
+      <Filter>servers\land_robot_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\land_robot_server\src\msg_imple_handle.cpp">
+      <Filter>servers\land_robot_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\land_robot_ai_ex\src\AIUtils.cpp">
+      <Filter>servers\land_robot_ai_ex\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\land_robot_ai_ex\src\LordRobotAi.cpp">
+      <Filter>servers\land_robot_ai_ex\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\land_robot_ai_ex\src\OGLordRbtAIClv.cpp">
+      <Filter>servers\land_robot_ai_ex\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\land_robot_ai_ex\src\OGLordRobot.cpp">
+      <Filter>servers\land_robot_ai_ex\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\land_robot_ai_ex\src\OGLordRobotAI.cpp">
+      <Filter>servers\land_robot_ai_ex\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\land_robot_ai_ex\src\CardsEvaluating.cpp">
+      <Filter>servers\land_robot_ai_ex\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\fight_server\src\fight_logic.cpp">
+      <Filter>servers\fight_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\fight_server\src\game_imple_table.cpp">
+      <Filter>servers\fight_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\fight_server\src\game_server.cpp">
+      <Filter>servers\fight_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\fight_server\src\msg_imple_handle.cpp">
+      <Filter>servers\fight_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\fight_server\src\robot_oper_mgr.cpp">
+      <Filter>servers\fight_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\config\config.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\config\csvreader.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\config\xmlcfgreader.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\aes.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\base64.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\blowFish.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\crypt.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\encrypt.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\hmac_sha1.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\mars.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\md5.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\serpent.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\crypt\urlEncode.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\db_task.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\db_wrap.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\dbmysql.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\dbmysql_exception.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\dbmysql_result.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\dbmysql_statement.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\dbmysql_transaction.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\hiredisop.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\dbmysql\test_client.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\framework\framework.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\framework\frameworkmain.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\fundamental\bloomfilter.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\fundamental\linkcache.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\hash\md4emule.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\hash\md5.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\hash\sha1.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\helper\bufferStream.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\helper\filehelper.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\helper\fileStream.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\helper\helper.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\helper\streamBase.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\helper\stringStream.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\math\mathFunctions.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\math\rand_table.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\tinyxml\tinystr.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\tinyxml\tinyxml.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\tinyxml\tinyxmlerror.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\tinyxml\tinyxmlparser.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\basicFunctions.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\cooling.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\curl_wrap.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\encode_utility.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\ipcutility.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\profile_manager.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\stringFunctions.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\stringutility.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\stw_timer.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\thread.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\timeFunction.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\timer_mgr.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\frame\server_frame\src\utility\timeutility.cpp">
+      <Filter>frame\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\robniu_server\src\game_imple_table.cpp">
+      <Filter>servers\robniu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\robniu_server\src\game_server.cpp">
+      <Filter>servers\robniu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\robniu_server\src\msg_imple_handle.cpp">
+      <Filter>servers\robniu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\robniu_server\src\robniu_logic.cpp">
+      <Filter>servers\robniu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\robniu_server\src\robot_oper_mgr.cpp">
+      <Filter>servers\robniu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\niuniu_server\src\robot_oper_mgr.cpp">
+      <Filter>servers\niuniu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\niuniu_server\src\niuniu_logic.cpp">
+      <Filter>servers\niuniu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\game_server\src\active_welfare_mgr.cpp">
+      <Filter>servers\game_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\game_server\src\GameCommonLogic.cpp">
+      <Filter>servers\game_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\paijiu_server\src\paijiu_logic.cpp">
+      <Filter>servers\paijiu_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\fishing_server\src\game_imple_table.cpp">
+      <Filter>servers\fishing_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\fishing_server\src\game_server.cpp">
+      <Filter>servers\fishing_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\fishing_server\src\msg_imple_handle.cpp">
+      <Filter>servers\fishing_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\game_server\src\fish_info_mgr.cpp">
+      <Filter>servers\game_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\game_server\src\new_register_welfare_mgr.cpp">
+      <Filter>servers\game_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\fight_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\fishing_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\robniu_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\slot_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\common\src\pb\war_logic_msg.pb.cc">
+      <Filter>servers\common\src\pb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\twoeight_server\src\game_imple_table.cpp">
+      <Filter>servers\twoeight_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\twoeight_server\src\game_server.cpp">
+      <Filter>servers\twoeight_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\twoeight_server\src\msg_imple_handle.cpp">
+      <Filter>servers\twoeight_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\twoeight_server\src\robot_oper_mgr.cpp">
+      <Filter>servers\twoeight_server\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\servers\twoeight_server\src\twoeight_logic.cpp">
+      <Filter>servers\twoeight_server\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\servers\baccarat_server\src\game_imple_table.h">
+      <Filter>servers\baccarat_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\baccarat_server\src\msg_imple_handle.h">
+      <Filter>servers\baccarat_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\bainiu_server\src\game_imple_table.h">
+      <Filter>servers\bainiu_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\bainiu_server\src\msg_imple_handle.h">
+      <Filter>servers\bainiu_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\center_log.h">
+      <Filter>servers\common\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\common_logic.h">
+      <Filter>servers\common\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\data_cfg_mgr.h">
+      <Filter>servers\common\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\db_operator.h">
+      <Filter>servers\common\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\db_struct_define.h">
+      <Filter>servers\common\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\dbmysql_mgr.h">
+      <Filter>servers\common\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\game_define.h">
+      <Filter>servers\common\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\player_base.h">
+      <Filter>servers\common\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\player_mgr.h">
+      <Filter>servers\common\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\redis_mgr.h">
+      <Filter>servers\common\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\poker\baccarat_logic.h">
+      <Filter>servers\common\src\poker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\poker\niuniu_logic.h">
+      <Filter>servers\common\src\poker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\poker\paijiu_logic.h">
+      <Filter>servers\common\src\poker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\poker\poker_logic.h">
+      <Filter>servers\common\src\poker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\poker\sangong_logic.h">
+      <Filter>servers\common\src\poker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\baccarat_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\bainiu_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\base_msg_struct.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\client_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\dice_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\error_code.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\land_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\msg_define.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\niuniu_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\paijiu_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\sangong_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\servers_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\showhand_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\texas_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\zajinhua_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\dice_server\src\game_imple_table.h">
+      <Filter>servers\dice_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\dice_server\src\msg_imple_handle.h">
+      <Filter>servers\dice_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\game_server\src\async_dbcallback.h">
+      <Filter>servers\game_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\game_server\src\game_net_mgr.h">
+      <Filter>servers\game_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\game_server\src\game_player.h">
+      <Filter>servers\game_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\game_server\src\game_room.h">
+      <Filter>servers\game_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\game_server\src\game_room_mgr.h">
+      <Filter>servers\game_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\game_server\src\game_server_config.h">
+      <Filter>servers\game_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\game_server\src\game_table.h">
+      <Filter>servers\game_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\game_server\src\gobal_event_mgr.h">
+      <Filter>servers\game_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\game_server\src\lobby_mgr.h">
+      <Filter>servers\game_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\game_server\src\msg_lobby_handle.h">
+      <Filter>servers\game_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\game_server\src\robot.h">
+      <Filter>servers\game_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\game_server\src\robot_mgr.h">
+      <Filter>servers\game_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\game_server\src\stdafx.h">
+      <Filter>servers\game_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\lobby_server\src\async_dbcallback.h">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\lobby_server\src\game_net_mgr.h">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\lobby_server\src\gobal_event_mgr.h">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\lobby_server\src\gobal_robot_mgr.h">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\lobby_server\src\lobby_server_config.h">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\lobby_server\src\mission_mgr.h">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\lobby_server\src\msg_client_handle.h">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\lobby_server\src\msg_php_handle.h">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\lobby_server\src\msg_server_handle.h">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\lobby_server\src\player.h">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\lobby_server\src\robot.h">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\lobby_server\src\server_mgr.h">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\lobby_server\src\stdafx.h">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\zajinhua_server\src\game_imple_table.h">
+      <Filter>servers\zajinhua_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\zajinhua_server\src\msg_imple_handle.h">
+      <Filter>servers\zajinhua_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\texas_server\src\game_imple_table.h">
+      <Filter>servers\texas_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\texas_server\src\msg_imple_handle.h">
+      <Filter>servers\texas_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\showhand_server\src\game_imple_table.h">
+      <Filter>servers\showhand_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\showhand_server\src\msg_imple_handle.h">
+      <Filter>servers\showhand_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\sangong_server\src\game_imple_table.h">
+      <Filter>servers\sangong_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\sangong_server\src\msg_imple_handle.h">
+      <Filter>servers\sangong_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\paijiu_server\src\game_imple_table.h">
+      <Filter>servers\paijiu_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\paijiu_server\src\msg_imple_handle.h">
+      <Filter>servers\paijiu_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\niuniu_server\src\game_imple_table.h">
+      <Filter>servers\niuniu_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\niuniu_server\src\msg_imple_handle.h">
+      <Filter>servers\niuniu_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\config\config.h">
+      <Filter>server_frame\include\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\config\csvreader.h">
+      <Filter>server_frame\include\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\config\xmlcfgreader.h">
+      <Filter>server_frame\include\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\crypt\aes.h">
+      <Filter>server_frame\include\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\crypt\base64.h">
+      <Filter>server_frame\include\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\crypt\blowfish.h">
+      <Filter>server_frame\include\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\crypt\crypt.h">
+      <Filter>server_frame\include\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\crypt\encrypt.h">
+      <Filter>server_frame\include\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\crypt\hmac_sha1.h">
+      <Filter>server_frame\include\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\crypt\mars.h">
+      <Filter>server_frame\include\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\crypt\md5.h">
+      <Filter>server_frame\include\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\crypt\serpent.h">
+      <Filter>server_frame\include\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\crypt\urlEncode.h">
+      <Filter>server_frame\include\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\crypt\xor256.h">
+      <Filter>server_frame\include\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\dbmysql\db_task.h">
+      <Filter>server_frame\include\dbmysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\dbmysql\db_wrap.h">
+      <Filter>server_frame\include\dbmysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\dbmysql\dbmysql.h">
+      <Filter>server_frame\include\dbmysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\dbmysql\hiredis.h">
+      <Filter>server_frame\include\dbmysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\dbmysql\hiredisop.h">
+      <Filter>server_frame\include\dbmysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\dbmysql\sql_join.h">
+      <Filter>server_frame\include\dbmysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\framework\application.h">
+      <Filter>server_frame\include\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\framework\cmdline.h">
+      <Filter>server_frame\include\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\framework\logger.h">
+      <Filter>server_frame\include\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\fundamental\bloomfilter.h">
+      <Filter>server_frame\include\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\fundamental\common.h">
+      <Filter>server_frame\include\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\fundamental\cyclebuffer.h">
+      <Filter>server_frame\include\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\fundamental\cyclebuffer_shm.h">
+      <Filter>server_frame\include\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\fundamental\hashtable.h">
+      <Filter>server_frame\include\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\fundamental\hashval.h">
+      <Filter>server_frame\include\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\fundamental\linkcache.h">
+      <Filter>server_frame\include\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\fundamental\multiprocesshashtable.h">
+      <Filter>server_frame\include\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\fundamental\noncopyable.h">
+      <Filter>server_frame\include\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\fundamental\ring_buff.h">
+      <Filter>server_frame\include\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\fundamental\variablehashtable.h">
+      <Filter>server_frame\include\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\fundamental\variablelengthhashtable.h">
+      <Filter>server_frame\include\fundamental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\hash\md4emule.h">
+      <Filter>server_frame\include\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\hash\md5.h">
+      <Filter>server_frame\include\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\hash\sha1.h">
+      <Filter>server_frame\include\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\helper\bufferStream.h">
+      <Filter>server_frame\include\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\helper\filehelper.h">
+      <Filter>server_frame\include\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\helper\fileStream.h">
+      <Filter>server_frame\include\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\helper\helper.h">
+      <Filter>server_frame\include\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\helper\numberStream.h">
+      <Filter>server_frame\include\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\helper\streamBase.h">
+      <Filter>server_frame\include\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\helper\stringStream.h">
+      <Filter>server_frame\include\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\json\autolink.h">
+      <Filter>server_frame\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\json\config.h">
+      <Filter>server_frame\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\json\features.h">
+      <Filter>server_frame\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\json\forwards.h">
+      <Filter>server_frame\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\json\json.h">
+      <Filter>server_frame\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\json\reader.h">
+      <Filter>server_frame\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\json\value.h">
+      <Filter>server_frame\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\json\writer.h">
+      <Filter>server_frame\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\lapi.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\lauxlib.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\lcode.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\ldebug.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\ldo.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\lfunc.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\lgc.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\llex.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\llimits.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\lmem.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\lobject.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\lopcodes.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\lparser.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\lstate.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\lstring.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\ltable.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\ltm.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\lua.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\lua_tinker.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\luaconf.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\luaConsole.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\lualib.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\luaTinker.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\lundump.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\lvm.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\luatinker\lzio.h">
+      <Filter>server_frame\include\luatinker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\math\box2.h">
+      <Filter>server_frame\include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\math\mathFunctions.h">
+      <Filter>server_frame\include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\math\point2.h">
+      <Filter>server_frame\include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\math\point3.h">
+      <Filter>server_frame\include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\math\rand_table.h">
+      <Filter>server_frame\include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\math\rank.h">
+      <Filter>server_frame\include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\math\rect.h">
+      <Filter>server_frame\include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\basicFunctions.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\basicTypes.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\comm_macro.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\cooling.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\curl_wrap.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\encode_utility.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\ipcutility.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\likelydef.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\profile_manager.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\singleton.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\stl_hash_map.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\stringFunctions.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\stringutility.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\stw_timer.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\thread.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\timeFunction.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\timer_mgr.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\utility\timeutility.h">
+      <Filter>server_frame\include\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\tinyxml\tinystr.h">
+      <Filter>server_frame\include\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\tinyxml\tinyxml.h">
+      <Filter>server_frame\include\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\packet\istreampacket.h">
+      <Filter>server_frame\include\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\packet\ostreampacket.h">
+      <Filter>server_frame\include\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\packet\streampacket.h">
+      <Filter>server_frame\include\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\svrlib.h">
+      <Filter>server_frame\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\lobby_server\src\robot_city.h">
+      <Filter>servers\lobby_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\base.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\cache.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\CCInnerDecoder.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\CCnet.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\CCReactor.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\CCSocketHandler.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\CCSocketServer.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\CCStreamDecoder.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\CCTcpHandler.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\hashtab.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\heap.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\heap_timer.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\ICC_Decoder.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\ICC_TCP_Server.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\ICHAT_PacketBase.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\idxobj.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\list.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\memcheck.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\mempool.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\MsgDecoder.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\myepoll.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\Network.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\NetworkObject.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\poller.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\protobuf_pkg.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\protocol_base.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\server_frame\include\network\timerbase.h">
+      <Filter>server_frame\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\everycolor_server\src\game_imple_table.h">
+      <Filter>servers\everycolor_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\everycolor_server\src\msg_imple_handle.h">
+      <Filter>servers\everycolor_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\everycolor_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\majiang_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\majiang_server\src\game_imple_table.h">
+      <Filter>servers\majiang_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\majiang_server\src\majiang_config.h">
+      <Filter>servers\majiang_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\majiang_server\src\majiang_logic.h">
+      <Filter>servers\majiang_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\majiang_server\src\msg_imple_handle.h">
+      <Filter>servers\majiang_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\dice_server\src\dice_logic.h">
+      <Filter>servers\dice_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\zajinhua_server\src\zajinhua_logic.h">
+      <Filter>servers\zajinhua_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\slot_server\src\game_imple_table.h">
+      <Filter>servers\slot_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\slot_server\src\msg_imple_handle.h">
+      <Filter>servers\slot_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\slot_server\src\slot_logic.h">
+      <Filter>servers\slot_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\showhand_server\src\show_hand_logic.h">
+      <Filter>servers\showhand_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\texas_server\src\texas_logic.h">
+      <Filter>servers\texas_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\war_server\src\game_imple_table.h">
+      <Filter>servers\war_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\war_server\src\msg_imple_handle.h">
+      <Filter>servers\war_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\war_server\src\war_logic.h">
+      <Filter>servers\war_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\bainiu_server\src\robot_oper_mgr.h">
+      <Filter>servers\bainiu_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\baccarat_server\src\robot_oper_mgr.h">
+      <Filter>servers\baccarat_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\paijiu_server\src\robot_oper_mgr.h">
+      <Filter>servers\paijiu_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\war_server\src\robot_oper_mgr.h">
+      <Filter>servers\war_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\land_robot_server\src\game_imple_table.h">
+      <Filter>servers\land_robot_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\land_robot_server\src\land_logic.h">
+      <Filter>servers\land_robot_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\land_robot_server\src\msg_imple_handle.h">
+      <Filter>servers\land_robot_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\AIUtils.h">
+      <Filter>servers\land_robot_ai_ex\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\OGLordRbtAIClv.h">
+      <Filter>servers\land_robot_ai_ex\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\OGLordRbtAIClvDepd.h">
+      <Filter>servers\land_robot_ai_ex\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\OGLordRobot.h">
+      <Filter>servers\land_robot_ai_ex\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\OGLordRobotAI.h">
+      <Filter>servers\land_robot_ai_ex\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\Robot.h">
+      <Filter>servers\land_robot_ai_ex\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\ddz_interface.h">
+      <Filter>servers\land_robot_ai_ex\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\CardsEvaluating.h">
+      <Filter>servers\land_robot_ai_ex\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\land_robot_ai_ex\src\DDZ_BP_MeldGroup.h">
+      <Filter>servers\land_robot_ai_ex\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\fight_server\src\fight_logic.h">
+      <Filter>servers\fight_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\fight_server\src\game_imple_table.h">
+      <Filter>servers\fight_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\fight_server\src\msg_imple_handle.h">
+      <Filter>servers\fight_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\fight_server\src\robot_oper_mgr.h">
+      <Filter>servers\fight_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\frame\server_frame\src\framework\configchecker.h">
+      <Filter>frame\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\frame\server_frame\src\framework\framework.h">
+      <Filter>frame\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\frame\server_frame\src\fund\cache.h">
+      <Filter>frame\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\frame\server_frame\src\fund\convert.h">
+      <Filter>frame\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\frame\server_frame\src\fund\hashtable.h">
+      <Filter>frame\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\frame\server_frame\src\fund\lruvariablelengthhashtable.h">
+      <Filter>frame\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\frame\server_frame\src\fund\mylink.h">
+      <Filter>frame\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\frame\server_frame\src\fund\nodealloc.h">
+      <Filter>frame\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\frame\server_frame\src\fund\size.h">
+      <Filter>frame\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\frame\server_frame\src\fund\statemachine.h">
+      <Filter>frame\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\frame\server_frame\src\fundamental\randomgenerator.h">
+      <Filter>frame\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\frame\server_frame\src\hash\md5_loc.h">
+      <Filter>frame\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\robniu_server\src\game_imple_table.h">
+      <Filter>servers\robniu_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\robniu_server\src\msg_imple_handle.h">
+      <Filter>servers\robniu_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\robniu_server\src\robniu_logic.h">
+      <Filter>servers\robniu_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\robniu_server\src\robot_oper_mgr.h">
+      <Filter>servers\robniu_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\niuniu_server\src\robot_oper_mgr.h">
+      <Filter>servers\niuniu_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\niuniu_server\src\niuniu_logic.h">
+      <Filter>servers\niuniu_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\game_server\src\active_welfare_mgr.h">
+      <Filter>servers\game_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\game_server\src\GameCommonLogic.h">
+      <Filter>servers\game_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\paijiu_server\src\paijiu_logic.h">
+      <Filter>servers\paijiu_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\master_city.h">
+      <Filter>servers\common\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\fishing_server\src\game_imple_table.h">
+      <Filter>servers\fishing_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\fishing_server\src\msg_imple_handle.h">
+      <Filter>servers\fishing_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\game_server\src\fish_info_mgr.h">
+      <Filter>servers\game_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\game_server\src\new_register_welfare_mgr.h">
+      <Filter>servers\game_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\fight_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\fishing_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\robniu_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\slot_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\common\src\pb\war_logic_msg.pb.h">
+      <Filter>servers\common\src\pb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\twoeight_server\src\game_imple_table.h">
+      <Filter>servers\twoeight_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\twoeight_server\src\msg_imple_handle.h">
+      <Filter>servers\twoeight_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\twoeight_server\src\robot_oper_mgr.h">
+      <Filter>servers\twoeight_server\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\servers\twoeight_server\src\twoeight_logic.h">
+      <Filter>servers\twoeight_server\src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

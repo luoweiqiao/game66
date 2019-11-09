@@ -1,0 +1,222 @@
+
+package net;
+import "base_msg_struct.proto";
+import "error_code.proto";
+
+//-------------游戏消息---------------------------------------
+
+// 区域信息
+message dice_area_info
+{
+	optional uint32 	jetton_area				= 1;	// 下注区域
+	optional uint32 	jetton_multiple			= 2;	// 下注赔率
+	optional int64 		jetton_score			= 3;	// 下注分数
+	optional int64	 	final_score				= 4;	// 最终分数
+}
+
+// 排行榜
+message dice_game_score_rank
+{
+	optional uint32 	uid						= 1;	// uid
+	optional bytes		nick_name				= 2;	// 昵称
+	optional bytes		city					= 3;	// 城市
+	optional int64		income_score			= 4;	// 收益
+}
+
+// 奖池信息请求
+message dice_jackpot_info_req
+{
+}
+
+// 奖池信息
+message dice_jackpot_info
+{
+	repeated uint32 	table_cards 			= 1;	// 桌面扑克
+	optional uint64		utime					= 2;	// 游戏时间
+	optional int64		win_total_score			= 3;	// 用户赢总成绩(不包括奖池)
+	optional int64		cur_jackpot_score		= 4;	// 当前奖池分数
+	repeated dice_game_score_rank score_rank	= 5;	// 上轮收益排行
+}
+
+
+// 游戏结束信息
+message dice_game_end_info
+{
+	repeated uint32 	table_cards 		= 1;	// 桌面扑克
+	repeated uint32 	hit_area	 		= 2;	// 中奖区域
+	optional uint32		big_small			= 3;	// 大小
+	optional uint32		sum_point			= 4;	// 总点数
+	optional int64		user_score			= 5;	// 自己输赢成绩
+	repeated int64		player_score		= 6;	// 座位输赢成绩
+	optional int64		jackpot_score		= 7;	// 奖池成绩
+	optional int64		total_score			= 8;	// 总成绩 = 奖池成绩+下注成绩
+	optional int64		self_cur_score		= 9;	// 自己当前分数
+	repeated int64		player_cur_score	= 10;	// 座位当前分数
+	repeated dice_area_info self_area_info  = 11;	// 自己的区域信息
+	repeated dice_area_info total_area_info = 12;	// 总的区域信息
+	optional dice_jackpot_info jackpot_info	= 13;	// 奖池信息
+}
+
+// 游戏状态
+message msg_dice_game_info_free_rep
+{
+	optional uint32 time_leave 				= 1; //剩余时间
+	optional uint32 game_status				= 2; //游戏状态
+	optional uint32 banker_id				= 3; //当前庄家
+	optional uint32 banker_time				= 4; //庄家局数
+	optional int64	banker_win_score		= 5; //庄家成绩
+	optional int64  banker_score			= 6; //庄家分数
+	optional int64  banker_buyin_score  	= 7; //庄家带入
+}
+
+message msg_dice_game_info_play_rep
+{
+	// 庄家信息
+	optional uint32 banker_id				= 1;	//当前庄家
+	optional uint32 banker_time				= 2;	//庄家局数
+	optional int64  banker_win_score		= 3;	//庄家赢分
+	optional int64  banker_score			= 4;	//庄家分数
+	optional int64  banker_buyin_score  	= 5;	//庄家带入
+	// 游戏信息
+	optional uint32 time_leave				= 6;	//剩余时间
+	optional uint32 game_status				= 7;	//游戏状态
+	// 游戏状态
+	repeated int64  all_jetton_score		= 8;	//全体总注
+	repeated int64  self_jetton_score		= 9;	//自己下注
+
+	optional dice_game_end_info	end_info	= 10;	//结束信息
+}
+// 游戏开始
+message msg_dice_start_rep
+{
+	optional uint32 banker_id			= 1;	//庄家id
+	optional int64  banker_score		= 2;	//庄家金币
+	optional uint32 time_leave			= 3;	//剩余时间	
+	optional int64  banker_buyin_score  = 4;	//庄家带入
+	
+}
+// 用户下注
+message msg_dice_place_jetton_req
+{
+	optional uint32 jetton_area  = 1; //下注区域
+	optional int64  jetton_score = 2; //加注数目	
+}
+message msg_dice_place_jetton_rep
+{
+	optional uint32 jetton_area  = 1; //下注区域
+	optional int64  jetton_score = 2; //加注数目
+	optional uint32 result		 = 3; //加注返回
+}
+message msg_dice_place_jetton_broadcast
+{
+	optional uint32 uid					= 1;	//用户位置
+	optional uint32 jetton_area			= 2;	//筹码区域
+	optional int64  jetton_score		= 3;	//加注数目		
+	optional int64  total_jetton_score  = 4;	//总下注	
+}
+
+// 用户取消下注
+message msg_dice_cancel_jetton_req
+{
+}
+
+message msg_dice_cancel_jetton_rep
+{
+	optional uint32 result		 = 1; //取消加注返回
+}
+
+message msg_dice_cancel_jetton_broadcast
+{
+	repeated int64  all_jetton_score		= 1;	//全体总注
+}
+
+// 游戏结束
+message msg_dice_game_end
+{
+	optional uint32 	time_leave			= 1;	// 剩余时间
+	optional uint32     banker_time			= 2;	// 做庄次数
+	optional int64		banker_win_score	= 3;	// 庄家成绩
+	optional int64		banker_total_score	= 4;	// 庄家成绩
+	optional dice_game_end_info	end_info	= 5;	//结束信息
+}
+// 申请庄家
+message msg_dice_apply_banker
+{
+	optional uint32 apply_oper		= 1;	// 1申请0取消申请	
+	optional int64	apply_score		= 2;	// 上庄带入筹码
+	optional uint32 auto_addscore   = 3;	// 自动补币
+}
+message msg_dice_apply_banker_rep
+{
+	optional uint32 apply_oper	= 1;
+	optional uint32 result		= 2;
+	optional int64  buyin_score = 3;	
+}
+// 切换庄家
+message msg_dice_change_banker
+{
+	optional uint32 banker_user 	= 1;
+	optional int64	banker_score	= 2;	
+}
+// 更新积分
+message msg_dice_change_user_score
+{
+	optional uint32		chair_id			= 1;	// 椅子号码
+	optional int64		score				= 2;	// 玩家积分
+}
+// 申请庄家列表
+message msg_dice_apply_list
+{
+	repeated uint32     player_ids			= 1;	// 申请庄家列表	
+	repeated int64		apply_score			= 2;	// 带入积分
+}
+// 插队
+message msg_dice_jump_apply_queue_req
+{
+	optional uint32 jump_pos = 1;	
+}
+message msg_dice_jump_apply_queue_rep
+{
+	optional uint32 result = 1;
+}
+//	庄家结算
+message msg_dice_banker_calc_rep
+{
+	optional uint32 banker_time = 1; // 坐庄局数
+	optional uint32 win_count	= 2; // 胜利局数
+	optional int64  buyin_score = 3; // 带入积分
+	optional int64  win_score	= 4; // 盈利积分
+	optional int64  win_max		= 5; // 最佳赢币
+	optional int64  win_min		= 6; // 最惨输币
+	
+}
+//  庄家补币
+message msg_dice_add_bankerscore_rep
+{
+	optional int64 buyin_score  = 1; // 补币金额
+	
+}
+
+//  游戏记录
+message dice_play_log
+{
+	optional uint32 big_small	  = 1;
+	optional uint32 sum_point	  = 2;
+	repeated uint32	cards		  = 3;
+	optional uint32 is_waidice	  = 4;
+}
+message msg_dice_play_log_rep
+{
+	repeated dice_play_log logs = 1;//游戏记录	
+}
+
+// 骰子控制
+message dice_control_req
+{
+	repeated uint32 	table_cards 			= 1;	// 桌面扑克
+}
+
+//-----------------游戏消息----------------------------------------------------------------
+
+
+

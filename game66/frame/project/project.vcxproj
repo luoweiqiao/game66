@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8A3A16B8-ED5B-4195-8FB2-8AD23696AB10}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>project</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="..\CMakeLists.txt" />
+    <Text Include="..\server_frame\build\CMakeLists.txt" />
+    <Text Include="..\server_frame\document\svrlib使用说明.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\cmake_config\common_path.cmake" />
+    <None Include="..\cmake_config\config.cmake" />
+    <None Include="..\cmake_config\config_lib.cmake" />
+    <None Include="..\cmake_config\macros.cmake" />
+    <None Include="..\rebuild_frame.sh" />
+    <None Include="..\server_frame\build\rebuild.sh" />
+    <None Include="..\server_frame\include\network\makefile" />
+    <None Include="..\server_frame\src\json\json_internalarray.inl" />
+    <None Include="..\server_frame\src\json\json_internalmap.inl" />
+    <None Include="..\server_frame\src\json\json_valueiterator.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\server_frame\include\config\config.h" />
+    <ClInclude Include="..\server_frame\include\config\csvreader.h" />
+    <ClInclude Include="..\server_frame\include\config\xmlcfgreader.h" />
+    <ClInclude Include="..\server_frame\include\crypt\aes.h" />
+    <ClInclude Include="..\server_frame\include\crypt\base64.h" />
+    <ClInclude Include="..\server_frame\include\crypt\blowfish.h" />
+    <ClInclude Include="..\server_frame\include\crypt\crypt.h" />
+    <ClInclude Include="..\server_frame\include\crypt\encrypt.h" />
+    <ClInclude Include="..\server_frame\include\crypt\hmac_sha1.h" />
+    <ClInclude Include="..\server_frame\include\crypt\mars.h" />
+    <ClInclude Include="..\server_frame\include\crypt\md5.h" />
+    <ClInclude Include="..\server_frame\include\crypt\serpent.h" />
+    <ClInclude Include="..\server_frame\include\crypt\urlEncode.h" />
+    <ClInclude Include="..\server_frame\include\crypt\xor256.h" />
+    <ClInclude Include="..\server_frame\include\dbmysql\dbmysql.h" />
+    <ClInclude Include="..\server_frame\include\dbmysql\db_task.h" />
+    <ClInclude Include="..\server_frame\include\dbmysql\db_wrap.h" />
+    <ClInclude Include="..\server_frame\include\dbmysql\hiredis.h" />
+    <ClInclude Include="..\server_frame\include\dbmysql\hiredisop.h" />
+    <ClInclude Include="..\server_frame\include\dbmysql\sql_join.h" />
+    <ClInclude Include="..\server_frame\include\framework\application.h" />
+    <ClInclude Include="..\server_frame\include\framework\cmdline.h" />
+    <ClInclude Include="..\server_frame\include\framework\logger.h" />
+    <ClInclude Include="..\server_frame\include\fundamental\bloomfilter.h" />
+    <ClInclude Include="..\server_frame\include\fundamental\common.h" />
+    <ClInclude Include="..\server_frame\include\fundamental\cyclebuffer.h" />
+    <ClInclude Include="..\server_frame\include\fundamental\cyclebuffer_shm.h" />
+    <ClInclude Include="..\server_frame\include\fundamental\hashtable.h" />
+    <ClInclude Include="..\server_frame\include\fundamental\hashval.h" />
+    <ClInclude Include="..\server_frame\include\fundamental\linkcache.h" />
+    <ClInclude Include="..\server_frame\include\fundamental\multiprocesshashtable.h" />
+    <ClInclude Include="..\server_frame\include\fundamental\noncopyable.h" />
+    <ClInclude Include="..\server_frame\include\fundamental\ring_buff.h" />
+    <ClInclude Include="..\server_frame\include\fundamental\variablehashtable.h" />
+    <ClInclude Include="..\server_frame\include\fundamental\variablelengthhashtable.h" />
+    <ClInclude Include="..\server_frame\include\hash\md4emule.h" />
+    <ClInclude Include="..\server_frame\include\hash\md5.h" />
+    <ClInclude Include="..\server_frame\include\hash\sha1.h" />
+    <ClInclude Include="..\server_frame\include\helper\bufferStream.h" />
+    <ClInclude Include="..\server_frame\include\helper\filehelper.h" />
+    <ClInclude Include="..\server_frame\include\helper\fileStream.h" />
+    <ClInclude Include="..\server_frame\include\helper\helper.h" />
+    <ClInclude Include="..\server_frame\include\helper\numberStream.h" />
+    <ClInclude Include="..\server_frame\include\helper\streamBase.h" />
+    <ClInclude Include="..\server_frame\include\helper\stringStream.h" />
+    <ClInclude Include="..\server_frame\include\json\autolink.h" />
+    <ClInclude Include="..\server_frame\include\json\config.h" />
+    <ClInclude Include="..\server_frame\include\json\features.h" />
+    <ClInclude Include="..\server_frame\include\json\forwards.h" />
+    <ClInclude Include="..\server_frame\include\json\json.h" />
+    <ClInclude Include="..\server_frame\include\json\reader.h" />
+    <ClInclude Include="..\server_frame\include\json\value.h" />
+    <ClInclude Include="..\server_frame\include\json\writer.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\lapi.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\lauxlib.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\lcode.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\ldebug.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\ldo.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\lfunc.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\lgc.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\llex.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\llimits.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\lmem.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\lobject.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\lopcodes.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\lparser.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\lstate.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\lstring.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\ltable.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\ltm.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\lua.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\luaconf.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\luaConsole.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\lualib.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\luaTinker.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\lua_tinker.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\lundump.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\lvm.h" />
+    <ClInclude Include="..\server_frame\include\luatinker\lzio.h" />
+    <ClInclude Include="..\server_frame\include\math\box2.h" />
+    <ClInclude Include="..\server_frame\include\math\mathFunctions.h" />
+    <ClInclude Include="..\server_frame\include\math\point2.h" />
+    <ClInclude Include="..\server_frame\include\math\point3.h" />
+    <ClInclude Include="..\server_frame\include\math\rand_table.h" />
+    <ClInclude Include="..\server_frame\include\math\rank.h" />
+    <ClInclude Include="..\server_frame\include\math\rect.h" />
+    <ClInclude Include="..\server_frame\include\network\base.h" />
+    <ClInclude Include="..\server_frame\include\network\cache.h" />
+    <ClInclude Include="..\server_frame\include\network\CCInnerDecoder.h" />
+    <ClInclude Include="..\server_frame\include\network\CCnet.h" />
+    <ClInclude Include="..\server_frame\include\network\CCReactor.h" />
+    <ClInclude Include="..\server_frame\include\network\CCSocketHandler.h" />
+    <ClInclude Include="..\server_frame\include\network\CCSocketServer.h" />
+    <ClInclude Include="..\server_frame\include\network\CCStreamDecoder.h" />
+    <ClInclude Include="..\server_frame\include\network\CCTcpHandler.h" />
+    <ClInclude Include="..\server_frame\include\network\hashtab.h" />
+    <ClInclude Include="..\server_frame\include\network\heap.h" />
+    <ClInclude Include="..\server_frame\include\network\heap_timer.h" />
+    <ClInclude Include="..\server_frame\include\network\ICC_Decoder.h" />
+    <ClInclude Include="..\server_frame\include\network\ICC_TCP_Server.h" />
+    <ClInclude Include="..\server_frame\include\network\ICHAT_PacketBase.h" />
+    <ClInclude Include="..\server_frame\include\network\idxobj.h" />
+    <ClInclude Include="..\server_frame\include\network\list.h" />
+    <ClInclude Include="..\server_frame\include\network\memcheck.h" />
+    <ClInclude Include="..\server_frame\include\network\mempool.h" />
+    <ClInclude Include="..\server_frame\include\network\MsgDecoder.h" />
+    <ClInclude Include="..\server_frame\include\network\myepoll.h" />
+    <ClInclude Include="..\server_frame\include\network\Network.h" />
+    <ClInclude Include="..\server_frame\include\network\NetworkObject.h" />
+    <ClInclude Include="..\server_frame\include\network\poller.h" />
+    <ClInclude Include="..\server_frame\include\network\protobuf_pkg.h" />
+    <ClInclude Include="..\server_frame\include\network\protocol_base.h" />
+    <ClInclude Include="..\server_frame\include\network\timerbase.h" />
+    <ClInclude Include="..\server_frame\include\packet\istreampacket.h" />
+    <ClInclude Include="..\server_frame\include\packet\ostreampacket.h" />
+    <ClInclude Include="..\server_frame\include\packet\streampacket.h" />
+    <ClInclude Include="..\server_frame\include\svrlib.h" />
+    <ClInclude Include="..\server_frame\include\tinyxml\tinystr.h" />
+    <ClInclude Include="..\server_frame\include\tinyxml\tinyxml.h" />
+    <ClInclude Include="..\server_frame\include\utility\basicFunctions.h" />
+    <ClInclude Include="..\server_frame\include\utility\basicTypes.h" />
+    <ClInclude Include="..\server_frame\include\utility\comm_macro.h" />
+    <ClInclude Include="..\server_frame\include\utility\cooling.h" />
+    <ClInclude Include="..\server_frame\include\utility\curl_wrap.h" />
+    <ClInclude Include="..\server_frame\include\utility\encode_utility.h" />
+    <ClInclude Include="..\server_frame\include\utility\ipcutility.h" />
+    <ClInclude Include="..\server_frame\include\utility\likelydef.h" />
+    <ClInclude Include="..\server_frame\include\utility\profile_manager.h" />
+    <ClInclude Include="..\server_frame\include\utility\singleton.h" />
+    <ClInclude Include="..\server_frame\include\utility\stl_hash_map.h" />
+    <ClInclude Include="..\server_frame\include\utility\stringFunctions.h" />
+    <ClInclude Include="..\server_frame\include\utility\stringutility.h" />
+    <ClInclude Include="..\server_frame\include\utility\stw_timer.h" />
+    <ClInclude Include="..\server_frame\include\utility\thread.h" />
+    <ClInclude Include="..\server_frame\include\utility\timeFunction.h" />
+    <ClInclude Include="..\server_frame\include\utility\timer_mgr.h" />
+    <ClInclude Include="..\server_frame\include\utility\timeutility.h" />
+    <ClInclude Include="..\server_frame\src\framework\configchecker.h" />
+    <ClInclude Include="..\server_frame\src\framework\framework.h" />
+    <ClInclude Include="..\server_frame\src\fundamental\randomgenerator.h" />
+    <ClInclude Include="..\server_frame\src\fund\cache.h" />
+    <ClInclude Include="..\server_frame\src\fund\convert.h" />
+    <ClInclude Include="..\server_frame\src\fund\hashtable.h" />
+    <ClInclude Include="..\server_frame\src\fund\lruvariablelengthhashtable.h" />
+    <ClInclude Include="..\server_frame\src\fund\mylink.h" />
+    <ClInclude Include="..\server_frame\src\fund\nodealloc.h" />
+    <ClInclude Include="..\server_frame\src\fund\size.h" />
+    <ClInclude Include="..\server_frame\src\fund\statemachine.h" />
+    <ClInclude Include="..\server_frame\src\hash\md5_loc.h" />
+    <ClInclude Include="..\server_frame\src\json\json_batchallocator.h" />
+    <ClInclude Include="..\server_frame\src\json\json_tool.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\server_frame\include\network\base.cpp" />
+    <ClCompile Include="..\server_frame\include\network\cache.cpp" />
+    <ClCompile Include="..\server_frame\include\network\CCnet.cpp" />
+    <ClCompile Include="..\server_frame\include\network\CCReactor.cpp" />
+    <ClCompile Include="..\server_frame\include\network\CCSocketHandler.cpp" />
+    <ClCompile Include="..\server_frame\include\network\CCSocketServer.cpp" />
+    <ClCompile Include="..\server_frame\include\network\CCTcpHandler.cpp" />
+    <ClCompile Include="..\server_frame\include\network\heap_timer.cpp" />
+    <ClCompile Include="..\server_frame\include\network\idxobj.cpp" />
+    <ClCompile Include="..\server_frame\include\network\memcheck.cpp" />
+    <ClCompile Include="..\server_frame\include\network\mempool.cpp" />
+    <ClCompile Include="..\server_frame\include\network\poller.cpp" />
+    <ClCompile Include="..\server_frame\include\network\protobuf_pkg.cpp" />
+    <ClCompile Include="..\server_frame\src\config\config.cpp" />
+    <ClCompile Include="..\server_frame\src\config\csvreader.cpp" />
+    <ClCompile Include="..\server_frame\src\config\xmlcfgreader.cpp" />
+    <ClCompile Include="..\server_frame\src\crypt\aes.cpp" />
+    <ClCompile Include="..\server_frame\src\crypt\base64.cpp" />
+    <ClCompile Include="..\server_frame\src\crypt\blowFish.cpp" />
+    <ClCompile Include="..\server_frame\src\crypt\crypt.cpp" />
+    <ClCompile Include="..\server_frame\src\crypt\encrypt.cpp" />
+    <ClCompile Include="..\server_frame\src\crypt\hmac_sha1.cpp" />
+    <ClCompile Include="..\server_frame\src\crypt\mars.cpp" />
+    <ClCompile Include="..\server_frame\src\crypt\md5.cpp" />
+    <ClCompile Include="..\server_frame\src\crypt\serpent.cpp" />
+    <ClCompile Include="..\server_frame\src\crypt\urlEncode.cpp" />
+    <ClCompile Include="..\server_frame\src\dbmysql\dbmysql.cpp" />
+    <ClCompile Include="..\server_frame\src\dbmysql\dbmysql_exception.cpp" />
+    <ClCompile Include="..\server_frame\src\dbmysql\dbmysql_result.cpp" />
+    <ClCompile Include="..\server_frame\src\dbmysql\dbmysql_statement.cpp" />
+    <ClCompile Include="..\server_frame\src\dbmysql\dbmysql_transaction.cpp" />
+    <ClCompile Include="..\server_frame\src\dbmysql\db_task.cpp" />
+    <ClCompile Include="..\server_frame\src\dbmysql\db_wrap.cpp" />
+    <ClCompile Include="..\server_frame\src\dbmysql\hiredisop.cpp" />
+    <ClCompile Include="..\server_frame\src\dbmysql\test_client.cpp" />
+    <ClCompile Include="..\server_frame\src\framework\framework.cpp" />
+    <ClCompile Include="..\server_frame\src\framework\frameworkmain.cpp" />
+    <ClCompile Include="..\server_frame\src\fundamental\bloomfilter.cpp" />
+    <ClCompile Include="..\server_frame\src\fundamental\linkcache.cpp" />
+    <ClCompile Include="..\server_frame\src\hash\md4emule.cpp" />
+    <ClCompile Include="..\server_frame\src\hash\md5.cpp" />
+    <ClCompile Include="..\server_frame\src\hash\sha1.cpp" />
+    <ClCompile Include="..\server_frame\src\helper\bufferStream.cpp" />
+    <ClCompile Include="..\server_frame\src\helper\filehelper.cpp" />
+    <ClCompile Include="..\server_frame\src\helper\fileStream.cpp" />
+    <ClCompile Include="..\server_frame\src\helper\helper.cpp" />
+    <ClCompile Include="..\server_frame\src\helper\streamBase.cpp" />
+    <ClCompile Include="..\server_frame\src\helper\stringStream.cpp" />
+    <ClCompile Include="..\server_frame\src\json\json_reader.cpp" />
+    <ClCompile Include="..\server_frame\src\json\json_value.cpp" />
+    <ClCompile Include="..\server_frame\src\json\json_writer.cpp" />
+    <ClCompile Include="..\server_frame\src\luatinker\lapi.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\lauxlib.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\lbaselib.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\lcode.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\ldblib.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\ldebug.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\ldo.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\ldump.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\lfunc.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\lgc.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\linit.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\liolib.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\llex.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\lmathlib.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\lmem.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\loadlib.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\lobject.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\lopcodes.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\loslib.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\lparser.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\lstate.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\lstring.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\lstrlib.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\ltable.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\ltablib.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\ltm.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\luaConsole.cpp" />
+    <ClCompile Include="..\server_frame\src\luatinker\lua_tinker.cpp" />
+    <ClCompile Include="..\server_frame\src\luatinker\lundump.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\lvm.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\lzio.c" />
+    <ClCompile Include="..\server_frame\src\luatinker\print.c" />
+    <ClCompile Include="..\server_frame\src\math\mathFunctions.cpp" />
+    <ClCompile Include="..\server_frame\src\math\rand_table.cpp" />
+    <ClCompile Include="..\server_frame\src\tinyxml\tinystr.cpp" />
+    <ClCompile Include="..\server_frame\src\tinyxml\tinyxml.cpp" />
+    <ClCompile Include="..\server_frame\src\tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="..\server_frame\src\tinyxml\tinyxmlparser.cpp" />
+    <ClCompile Include="..\server_frame\src\utility\basicFunctions.cpp" />
+    <ClCompile Include="..\server_frame\src\utility\cooling.cpp" />
+    <ClCompile Include="..\server_frame\src\utility\curl_wrap.cpp" />
+    <ClCompile Include="..\server_frame\src\utility\encode_utility.cpp" />
+    <ClCompile Include="..\server_frame\src\utility\ipcutility.cpp" />
+    <ClCompile Include="..\server_frame\src\utility\profile_manager.cpp" />
+    <ClCompile Include="..\server_frame\src\utility\stringFunctions.cpp" />
+    <ClCompile Include="..\server_frame\src\utility\stringutility.cpp" />
+    <ClCompile Include="..\server_frame\src\utility\stw_timer.cpp" />
+    <ClCompile Include="..\server_frame\src\utility\thread.cpp" />
+    <ClCompile Include="..\server_frame\src\utility\timeFunction.cpp" />
+    <ClCompile Include="..\server_frame\src\utility\timer_mgr.cpp" />
+    <ClCompile Include="..\server_frame\src\utility\timeutility.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

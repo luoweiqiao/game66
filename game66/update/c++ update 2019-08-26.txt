@@ -1,0 +1,7 @@
+更新内容
+1、玩家领取登陆奖励导致服务端宕机bug修复。
+2、德州比较牌型导致服务端宕机bug修复。
+
+update file 120.24.54.6
+/disk/ablitte/server/release/texas_server/texasServer
+/disk/ablitte/server/release/lobby_server/lobbyServer

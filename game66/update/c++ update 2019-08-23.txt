@@ -1,0 +1,8 @@
+变更内容
+1、增加专享闪付服务端处理
+2、增加处理客户端聊天信息转发
+3、德州桌面上的牌由大到小排序改为随机排序
+
+update file 120.24.54.6
+/disk/ablitte/server/release/texas_server/texasServer
+/disk/ablitte/server/release/lobby_server/lobbyServer

@@ -1,0 +1,201 @@
+
+
+¿´ÅÆÇÀ×¯ÓÎÏ· 
+
+{"basescore":1000,"begintime":1547196510,"chessid":"16-4-1-1547196510","consume":2,"content":"{\"banker\":0,\"card\":[{\"c\":[7,59,26,60,20],\"cardtype\":2,\"p\":0,\"s\":0},{\"c\":[3,2,34,49,33],\"cardtype\":13,\"p\":1,\"s\":5},{\"c\":[50,51,35,1,17],\"cardtype\":13,\"p\":2,\"s\":5},{\"c\":[19,8,8,36,52],\"cardtype\":8,\"p\":3,\"s\":5},{\"c\":[55,10,61,27,56],\"cardtype\":6,\"p\":4,\"s\":5}],\"info\":[{\"ci\":0,\"rm\":4,\"wm\":0,\"ws\":-220000},{\"ci\":1,\"rm\":0,\"wm\":4,\"ws\":76000},{\"ci\":2,\"rm\":0,\"wm\":4,\"ws\":76000},{\"ci\":3,\"rm\":0,\"wm\":2,\"ws\":38000},{\"ci\":4,\"rm\":0,\"wm\":1,\"ws\":19000}]}\n","deal":1,"endtime":1547196539,"fee":-11000,"gid":16,"logtype":"gamelog","rid":4,"roomtype":0,"tid":1,"uids":[{"chair":0,"fee":0,"gamecount":11,"land":0,"newv":10824816,"oldv":11044816,"playerType":1,"safebox":0,"totalwinc":168000,"uid":18335,"welfare":0,"win":-220000},{"chair":1,"fee":-4000,"gamecount":4,"land":0,"newv":10666200,"oldv":10590200,"playerType":1,"safebox":0,"totalwinc":-84000,"uid":18337,"welfare":0,"win":76000},{"chair":2,"fee":-4000,"gamecount":2,"land":0,"newv":9121200,"oldv":9045200,"playerType":1,"safebox":0,"totalwinc":380000,"uid":18351,"welfare":0,"win":76000},{"chair":3,"fee":-2000,"gamecount":18,"land":0,"newv":8983458,"oldv":8945458,"playerType":1,"safebox":0,"totalwinc":-30525,"uid":18353,"welfare":0,"win":38000},{"chair":4,"fee":-1000,"gamecount":3,"land":0,"newv":2226600,"oldv":2207600,"playerType":1,"safebox":0,"totalwinc":-53400,"uid":18369,"welfare":0,"win":19000}],"welctrl":0,"welfare":1}
+
+
+
+{
+    "basescore":1000,
+    "begintime":1547196510,
+    "chessid":"16-4-1-1547196510",
+    "consume":2,
+    "content":"{"banker":0,"card":[{"c":[7,59,26,60,20],"cardtype":2,"p":0,"s":0},{"c":[3,2,34,49,33],"cardtype":13,"p":1,"s":5},{"c":[50,51,35,1,17],"cardtype":13,"p":2,"s":5},{"c":[19,8,8,36,52],"cardtype":8,"p":3,"s":5},{"c":[55,10,61,27,56],"cardtype":6,"p":4,"s":5}],"info":[{"ci":0,"rm":4,"wm":0,"ws":-220000},{"ci":1,"rm":0,"wm":4,"ws":76000},{"ci":2,"rm":0,"wm":4,"ws":76000},{"ci":3,"rm":0,"wm":2,"ws":38000},{"ci":4,"rm":0,"wm":1,"ws":19000}]}",
+    "deal":1,
+    "endtime":1547196539,
+    "fee":-11000,
+    "gid":16,
+    "logtype":"gamelog",
+    "rid":4,
+    "roomtype":0,
+    "tid":1,
+    "uids":[
+        {
+            "chair":0,
+            "fee":0,
+            "gamecount":11,
+            "land":0,
+            "newv":10824816,
+            "oldv":11044816,
+            "playerType":1,
+            "safebox":0,
+            "totalwinc":168000,
+            "uid":18335,
+            "welfare":0,
+            "win":-220000
+        },
+        {
+            "chair":1,
+            "fee":-4000,
+            "gamecount":4,
+            "land":0,
+            "newv":10666200,
+            "oldv":10590200,
+            "playerType":1,
+            "safebox":0,
+            "totalwinc":-84000,
+            "uid":18337,
+            "welfare":0,
+            "win":76000
+        },
+        {
+            "chair":2,
+            "fee":-4000,
+            "gamecount":2,
+            "land":0,
+            "newv":9121200,
+            "oldv":9045200,
+            "playerType":1,
+            "safebox":0,
+            "totalwinc":380000,
+            "uid":18351,
+            "welfare":0,
+            "win":76000
+        },
+        {
+            "chair":3,
+            "fee":-2000,
+            "gamecount":18,
+            "land":0,
+            "newv":8983458,
+            "oldv":8945458,
+            "playerType":1,
+            "safebox":0,
+            "totalwinc":-30525,
+            "uid":18353,
+            "welfare":0,
+            "win":38000
+        },
+        {
+            "chair":4,
+            "fee":-1000,
+            "gamecount":3,
+            "land":0,
+            "newv":2226600,
+            "oldv":2207600,
+            "playerType":1,
+            "safebox":0,
+            "totalwinc":-53400,
+            "uid":18369,
+            "welfare":0,
+            "win":19000
+        }
+    ],
+    "welctrl":0,
+    "welfare":1
+}
+
+
+
+{
+    "banker":0,
+    "card":[
+        {
+            "c":[
+                7,
+                59,
+                26,
+                60,
+                20
+            ],
+            "cardtype":2,
+            "p":0,
+            "s":0
+        },
+        {
+            "c":[
+                3,
+                2,
+                34,
+                49,
+                33
+            ],
+            "cardtype":13,
+            "p":1,
+            "s":5
+        },
+        {
+            "c":[
+                50,
+                51,
+                35,
+                1,
+                17
+            ],
+            "cardtype":13,
+            "p":2,
+            "s":5
+        },
+        {
+            "c":[
+                19,
+                8,
+                8,
+                36,
+                52
+            ],
+            "cardtype":8,
+            "p":3,
+            "s":5
+        },
+        {
+            "c":[
+                55,
+                10,
+                61,
+                27,
+                56
+            ],
+            "cardtype":6,
+            "p":4,
+            "s":5
+        }
+    ],
+    "info":[
+        {
+            "ci":0, // ÒÎ×ÓºÅ
+            "rm":4, // ÇÀ×¯±¶ÂÊ
+            "wm":0, // ÊäÓ®±¶ÂÊ
+            "ws":-220000 // ÊäÓ®·ÖÊý
+        },
+        {
+            "ci":1,
+            "rm":0,
+            "wm":4,
+            "ws":76000
+        },
+        {
+            "ci":2,
+            "rm":0,
+            "wm":4,
+            "ws":76000
+        },
+        {
+            "ci":3,
+            "rm":0,
+            "wm":2,
+            "ws":38000
+        },
+        {
+            "ci":4,
+            "rm":0,
+            "wm":1,
+            "ws":19000
+        }
+    ]
+}
+
+
+
+

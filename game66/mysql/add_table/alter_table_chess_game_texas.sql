@@ -1,0 +1,1 @@
+alter table chess.game_texas add column totalwinc bigint(20) DEFAULT 0 COMMENT 'ÀÛ¼ÆÊäÓ®³ïÂë';

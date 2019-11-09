@@ -1,0 +1,8 @@
+变更内容
+1、修改新手福利BUG，斗地主上报游戏数据时，没有设置游戏赢取次数，导致玩家再进入其它游戏时，赢取次数为0
+2、增加定额银联云闪付显示与关闭处理
+
+update file 120.24.54.6
+/disk/ablitte/server/release/land_server/landServer
+/disk/ablitte/server/release/lobby_server/lobbyServer
+

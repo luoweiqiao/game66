@@ -1,0 +1,191 @@
+
+package net;
+import "base_msg_struct.proto";
+import "error_code.proto";
+
+//-------------捕鱼游戏消息---------------------------------------
+
+// 游戏状态
+message msg_fishing_game_info_rep
+{
+		
+}
+
+message msg_fishing_game_info_rsp
+{
+	//状态信息
+	optional uint32 interval_time  	= 1;						//地图已经经过的时间
+	repeated uint32 fish_no   		= 2;						//当前地图生存的鱼ID列表	
+	optional uint32 map_id  		= 3;						//地图ID
+	optional uint32	bullet_id 		= 4; 						//子弹ID
+	repeated uint32 bot_list   		= 5;						//底分列表
+	repeated uint32 arm_range  		= 6;						//瞄准倍数列表
+}
+
+// 玩家击中目标请求
+message msg_fishing_hit_req
+{
+	optional uint32	seat_id 		= 1; 						//座位ID
+	optional uint32	bullet_id 		= 2; 						//子弹ID
+	optional uint32 bullet_bot		= 3;						//子弹底分
+	optional uint32 fish_no  		= 4;						//击中鱼的编号	
+	optional uint64 timestamp  		= 5;						//客户端时间戳
+}
+
+// 玩家击中目标返回---群发---鱼死才返回
+message msg_fishing_hit_rsp
+{
+	optional uint32	seat_id 		= 1; 						//座位ID
+	optional uint32	bullet_id 		= 2; 						//子弹ID
+	optional uint32 bullet_bot		= 3;						//子弹底分
+	optional uint32 fish_id			= 4;						//击中鱼的编号
+	optional uint32 fish_multi  	= 5;						//鱼死亡的倍数
+	optional uint32 score   		= 6;						//当前玩家成绩	
+}
+
+// 玩家击中目标返回---群发---无鱼/鱼已死的情况
+message msg_fishing_hit_no_fish_rsp
+{
+	optional uint32	seat_id 		= 1; 						//座位ID
+	optional uint32	bullet_id 		= 2; 						//子弹ID
+	optional uint32 bullet_bot		= 3;						//子弹底分
+	optional uint32 fish_id			= 4;						//击中鱼的编号	
+	optional uint64 timestamp  		= 5;						//客户端时间戳
+}
+
+// 玩家射击请求
+message msg_fishing_shooting_req
+{
+	optional uint32	seat_id 		= 1; 						//座位ID
+	optional uint32	bullet_id 		= 2; 						//子弹ID
+	optional int32 	bullet_direct	= 3;						//子弹方位	
+	optional uint32 bullet_bot		= 4;						//子弹底分
+	optional uint32 fish_no  		= 5;						//鱼的编号
+}
+
+// 玩家射击请求---群发
+message msg_fishing_notice_shooting
+{
+	optional uint32	seat_id 		= 1; 						//座位ID
+	optional uint32	bullet_id 		= 2; 						//子弹ID
+	optional int32 	bullet_direct	= 3;						//子弹方位	
+	optional uint32 bullet_bot		= 4;						//子弹底分
+	optional uint32 score   		= 5;						//当前玩家成绩
+	optional uint32 fish_no  		= 6;						//鱼的编号
+}
+
+// 玩家修改底分请求
+message msg_fishing_change_bot
+{
+	optional uint32	seat_id 		= 1; 						//座位ID
+	optional uint32 bot				= 2;						//底分
+}
+
+// 玩家修改底分---群发
+message msg_fishing_notice_change_bot
+{
+	optional uint32	seat_id 		= 1; 						//座位ID
+	optional uint32 bot				= 2;						//底分
+}
+
+// 系统切换地图---群发
+message msg_fishing_notice_change_map
+{
+	optional uint32	map_id 			= 1; 						//地图ID	
+}
+
+// 玩家使用道具请求
+message msg_fishing_use_prop
+{
+	optional uint32	seat_id 		= 1; 						//座位ID
+	optional uint32	prop_id			= 2; 						//道具ID
+	optional uint32	state			= 3; 						//状态	
+}
+
+// 玩家修改底分---群发
+message msg_fishing_notice_use_prop
+{
+	optional uint32	seat_id 		= 1; 						//座位ID
+	optional uint32 prop_id			= 2;						//道具ID
+	optional uint32	state			= 3; 						//状态
+}
+
+// 地图信息
+message msg_fishing_map_info_rep
+{
+		
+}
+
+message msg_fishing_map_info_rsp
+{
+	//状态信息
+	optional uint32 interval_time  	= 1;						//地图已经经过的时间	
+}
+
+// 玩家子弹跟踪请求
+message msg_fishing_bullet_trace_req
+{
+	optional uint32	seat_id 		= 1; 						//座位ID
+	optional uint32	fish_no			= 2; 						//鱼的编号	
+}
+
+// 玩家子弹跟踪请求---群发
+message msg_fishing_notice_bullet_trace
+{
+	optional uint32	seat_id 		= 1; 						//座位ID
+	optional uint32 fish_no			= 2;						//鱼的编号
+}
+
+// 玩家生成新子弹请求
+message msg_fishing_new_bullet_req
+{
+	optional uint32	seat_id 		= 1; 						//座位ID
+	optional uint32	bullet_id 		= 2; 						//子弹ID
+	optional int32 	bullet_direct	= 3;						//子弹方位	
+	optional uint32 bullet_bot		= 4;						//子弹底分
+	optional uint32 fish_no  		= 5;						//鱼的编号
+	optional int32 pos_x  			= 6;						//X坐标
+	optional int32 pos_y  			= 7;						//Y坐标
+}
+
+// 玩家生成新子弹请求---群发
+message msg_fishing_notice_new_bullet
+{
+	optional uint32	seat_id 		= 1; 						//座位ID
+	optional uint32	bullet_id 		= 2; 						//子弹ID
+	optional int32 	bullet_direct	= 3;						//子弹方位	
+	optional uint32 bullet_bot		= 4;						//子弹底分
+	optional uint32 fish_no  		= 5;						//鱼的编号
+	optional int32 pos_x  			= 6;						//X坐标
+	optional int32 pos_y  			= 7;						//Y坐标
+}
+
+//-----------------捕鱼游戏消息----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,757 @@
+
+package net;
+
+import "error_code.proto";
+import "base_msg_struct.proto";
+import "land_logic_msg.proto";
+import "showhand_logic_msg.proto";
+import "bainiu_logic_msg.proto";
+import "texas_logic_msg.proto";
+import "zajinhua_logic_msg.proto";
+import "client_logic_msg.proto";
+import "niuniu_logic_msg.proto";
+import "baccarat_logic_msg.proto";
+import "sangong_logic_msg.proto";
+import "paijiu_logic_msg.proto";
+import "everycolor_logic_msg.proto";
+import "dice_logic_msg.proto";
+import "majiang_logic_msg.proto";
+import "slot_logic_msg.proto";
+import "war_logic_msg.proto";
+import "fight_logic_msg.proto";
+import "robniu_logic_msg.proto";
+import "fishing_logic_msg.proto";
+import "twoeight_logic_msg.proto";
+import "carcity_logic_msg.proto";
+
+import "servers_msg.proto";
+
+
+// PHP消息ID
+enum  PHP_MSG_ID
+{
+	PHP_MSG_CHANGE_SAFEPWD									= 11; // 修改保险箱密码 	
+	PHP_MSG_BROADCAST										= 12; // 广播消息
+	PHP_MSG_SYS_NOTICE										= 13; // 系统公告
+	PHP_MSG_KILL_PLAYER										= 14; // 踢出玩家
+	PHP_MSG_CHANGE_ACCVALUE									= 15; // 修改玩家数值
+	PHP_MSG_SET_SVR_STATE									= 16; // 服务器状态
+	PHP_MSG_CHANGE_NAME										= 17; // 修改玩家名字
+	PHP_MSG_STOP_SERVICE									= 18; // 停服通知
+	PHP_MSG_CHANGE_ROBOT									= 19; // 更改机器人配置
+	PHP_MSG_CHANGE_VIP										= 20; // 更改VIP
+	PHP_MSG_CHANGE_ROOM_PARAM								= 21; // 更改房间 param
+	PHP_MSG_CONTROL_PLAYER									= 22; // 控制玩家
+	PHP_MSG_UPDATE_ACCVALUE_INGAME							= 23; // 游戏内修改玩家数值
+	PHP_MSG_STOP_SNATCH_COIN								= 24; // 停止夺宝
+	PHP_MSG_CHANGE_VIP_BROADCAST							= 25; // 修改vip广播配置
+	PHP_MSG_ROBOT_SNATCH_COIN								= 26; // 配置机器人数量夺宝
+	PHP_MSG_NOTIFY_VIP_PROXY_RECHARGE						= 27; // vip代理充值
+	PHP_MSG_CONTROL_MULTI_PLAYER							= 28; // 控制多玩家
+	PHP_MSG_CONTROL_DICE_GAME_CARD							= 29; // 控制骰宝游戏骰子
+	PHP_MSG_NOTIFY_UNION_PAY_RECHARGE						= 30; // 银联充值
+	PHP_MSG_NOTIFY_WECHAT_PAY_RECHARGE						= 31; // 微信充值
+	PHP_MSG_NOTIFY_ALI_PAY_RECHARGE							= 32; // 支付宝充值
+	PHP_MSG_NOTIFY_OTHER_PAY_RECHARGE						= 33; // 其他支付充值
+	PHP_MSG_NOTIFY_QQ_PAY_RECHARGE							= 34; // QQ充值
+	PHP_MSG_NOTIFY_WECHAT_SCAN_PAY_RECHARGE					= 35; // 微信扫码充值
+	PHP_MSG_NOTIFY_JD_PAY_RECHARGE							= 36; // 京东支付充值
+	PHP_MSG_ONLINE_CONFIG_ROBOT								= 37; // 在线配置机器人
+	PHP_MSG_NOTIFY_APPLE_PAY_RECHARGE						= 38; // 苹果支付
+	PHP_MSG_CONFIG_MAJIANG_CARD								= 39; // 配置麻将牌
+	PHP_MSG_NOTIFY_LARGE_ALI_PAY_RECHARGE					= 40; // 大额支付宝
+	PHP_MSG_REFRESH_AUTO_KILL_CFG							= 41; // 刷新自动杀分配置
+	PHP_MSG_REFRESH_AUTO_KILL_USERS							= 42; // 刷新自动杀分玩家列表
+	PHP_MSG_NOTIFY_UPDATE_NEW_PLAYER_NOVICE_WELFARE_RIGHT	= 43; // 更新新用户福利权限
+	PHP_MSG_NOTIFY_UPDATE_NEW_PLAYER_NOVICE_WELFARE_VALUE	= 44; // 更新新用户福利数值
+	PHP_MSG_NOTIFY_SIGN_IN_UPDATE							= 45; // 签到更新
+    PHP_MSG_NOTIFY_ACTIVE_WELFARE_CFG_UPDATE				= 46; // 更新活跃福利配置
+    PHP_MSG_NOTIFY_ACTIVE_WELFARE_INFO_CLEAR				= 47; // 定时清除活跃福利数据
+	PHP_MSG_NOTIFY_NEW_REGISTER_WELFARE_CFG_UPDATE          = 48; // 更新新账号福利配置
+	PHP_MSG_CONFIG_CONTROL_USER								= 50; // 配置精准控制
+	PHP_MSG_CHANGE_ROOM_STOCK_CFG                           = 51; // 修改房间库存配置
+	PHP_MSG_NOTIFY_EXCLUSIVE_ALIPAY_RECHARGE				= 53; // 个人专属支付宝充值
+	PHP_MSG_CONFIG_LUCKY_INFO								= 54; // 配置幸运值
+	PHP_MSG_CONFIG_FISH_INFO								= 55; // 配置捕鱼
+	PHP_MSG_RESET_LUCK_CONFIG_INFO							= 56; // 重置幸运值---每天凌晨12点---所有玩家
+	PHP_MSG_NOTIFY_FIXED_ALIPAY_RECHARGE					= 57; // 定额支付宝充值
+	PHP_MSG_NOTIFY_FIXED_WECHAT_RECHARGE					= 58; // 定额微信充值
+	PHP_MSG_NOTIFY_FIXED_UNIONPAY_RECHARGE					= 59; // 定额银联云闪付充值
+	PHP_MSG_NOTIFY_EXCLUSIVE_FLASH_RECHARGE				    = 60; // 专享闪付充值
+}
+
+
+
+
+// 服务器消息ID
+enum  SERVER_MSG_ID
+{
+	S2L_MSG_REGISTER 	        		= 501;	// 注册服务器
+	L2S_MSG_REGISTER_REP				= 502;	// 注册返回
+	
+	S2L_MSG_REPORT						= 503;	// 服务器上报信息
+	S2L_MSG_LEAVE_SVR					= 504;	// 返回大厅	
+
+	L2S_MSG_NOTIFY_NET_STATE			= 505;	// 通知网络状态
+	L2S_MSG_ENTER_INTO_SVR				= 506;	// 进入游戏服务器
+	S2L_MSG_NOTIFY_CHANGE_ACCOUNT_DATA  = 507; 	// 修改游戏数值
+	L2S_MSG_NOTIFY_CHANGE_PLAYERINFO	= 508;	// 修改信息通知
+	L2S_MSG_NOTIFY_STOP_SERVICE			= 509;	// 通知停服
+	L2S_MSG_CHANGE_ROOM_PARAM			= 510;	// 改变房间param
+	L2S_MSG_CONTORL_PLAYER				= 511;	// 控制玩家
+	L2S_MSG_STOP_SNATCH_COIN			= 512;	// 停止夺宝
+	L2S_MSG_ROBOT_SNATCH_COIN			= 513;	// 机器人夺宝
+	L2S_MSG_CONTORL_MULTI_PLAYER		= 514;	// 控制玩家
+	L2S_MSG_DICE_CONTROL_REQ			= 515;	// 骰子控制
+	L2S_MSG_UPDATE_SERVER_ROOM_ROBOT	= 516;	// 更新机器人配置
+	L2S_MSG_MAJIANG_CONFIG_HAND_CARD    = 517;	// 配置麻将手牌
+	L2S_MSG_RELOAD_ROBOT_ONLINE_CFG  	= 518;	// 更新机器人配置
+	L2S_MSG_REFRESH_AUTO_KILL_CFG    	= 519;	// 刷新自动杀分配置
+	L2S_MSG_REFRESH_AUTO_KILL_USERS    	= 520;	// 刷新自动杀分玩家列表
+	L2S_MSG_UPDATE_NEW_PLAYER_NOVICE_WELFARE_RIGHT = 521;	// 更新新手福利权限
+	L2S_MSG_UPDATE_NEW_PLAYER_NOVICE_WELFARE_VALUE = 522;	// 更新新手福利数值
+    L2S_MSG_REFRESH_ACTIVE_WELFARE_CFG  = 523;	// 刷新活跃福利配置
+	L2S_MSG_RESET_ACTIVE_WELFARE_INFO   = 524;	// 重置玩家活跃福利信息
+	L2S_MSG_RESET_NEW_REGISTER_WELFARE_INFO   = 525;	// 重置新注册玩家福利信息
+
+	L2S_MSG_STOP_CONTROL_PLAYER			= 530;	// 由于配置信息发生改变 通知控制玩家返回大厅 
+	L2S_MSG_SYN_CTRL_USER_CFG			= 531;	// 同步配置
+	L2S_MSG_CHANGE_ROOM_STOCK_CFG       = 532;	// 通知游戏服修改房间库存配置
+	L2S_MSG_SYN_LUCKY_CFG				= 533;	// 同步幸运值配置
+	L2S_MSG_SYN_FISH_CFG				= 534;	// 同步捕鱼配置
+	L2S_MSG_RESET_LUCKY_CFG				= 535;	// 重置幸运值配置
+	
+	S2L_MSG_REPORT_GAME_RESULT			= 601;	// 上报斗地主游戏信息
+	S2L_MSG_REPORT_FEE_LOG				= 602;	// 上报抽水信息	
+	L2S_MSG_LEAVE_ROBOT					= 603;	// 机器人离开
+	L2S_MSG_FLUSH_CHANGE_ACC_DATA		= 604;	// 刷新数据
+	L2S_MSG_UPDATE_CHANGE_ACC_DATA		= 605;	// 更新数据
+	S2L_MSG_UPDATE_LOBBY_CHANGE_ACCOUNT_DATA  = 606; 	// 修改游戏数值
+	S2L_MSG_NOTIFY_UPDATE_LOBBY_CHANGE_ACCOUNT_DATA  = 607; 	// 修改游戏数值
+
+	L2S_MSG_ENTER_INTO_EVERY_COLOR_SVR	= 610;	// 进入时时彩游戏服务器
+	L2S_MSG_ENTER_INTO_LEAVE_COLOR_SVR	= 611;	// 离开时时彩游戏服务器
+	
+}
+
+// Dispatch服务器消息
+enum DISPATCH_MSG_ID
+{
+	LS2D_MSG_REGISTER                        = 701;  // (大厅&&游戏)服务器注册到dispatch
+	D2LS_MSG_REGISTER_REP                    = 702; // (大厅&&游戏)服务器注册返回
+
+	D2S_MSG_NOTIFY_GAMESVRS_NEW_LOBBY        = 703;  // 通知gameser连接的新的大厅服务器 
+	D2L_MSG_RETIRE_LOBBYSVR                  = 704;  // lobbysvr退休
+	D2S_MSG_RETIRE_GAMESVR                   = 705;  // gamesvr退休
+
+	LS2D_MSG_REPORT_ONLINES                  = 706;  // 上报在线数据
+	P2D_MSG_RETIRE_SERVER                    = 707;  // 退休服务器
+	P2D_MSG_SVRLIST                          = 708;  // 服务器信息列表 
+
+	L2D_MSG_BROADCAST_OTHER_LOBBY            = 709;  // 通过dispatch广播消息
+	D2L_MSG_BROADCAST                        = 710;  // 广播消息
+}
+
+// 客户端消息ID
+enum  CLIENT_MSG_ID
+{
+	C2S_MSG_HEART						= 1000;	// 心跳包
+	C2S_MSG_LOGIN 	        			= 1001;	// 登录
+	S2C_MSG_LOGIN_REP					= 1002;	// 登录返回
+
+	S2C_MSG_NOTIFY_LEAVE 				= 1009; // 通知离开游戏
+	S2C_MSG_ENTER_GAME					= 1010;	// 通知进入游戏
+	S2C_MSG_PLAYER_INFO					= 1011;	// 玩家信息
+	C2S_MSG_UPDATE_INFO_REQ				= 1012;	// 请求更新玩家信息
+	S2C_MSG_UPDATE_ACC_VALUE			= 1013;	// 更新玩家数值
+	S2C_MSG_UPDATA_LAND_INFO			= 1014; // 更新斗地主信息
+	S2C_MSG_UPDATA_BASE_VALUE			= 1015; // 更新基础数值	
+	S2C_MSG_UPDATA_GAME_INFO			= 1017; // 更新游戏数据
+	S2C_MSG_SEND_BASE_VALUE			= 1018; // 发送基础数值	
+
+	C2S_MSG_REQ_SVRS_INFO				= 1100;	// 请求服务器信息
+	S2C_MSG_SVRS_INFO					= 1101;	// 发送游戏服务器信息
+	
+	C2S_MSG_ENTER_SVR					= 1102;	// 进入游戏服务器
+	S2C_MSG_ENTER_SVR_REP				= 1103;	// 进入游戏服务器返回
+
+	C2S_MSG_LOGIN_SAFEBOX				= 1109; // 登录保险箱
+	S2C_MSG_LOGIN_SAFEBOX_REP			= 1110; // 登录保险箱返回
+	C2S_MSG_CHANGE_SAFEBOX_PWD  		= 1111; // 修改保险箱密码
+	S2C_MSG_CHANGE_SAFEBOX_PWD_REP 		= 1112;	// 修改保险箱密码返回
+	C2S_MSG_TAKE_SAFEBOX				= 1113;	// 保险箱存取操作
+	S2C_MSG_TAKE_SAFEBOX_REP			= 1114;	// 存取操作返回
+	C2S_MSG_GIVE_SAFEBOX				= 1115;	// 保险箱赠送
+	S2C_MSG_GIVE_SAFEBOX				= 1116;	// 赠送返回
+
+
+	S2C_MSG_PHP_BROADCAST				= 1240;	// PHP转发广播消息
+	S2C_MSG_SYSTEM_BROADCAST			= 1241; // 系统广播
+
+	// 任务
+	S2C_MSG_SEND_ALL_MISSION_REP 		= 1250;
+	S2C_MSG_SEND_MISSION_REP 			= 1251;		
+	C2S_MSG_GET_MISSION_PRIZE_REQ 		= 1252;
+	S2C_MSG_GET_MISSION_PRIZE_REP 		= 1253;
+
+	C2S_MSG_GET_LOGIN_REWARD_REQ		= 1260;// 连续领奖
+	S2C_MSG_GET_LOGIN_REWARD_REP		= 1261;
+
+	C2S_MSG_GET_BANKRUPT_HELP			= 1265;// 领取破产补助
+	S2C_MSG_GET_BANKRUPT_HELP_REP		= 1266;
+
+	C2S_MSG_EXCHANGE_SCORE_REQ			= 1270;// 兑换财富币积分
+	S2C_MSG_EXCHANGE_SCORE_REP			= 1271;// 兑换返回
+
+	// 喇叭
+	C2S_MSG_SPEAK_BROADCAST_REQ			= 1280;// 发送广播
+	S2C_MSG_SPEAK_BROADCAST_REP			= 1281;// 
+	C2S_MSG_GET_HISTORY_SPEAK			= 1282;// 获取历史广播
+	S2C_MSG_SEND_HISTORY_SPEAK			= 1283;
+	S2C_MSG_SPEAK_OPER_REP				= 1284;// 发送广播返回
+	// 刷新服务器信息
+	C2S_MSG_GET_SERVER_INFO				= 1285;// 获得服务器信息
+	S2C_MSG_SEND_SERVER_INFO			= 1286;	
+			
+	//控制玩家权限发生改变,通知玩家返回大厅
+	S2C_MSG_NOTICE_CONTROL_PLAYER_BACK_LOBBY = 1287;
+			
+//-----------------ID:1000为游戏服跟客户端通信ID---------------------	
+	C2S_MSG_REQ_ROOMS_INFO						= 2001;// 请求房间列表信息
+	S2C_MSG_ROOMS_INFO							= 2002;// 发送游戏房间列表
+	
+	C2S_MSG_BACK_LOBBY							= 2003;// 返回大厅
+	S2C_MSG_BACK_LOBBY_REP						= 2004;// 返回大厅反馈
+	
+	C2S_MSG_GOTO_SVR							= 2005;// 跳转服务器	
+	S2C_MSG_GOTO_SVR_REP						= 2006;// 跳转服务器返回
+
+	C2S_MSG_ENTER_NOVICE_WELFARE_ROOM			= 2010;// 进入有可能有新手福利的房间
+	C2S_MSG_ENTER_ROOM							= 2011;// 进入房间
+	S2C_MSG_ENTER_ROOM_REP						= 2012;// 进入房间返回
+	S2C_MSG_NOTIFY_LEAVE_ROOM					= 2013;// 通知离开房间
+	
+	C2S_MSG_REQ_TABLE_LIST						= 2014;// 请求桌子列表
+	S2C_MSG_TABLE_LIST							= 2015;// 桌子列表
+	C2S_MSG_REQ_CREATE_TABLE					= 2016;// 创建桌子
+	S2C_MSG_CREATE_TABLE_REP					= 2017;// 创建桌子返回
+	C2S_MSG_RENEW_TABLE_REQ						= 2018;// 私人房续费
+	S2C_MSG_RENEW_TABLE_REP						= 2019;// 续费返回
+	C2S_MSG_LEAVE_TABLE_REQ						= 2020;// 请求离开桌子
+	S2C_MSG_LEAVE_TABLE_REP						= 2021;// 离开桌子返回
+
+	C2S_MSG_ENTER_TABLE_REQ						= 2024;// 进入桌子
+	S2C_MSG_ENTER_TABLE							= 2025;// 进入桌子返回
+	S2C_MSG_TABLE_INFO							= 2026;// 桌子信息
+	S2C_MSG_SEATS_INFO							= 2027;// 座位信息
+
+	C2S_MSG_TABLE_READY							= 2028;// 桌子准备
+	S2C_MSG_TABLE_READY_REP						= 2029;// 桌子准备返回
+
+	C2S_MSG_TABLE_CHAT							= 2030;// 桌子聊天
+	S2C_MSG_TABLE_CHAT							= 2031;// 桌子聊天
+
+	C2S_MSG_TABLE_SET_AUTO						= 2032;// 桌子托管设置
+	S2C_MSG_TABLE_SET_AUTO						= 2033;// 桌子托管设置
+
+	C2S_MSG_MASTER_JOIN_TABLE					= 2036;// 超权用户进入桌子
+	S2C_MSG_MASTER_JOIN_TABLE_REP				= 2037;// 超权用户进入桌子
+
+	C2S_MSG_FAST_JOIN_BY_ROOM_ID				= 2039;// 快速开始
+	C2S_MSG_FAST_JOIN_ROOM						= 2040;// 快速开始
+	S2C_MSG_FAST_JOIN_ROOM_REP  				= 2041;// 快速开始
+	C2S_MSG_FAST_JOIN_TABLE						= 2042;// 快速换桌
+	S2C_MSG_FAST_JOIN_TABLE_REP					= 2043;// 快速换桌
+
+	C2S_MSG_QUERY_TABLE_LIST_REQ				= 2045;// 查看桌子
+	S2C_MSG_QUERY_TABLE_LIST_REP				= 2046;// 查看桌子返回
+	
+	S2C_MSG_NOTIFY_PLAYER_JOIN					= 2047;// 通知玩家进入
+	S2C_MSG_LOOKER_LIST_INFO					= 2048;// 旁观者列表
+	
+	C2S_MSG_SITDOWN_STANDUP						= 2049;// 坐下站起
+	S2C_MSG_SITDOWN_STANDUP						= 2050;// 坐下站起
+	
+	C2S_MSG_ITEMS_USER_REQ						= 2051;// 道具使用请求
+	S2C_MSG_ITEMS_USER_REP						= 2052;// 道具使用返回
+	S2C_MSG_INGAME_UPDATE_SCORE					= 2053;// 更新金币
+
+	S2C_MSG_NOTIFY_VIP_RECHARGE_SHOW			= 2054;// vip界面充值显示
+	C2S_MSG_NOTIFY_VIP_RECHARGE_REQ				= 2055;// vip界面充值信息请求
+
+	C2S_MSG_NOTIFY_UNION_PAY_RECHARGE_REQ		= 2056;// 银联充值请求
+	S2C_MSG_NOTIFY_UNION_PAY_RECHARGE_REP		= 2057;// 银联充值回复
+
+	C2S_MSG_NOTIFY_WECHAT_PAY_RECHARGE_REQ		= 2058;// 充值请求
+	S2C_MSG_NOTIFY_WECHAT_PAY_RECHARGE_REP		= 2059;// 充值回复
+
+	C2S_MSG_NOTIFY_ALI_PAY_RECHARGE_REQ			= 2060;// 充值请求
+	S2C_MSG_NOTIFY_ALI_PAY_RECHARGE_REP			= 2061;// 充值回复
+
+	C2S_MSG_NOTIFY_OTHER_PAY_RECHARGE_REQ		= 2062;// 充值请求
+	S2C_MSG_NOTIFY_OTHER_PAY_RECHARGE_REP		= 2063;// 充值回复
+
+	C2S_MSG_NOTIFY_QQ_PAY_RECHARGE_REQ			= 2064;// 充值请求
+	S2C_MSG_NOTIFY_QQ_PAY_RECHARGE_REP			= 2065;// 充值回复
+
+	C2S_MSG_NOTIFY_WECHAT_SCAN_PAY_RECHARGE_REQ	= 2066;// 充值请求
+	S2C_MSG_NOTIFY_WECHAT_SCAN_PAY_RECHARGE_REP	= 2067;// 充值回复
+
+	C2S_MSG_NOTIFY_JD_PAY_RECHARGE_REQ			= 2068;// 充值请求
+	S2C_MSG_NOTIFY_JD_PAY_RECHARGE_REP			= 2069;// 充值回复
+
+	C2S_MSG_NOTIFY_APPLE_PAY_RECHARGE_REQ		= 2070;// 充值请求
+	S2C_MSG_NOTIFY_APPLE_PAY_RECHARGE_REP		= 2071;// 充值回复
+
+	S2C_MSG_BAIREN_GAME_CONTINUOUS_PRESSURE_REP	= 2072;// 百人游戏续压
+
+	C2S_MSG_NOTIFY_LARGE_ALI_PAY_RECHARGE_REQ	= 2073;// 充值请求
+	S2C_MSG_NOTIFY_LARGE_ALI_PAY_RECHARGE_REP	= 2074;// 充值回复
+
+	C2S_MSG_NOTIFY_VIP_ALIACC_RECHARGE_REQ		= 2075;// 支付宝vip界面充值显示
+	S2C_MSG_NOTIFY_VIP_ALIACC_RECHARGE_REP		= 2076;// 支付宝vip界面充值信息请求
+
+	S2C_MSG_NOTIFY_EXCLUSIVE_ALIPAY_RECHARGE_SHOW     = 2077;// 个人专属支付宝界面充值信息显示
+	C2S_MSG_NOTIFY_EXCLUSIVE_ALIPAY_RECHARGE_SHOW_REQ = 2078;// 个人专属支付宝界面充值信息请求
+
+	C2S_MSG_NOTIFY_FIXED_ALIPAY_RECHARGE_SHOW_REQ = 2079;// 定额支付宝界面充值信息显示请求
+	S2C_MSG_NOTIFY_FIXED_ALIPAY_RECHARGE_SHOW_REP = 2080;// 定额支付宝界面充值信息显示响应
+
+	C2S_MSG_NOTIFY_FIXED_WECHAT_RECHARGE_SHOW_REQ = 2081;// 定额微信界面充值信息显示请求
+	S2C_MSG_NOTIFY_FIXED_WECHAT_RECHARGE_SHOW_REP = 2082;// 定额微信界面充值信息显示响应
+
+	C2S_MSG_NOTIFY_FIXED_UNIONPAY_RECHARGE_SHOW_REQ = 2083;// 定额银联云闪付界面充值信息显示请求
+	S2C_MSG_NOTIFY_FIXED_UNIONPAY_RECHARGE_SHOW_REP = 2084;// 定额银联云闪付界面充值信息显示响应
+
+	C2S_MSG_NOTIFY_EXCLUSIVE_FLASH_RECHARGE_SHOW_REQ = 2085;// 专享闪付界面充值信息显示请求
+	S2C_MSG_NOTIFY_EXCLUSIVE_FLASH_RECHARGE_SHOW_REP = 2086;// 专享闪付界面充值信息显示响应
+
+	C2S_MSG_FIRST_GAME_PLAY_LOG_REQ				= 2090;// 发送游戏记录（用户进入游戏记录）
+	S2C_MSG_FIRST_SEND_GAME_PLAY_LOG_REP		= 2091;// 发送游戏记录（用户进入游戏记录）
+	S2C_MSG_NEXTS_SEND_GAME_PLAY_LOG_REP		= 2092;// 发送游戏记录（游戏之后的记录）
+
+	C2S_MSG_CHAT_INFO_FORWARD_REQ = 2093; // 聊天信息转发请求
+	S2C_MSG_CHAT_INFO_FORWARD_REP = 2094; // 聊天信息转发响应
+
+//--------------百人场精准控制消息--------------------------------------
+	C2S_MSG_BRC_CONTROL_ENTER_TABLE_REQ				= 2100;		// 百人场控制账号进入桌子
+	S2C_MSG_BRC_CONTROL_ENTER_TABLE_REP				= 2101;		// 百人场控制账号进入桌子返回
+	
+	C2S_MSG_BRC_CONTROL_LEAVE_TABLE_REQ				= 2102;		// 百人场控制账号离开桌子
+	S2C_MSG_BRC_CONTROL_LEAVE_TABLE_REP				= 2103;		// 百人场控制账号离开桌子返回
+	
+	C2S_MSG_BRC_CONTROL_FORCE_LEAVE_BANKER_REQ		= 2104;		// 百人场控制账号强制玩家下庄(包括当庄玩家和申请上庄玩家)
+	S2C_MSG_BRC_CONTROL_FORCE_LEAVE_BANKER_REP		= 2105;		// 百人场控制账号强制玩家下庄返回,直接返回结果并且刷新申请上庄列表
+	
+	C2S_MSG_BRC_CONTROL_AREA_INFO_REQ				= 2106;		// 百人场控制账号控制区域信息
+	S2C_MSG_BRC_CONTROL_AREA_INFO_REP				= 2107;		// 百人场控制账号控制区域信息返回
+	
+	S2C_MSG_BRC_CONTROL_TOTAL_ROBOT_BET_INFO		= 2108;		// 百人场机器人的下注信息,各区域总数
+	S2C_MSG_BRC_CONTROL_TOTAL_PLAYER_BET_INFO		= 2109;		// 百人场玩家的下注信息,各区域总数
+	S2C_MSG_BRC_CONTROL_SINGLE_PLAYER_BET_INFO		= 2110;		// 百人场玩家的下注信息,各区域总数---单个玩家---下注就刷新
+	S2C_MSG_BRC_CONTROL_ALL_PLAYER_BET_INFO			= 2111;		// 百人场玩家的下注信息,各区域总数---所有玩家---玩家进出房间刷新
+	S2C_MSG_BRC_CONTROL_APPLE_BANKER_INFO			= 2112;		// 百人场申请上庄列表刷新
+	S2C_MSG_BRC_CONTROL_GAME_END_INFO				= 2113;		// 百人场结算后游戏结果
+	S2C_MSG_BRC_CONTROL_GAME_STATUS_INFO			= 2114;		// 百人场游戏状态信息
+	S2C_MSG_BRC_CONTROL_FLUSH_AREA_INFO				= 2115;		// 百人场控制账号刷新控制区域信息
+	
+//--------------斗地主游戏消息--------------------------------------
+	S2C_MSG_LAND_GAME_INFO						= 3101;// 游戏信息
+	S2C_MSG_LAND_START							= 3102;// 游戏开始
+	C2S_MSG_LAND_CALL_SCORE_REQ					= 3103;// 玩家叫分
+	S2C_MSG_LAND_CALL_SCORE						= 3104;// 玩家叫分
+	
+	C2S_MSG_LAND_REQ_HAND_CARD  				= 3105;// 请求手牌
+	S2C_MSG_LAND_HAND_CARD						= 3106;// 返回手牌
+
+	S2C_MSG_LAND_BANKER_INFO					= 3107;// 庄家信息
+	
+	C2S_MSG_LAND_OUT_CARD_REQ					= 3108;// 玩家出牌
+	S2C_MSG_LAND_OUT_CARD						= 3109;// 玩家出牌
+
+	C2S_MSG_LAND_PASS_CARD_REQ					= 3110;// 放弃出牌
+	S2C_MSG_LAND_PASS_CARD						= 3111;// 放弃出牌
+	S2C_MSG_LAND_GAME_OVER						= 3112;// 游戏结束
+
+	S2C_MSG_LAND_MARRY_PLAYER					= 3113;// 匹配用户
+	
+	C2S_MSG_LAND_REQ_HAND_CARD_2  				= 3114;// 请求手牌
+	S2C_MSG_LAND_HAND_CARD_2					= 3115;// 返回手牌
+
+//--------------梭哈游戏消息-----------------------------------------
+	S2C_MSG_SHOWHAND_GAME_INFO					= 3300;// 游戏信息
+	S2C_MSG_SHOWHAND_START						= 3301;// 游戏开始
+	C2S_MSG_SHOWHAND_ADDSCORE					= 3302;// 用户加注
+	S2C_MSG_SHOWHAND_ADDSCORE					= 3303;// 用户加注	
+	C2S_MSG_SHOWHAND_GIVE_UP					= 3304;// 用户放弃
+	S2C_MSG_SHOWHAND_GIVE_UP					= 3305;// 用户放弃
+	S2C_MSG_SHOWHAND_SEND_CARD					= 3306;// 发送扑克
+	S2C_MSG_SHOWHAND_GAME_END					= 3307;// 游戏结束
+
+//--------------百牛游戏消息-----------------------------------------
+	S2C_MSG_BAINIU_GAME_FREE_INFO				= 3400;// 游戏信息
+	S2C_MSG_BAINIU_GAME_PLAY_INFO				= 3401;// 游戏信息
+	S2C_MSG_BAINIU_START						= 3402;// 游戏开始
+	C2S_MSG_BAINIU_PLACE_JETTON					= 3403;// 用户加注 
+	S2C_MSG_BAINIU_PLACE_JETTON_REP				= 3404;// 用户加注返回
+	S2C_MSG_BAINIU_PLACE_JETTON_BROADCAST		= 3405;// 加注广播
+	S2C_MSG_BAINIU_GAME_END						= 3408;// 游戏结束
+	C2S_MSG_BAINIU_APPLY_BANKER					= 3409;// 申请庄家
+	S2C_MSG_BAINIU_APPLY_BANKER					= 3410;// 申请庄家返回
+	S2C_MSG_BAINIU_CHANGE_BANKER				= 3411;// 切换庄家
+	S2C_MSG_BAINIU_CHANGE_USER_SCORE			= 3412;// 更新积分
+	S2C_MSG_BAINIU_APPLY_LIST					= 3413;// 申请庄家列表
+	C2S_MSG_BAINIU_JUMP_APPLY_QUEUE				= 3414;// 坐庄插队
+	S2C_MSG_BAINIU_JUMP_APPLY_QUEUE				= 3415;// 插队回复
+	S2C_MSG_BAINIU_BANKER_CALC					= 3416;// 庄家结算
+	S2C_MSG_BAINIU_ADD_BANKER_SCORE				= 3417;// 庄家补币
+	S2C_MSG_BAINIU_PLAY_LOG						= 3418;// 游戏记录
+	C2S_MSG_BAINIU_CONTINUOUS_PRESSURE_REQ	    = 3419;// 继续下注
+	S2C_MSG_BAINIU_CONTINUOUS_PRESSURE_REP	    = 3420;// 继续下注
+
+//--------------德州游戏消息-------------------------------------------	
+	S2C_MSG_TEXAS_GAME_FREE_INFO				= 3500;// 游戏信息
+	S2C_MSG_TEXAS_GAME_PLAY_INFO				= 3501;// 游戏信息	
+	S2C_MSG_TEXAS_START							= 3502;// 游戏开始	
+	C2S_MSG_TEXAS_ADD_SCORE						= 3503;// 用户加注
+	S2C_MSG_TEXAS_ADD_SCORE						= 3504;// 用户加注
+	C2S_MSG_TEXAS_GIVEUP						= 3505;// 弃牌
+	S2C_MSG_TEXAS_GIVEUP						= 3506;// 弃牌
+	S2C_MSG_TEXAS_SEND_CARD						= 3507;// 发牌消息
+	S2C_MSG_TEXAS_GAME_END						= 3508;// 游戏结束
+	C2S_MSG_TEXAS_BUYIN							= 3509;// 带入
+	S2C_MSG_TEXAS_BUYIN							= 3510;// 带入
+	C2S_MSG_TEXAS_SHOW_CARD						= 3511;// 亮牌
+	S2C_MSG_TEXAS_SHOW_CARD						= 3512;
+	S2C_MSG_TEXAS_STANDUP_TABLE					= 3513;//离开桌子
+	C2S_MSG_TEXAS_BUYIN_NEXT				    = 3514;// 下一局补齐筹码
+	S2C_MSG_TEXAS_BUYIN_NEXT					= 3515;// 下一局补齐筹码
+	S2C_MSG_TEXAS_BUYIN_NEXT_SUC				= 3516;// 成功补齐筹码
+	S2C_MSG_TEXAS_BUYIN_WAIT				    = 3517;// 等待买入筹码
+	C2S_MSG_TEXAS_BUYIN_WAIT_STANDUP            = 3518;// 等待买入筹码的玩家站起
+	S2C_MSG_TEXAS_BUYIN_WAIT_STANDUP            = 3519;// 等待买入筹码的玩家站起
+	
+//--------------扎金花游戏消息-------------------------------------------		
+	S2C_MSG_ZAJINHUA_GAME_FREE_INFO				= 3600;// 游戏信息
+	S2C_MSG_ZAJINHUA_GAME_PLAY_INFO				= 3601;// 游戏信息	
+	S2C_MSG_ZAJINHUA_START						= 3602;// 游戏开始	
+	C2S_MSG_ZAJINHUA_ADD_SCORE					= 3603;// 用户加注
+	S2C_MSG_ZAJINHUA_ADD_SCORE					= 3604;// 用户加注
+	C2S_MSG_ZAJINHUA_GIVEUP						= 3605;// 弃牌
+	S2C_MSG_ZAJINHUA_GIVEUP						= 3606;// 弃牌
+	S2C_MSG_ZAJINHUA_COMPARE_CARD				= 3607;//比牌	
+	C2S_MSG_ZAJINHUA_COMPARE_CARD				= 3608;//
+	S2C_MSG_ZAJINHUA_LOOK_CARD					= 3609;//看牌
+	C2S_MSG_ZAJINHUA_LOOK_CARD					= 3610;//	
+	
+	S2C_MSG_ZAJINHUA_OPEN_CARD					= 3612;//开牌
+	C2S_MSG_ZAJINHUA_OPEN_CARD					= 3613;
+	
+	S2C_MSG_ZAJINHUA_GAME_END					= 3614;// 游戏结束
+	C2S_MSG_ZAJINHUA_SHOW_CARD					= 3615;// 亮牌
+	S2C_MSG_ZAJINHUA_SHOW_CARD					= 3616;
+
+//--------------牛牛游戏消息--------------------------------------------
+	//S2C_MSG_NIUNIU_GAME_FREE_INFO				= 3700;// 游戏信息
+	//S2C_MSG_NIUNIU_GAME_PLAY_INFO				= 3701;
+	//S2C_MSG_NIUNIU_START						= 3702;
+	//C2S_MSG_NIUNIU_APPLY_BANKER				= 3703;// 抢庄
+	//S2C_MSG_NIUNIU_APPLY_BANKER_REP			= 3704;
+	//S2C_MSG_NIUNIU_BANKER_RESULT				= 3705;
+	//C2S_MSG_NIUNIU_PLACE_JETTON_REQ			= 3706;// 下注
+	//S2C_MSG_NIUNIU_PLACE_JETTON_REP			= 3707;
+	//S2C_MSG_NIUNIU_PLACE_JETTON_BROADCAST		= 3708;
+	//S2C_MSG_NIUNIU_SENDCARD_REP				= 3709;// 发牌
+	//C2S_MSG_NIUNIU_CHANGE_CARD				= 3710;// 摆牌
+	//S2C_MSG_NIUNIU_CHANGE_CARD_REP			= 3711;// 白牌广播
+	//S2C_MSG_NIUNIU_GAME_END					= 3712;// 结算
+
+//--------------百家乐游戏消息-----------------------------------------
+	S2C_MSG_BACCARAT_GAME_FREE_INFO				= 3800;// 游戏信息
+	S2C_MSG_BACCARAT_GAME_PLAY_INFO				= 3801;// 游戏信息
+	S2C_MSG_BACCARAT_START						= 3802;// 游戏开始
+	C2S_MSG_BACCARAT_PLACE_JETTON				= 3803;// 用户加注 
+	S2C_MSG_BACCARAT_PLACE_JETTON_REP			= 3804;// 用户加注返回
+	S2C_MSG_BACCARAT_PLACE_JETTON_BROADCAST		= 3805;// 加注广播
+	S2C_MSG_BACCARAT_GAME_END					= 3808;// 游戏结束
+	C2S_MSG_BACCARAT_APPLY_BANKER				= 3809;// 申请庄家
+	S2C_MSG_BACCARAT_APPLY_BANKER				= 3810;// 申请庄家返回
+	S2C_MSG_BACCARAT_CHANGE_BANKER				= 3811;// 切换庄家
+	S2C_MSG_BACCARAT_CHANGE_USER_SCORE			= 3812;// 更新积分
+	S2C_MSG_BACCARAT_APPLY_LIST					= 3813;// 申请庄家列表
+	C2S_MSG_BACCARAT_JUMP_APPLY_QUEUE			= 3814;// 坐庄插队
+	S2C_MSG_BACCARAT_JUMP_APPLY_QUEUE			= 3815;// 插队回复
+	S2C_MSG_BACCARAT_BANKER_CALC				= 3816;// 庄家结算
+	S2C_MSG_BACCARAT_ADD_BANKER_SCORE			= 3817;// 庄家补币
+	S2C_MSG_BACCARAT_PLAY_LOG					= 3818;// 游戏记录
+	C2S_MSG_BACCARAT_CONTINUOUS_PRESSURE_REQ 	= 3819;// 继续下注
+	S2C_MSG_BACCARAT_CONTINUOUS_PRESSURE_REP	= 3820;// 继续下注
+
+//--------------三公游戏消息--------------------------------------------
+	S2C_MSG_SANGONG_GAME_FREE_INFO				= 3900;// 游戏信息
+	S2C_MSG_SANGONG_GAME_PLAY_INFO				= 3901;
+	S2C_MSG_SANGONG_START						= 3902;
+	C2S_MSG_SANGONG_APPLY_BANKER				= 3903;// 抢庄
+	S2C_MSG_SANGONG_APPLY_BANKER_REP			= 3904;
+	S2C_MSG_SANGONG_BANKER_RESULT				= 3905;
+	C2S_MSG_SANGONG_PLACE_JETTON_REQ			= 3906;// 下注
+	S2C_MSG_SANGONG_PLACE_JETTON_REP			= 3907;
+	S2C_MSG_SANGONG_PLACE_JETTON_BROADCAST		= 3908;
+	S2C_MSG_SANGONG_SENDCARD_REP				= 3909;// 发牌
+	C2S_MSG_SANGONG_CHANGE_CARD					= 3910;// 摆牌
+	S2C_MSG_SANGONG_CHANGE_CARD_REP				= 3911;// 白牌广播
+	S2C_MSG_SANGONG_GAME_END					= 3912;// 结算
+
+//--------------牌九游戏消息-----------------------------------------
+	S2C_MSG_PAIJIU_GAME_FREE_INFO				= 4000;// 游戏信息
+	S2C_MSG_PAIJIU_GAME_PLAY_INFO				= 4001;// 游戏信息
+	S2C_MSG_PAIJIU_START						= 4002;// 游戏开始
+	C2S_MSG_PAIJIU_PLACE_JETTON					= 4003;// 用户加注 
+	S2C_MSG_PAIJIU_PLACE_JETTON_REP				= 4004;// 用户加注返回
+	S2C_MSG_PAIJIU_PLACE_JETTON_BROADCAST		= 4005;// 加注广播
+	S2C_MSG_PAIJIU_GAME_END						= 4008;// 游戏结束
+	C2S_MSG_PAIJIU_APPLY_BANKER					= 4009;// 申请庄家
+	S2C_MSG_PAIJIU_APPLY_BANKER					= 4010;// 申请庄家返回
+	S2C_MSG_PAIJIU_CHANGE_BANKER				= 4011;// 切换庄家
+	S2C_MSG_PAIJIU_CHANGE_USER_SCORE			= 4012;// 更新积分
+	S2C_MSG_PAIJIU_APPLY_LIST					= 4013;// 申请庄家列表
+	C2S_MSG_PAIJIU_JUMP_APPLY_QUEUE				= 4014;// 坐庄插队
+	S2C_MSG_PAIJIU_JUMP_APPLY_QUEUE				= 4015;// 插队回复
+	S2C_MSG_PAIJIU_BANKER_CALC					= 4016;// 庄家结算
+	S2C_MSG_PAIJIU_ADD_BANKER_SCORE				= 4017;// 庄家补币
+	S2C_MSG_PAIJIU_PLAY_LOG						= 4018;// 游戏记录
+	C2S_MSG_PAIJIU_CONTINUOUS_PRESSURE_REQ 	    = 4019;// 继续下注
+	S2C_MSG_PAIJIU_CONTINUOUS_PRESSURE_REP	    = 4020;// 继续下注
+
+//--------------时时彩游戏消息-----------------------------------------
+	CMD_MSG_EVERY_COLOR_GAME_BEGIN				= 4030;//时时彩消息号开始
+
+	C2S_MSG_EVERY_COLOR_GAME_ENTER				= 4031;//进入时时彩游戏
+	S2C_MSG_EVERY_COLOR_GAME_ENTER_REP			= 4032;//进入时时彩游戏返回
+	C2S_MSG_EVERY_COLOR_GAME_LEAVE				= 4033;//离开时时彩游戏
+	S2C_MSG_EVERY_COLOR_GAME_LEAVE_REP			= 4034;//离开时时彩游戏返回
+	S2C_MSG_EVERY_COLOR_GAME_FREE_INFO			= 4035;// 游戏信息
+	S2C_MSG_EVERY_COLOR_GAME_PLAY_INFO			= 4036;// 游戏信息
+	S2C_MSG_EVERY_COLOR_GAME_START				= 4037;// 游戏开始
+	S2C_MSG_EVERY_COLOR_TEN_GAME_START			= 4038;// 十元夺宝游戏开始
+	S2C_MSG_EVERY_COLOR_HUNDRED_GAME_START		= 4039;// 百元夺宝游戏开始
+	C2S_MSG_EVERY_COLOR_PLACE_JETTON_REQ		= 4040;// 用户加注
+	S2C_MSG_EVERY_COLOR_PLACE_JETTON_REP		= 4041;// 用户加注返回
+	S2C_MSG_EVERY_COLOR_PLACE_JETTON_BROADCAST	= 4042;// 加注广播
+	C2S_MSG_EVERY_COLOR_SNATCH_COIN_ENTER_REQ	= 4043;// 进入夺宝
+	C2S_MSG_EVERY_COLOR_SNATCH_COIN_ENTER_REP	= 4044;// 进入夺宝返回
+	C2S_MSG_EVERY_COLOR_SNATCH_COIN_REQ			= 4045;// 用户夺宝
+	S2C_MSG_EVERY_COLOR_SNATCH_COIN_REP			= 4046;// 用户夺宝返回
+	S2C_MSG_EVERY_COLOR_SNATCH_COIN_BROADCAST	= 4047;// 用户夺宝广播
+	S2C_MSG_EVERY_COLOR_GAME_END				= 4048;// 游戏结束
+	S2C_MSG_EVERY_COLOR_TEN_GAME_END			= 4049;// 十元夺宝游戏结束
+	S2C_MSG_EVERY_COLOR_HUNDRED_GAME_END		= 4050;// 百元夺宝游戏结束
+	S2C_MSG_EVERY_COLOR_SNATCH_COIN_STATE		= 4051;// 改变夺宝游戏状态
+	S2C_MSG_EVERY_COLOR_SNATCH_COIN_GAME_STATE	= 4052;// 夺宝游戏状态
+
+	CMD_MSG_EVERY_COLOR_GAME_END				= 4053;//时时彩消息号结束
+
+//--------------骰子游戏消息-----------------------------------------
+	S2C_MSG_DICE_GAME_FREE_INFO					= 4100;// 游戏信息
+	S2C_MSG_DICE_GAME_PLAY_INFO					= 4101;// 游戏信息
+	S2C_MSG_DICE_START							= 4102;// 游戏开始
+	C2S_MSG_DICE_PLACE_JETTON					= 4103;// 用户加注 
+	S2C_MSG_DICE_PLACE_JETTON_REP				= 4104;// 用户加注返回
+	S2C_MSG_DICE_PLACE_JETTON_BROADCAST			= 4105;// 加注广播
+	C2S_MSG_DICE_CANCEL_JETTON					= 4106;// 用户取消下注
+	S2C_MSG_DICE_CANCEL_JETTON_REP				= 4107;// 用户取消下注返回
+	S2C_MSG_DICE_CANCEL_JETTON_BROADCAST		= 4108;// 取消下注广播
+	S2C_MSG_DICE_GAME_END						= 4109;// 游戏结束
+	C2S_MSG_DICE_APPLY_BANKER					= 4110;// 申请庄家
+	S2C_MSG_DICE_APPLY_BANKER					= 4111;// 申请庄家返回
+	S2C_MSG_DICE_CHANGE_BANKER					= 4112;// 切换庄家
+	S2C_MSG_DICE_CHANGE_USER_SCORE				= 4113;// 更新积分
+	S2C_MSG_DICE_APPLY_LIST						= 4114;// 申请庄家列表
+	C2S_MSG_DICE_JUMP_APPLY_QUEUE				= 4115;// 坐庄插队
+	S2C_MSG_DICE_JUMP_APPLY_QUEUE				= 4116;// 插队回复
+	S2C_MSG_DICE_BANKER_CALC					= 4117;// 庄家结算
+	S2C_MSG_DICE_ADD_BANKER_SCORE				= 4118;// 庄家补币
+	S2C_MSG_DICE_PLAY_LOG						= 4119;// 游戏记录
+	C2S_MSG_DICE_JACKPOT_INFO_REQ				= 4120;// 奖池信息请求
+	S2C_MSG_DICE_JACKPOT_INFO_REP				= 4121;// 奖池信息返回
+	C2S_MSG_DICE_CONTROL_REQ					= 4122;// 骰子控制
+	C2S_MSG_DICE_CONTINUOUS_PRESSURE_REQ 	    = 4123;// 继续下注
+	S2C_MSG_DICE_CONTINUOUS_PRESSURE_REP	    = 4124;// 继续下注
+
+//--------------麻将游戏消息------------------------------------------
+	S2C_MSG_MAJIANG_GAME_INFO					= 4400;// 游戏信息
+	S2C_MSG_MAJIANG_START						= 4401;// 游戏开始
+	
+	C2S_MSG_MAJIANG_OUT_CARD_REQ				= 4402;// 玩家出牌
+	S2C_MSG_MAJIANG_OUT_CARD_REP				= 4403;// 玩家出牌
+
+	S2C_MSG_MAJIANG_SEND_CARD_REP				= 4404;// 发送扑克
+	S2C_MSG_MAJIANG_LISTEN_CARD_REP				= 4405;// 听牌命令
+
+	S2C_MSG_MAJIANG_OPER_NOTIFY_REP				= 4406;// 操作提示
+	C2S_MSG_MAJIANG_OPER_CARD_REQ				= 4407;// 用户操作
+	S2C_MSG_MAJIANG_OPER_RESULT_REP				= 4408;// 操作命令
+
+	S2C_MSG_MAJIANG_GAME_OVER_REP				= 4409;// 游戏结束
+
+	S2C_MSG_MAJIANG_OPENING_HU_REP				= 4410;// 起手胡显示
+	S2C_MSG_MAJIANG_FLUSH_DESK_REP				= 4411;// 刷新牌面
+	S2C_MSG_MAJIANG_SHOW_PUB_CARD_REP   		= 4412;// 亮公共牌
+
+	C2S_MSG_MAJIANG_CHANGE_CARD_REQ				= 4413;// 修改手牌(测试用)
+	C2S_MSG_MAJIANG_GET_HAND_CARD_REQ			= 4414;// 获取手牌信息
+	S2C_MSG_MAJIANG_GET_HAND_CARD_REP			= 4415;// 返回手牌信息
+
+	C2S_MSG_MAJIANG_OPER_TRUSTEE_REQ			= 4416;// 操作托管
+	S2C_MSG_MAJIANG_OPER_TRUSTEE_REP			= 4417;// 操作返回
+	S2C_MSG_MAJIANG_OPER_TRUSTEE_BROADCAST		= 4418;// 操作广播
+	C2S_MSG_MAJIANG_OPER_AFTER_NOTIFY_HU_REQ	= 4419;// 提示胡操作
+	S2C_MSG_MAJIANG_OPER_AFTER_NOTIFY_HU_REP	= 4420;// 提示胡操作
+
+	C2S_MSG_MAJIANG_GET_ALL_CARD_INFO_REQ		= 4421;// 获取手牌信息
+	S2C_MSG_MAJIANG_GET_ALL_CARD_INFO_REQ		= 4422;// 返回手牌信息
+
+	C2S_MSG_MAJIANG_OUT_AFTER_NOTIFY_HU_REQ		= 4423;// 提示胡操作
+	S2C_MSG_MAJIANG_OUT_AFTER_NOTIFY_HU_REP		= 4424;// 提示胡操作
+
+	//--------------水果机游戏消息------------------------------------------
+    S2C_MSG_SLOT_GAME_INFO						= 4500;//水果机游戏桌子信息
+    S2C_MSG_SLOT_GAME_PLAY_INFO					= 4501;//水果机游戏同步的信息
+	C2S_MSG_SLOT_SPIN_REQ                       = 4502;//水果机摇奖请求
+	S2C_MSG_SLOT_SPIN_REP                       = 4503;//水果机摇奖返回
+	C2S_MSG_SLOT_FREE_SPIN_REQ                  = 4504;//水果机免费摇奖请求
+	S2C_MSG_SLOT_FREE_SPIN_REP                  = 4505;//水果机免费摇奖返回
+	S2C_MSG_SLOT_ERROR_REP                      = 4506;//水果机异常返回
+	S2C_MSG_SLOT_SORT_FRONT_REP                 = 4507;//水果机前面用户
+	S2C_MSG_SLOT_JACKPOT_SCORE_REP              = 4508;//水果机彩金池更新
+
+	C2S_MSG_SLOT_SEND_MASTER_CTRL_INFO_REQ		= 4509;//发送水果机控制信息
+	S2C_MSG_SLOT_SEND_MASTER_CTRL_INFO_REP		= 4510;//发送水果机控制信息
+	S2C_MSG_SLOT_SEND_MASTER_CTRL_INFO_BROADCAST= 4511;//广播水果机控制信息
+
+	C2S_MSG_SLOT_SHOW_MASTER_CTRL_INFO_REQ		= 4512;//显示水果机控制信息
+	S2C_MSG_SLOT_SHOW_MASTER_CTRL_INFO_REP		= 4513;//显示水果机控制信息
+
+	C2S_MSG_SLOT_UPDATE_MASTER_SHOW_INFO_REQ	= 4514;//更新水果机显示信息
+	S2C_MSG_SLOT_UPDATE_MASTER_SHOW_INFO_REP	= 4515;//更新水果机显示信息
+
+
+	//--------------游戏消息-----------------------------------------
+	S2C_MSG_WAR_GAME_FREE_INFO					= 4550;// 游戏信息
+	S2C_MSG_WAR_GAME_PLAY_INFO					= 4551;// 游戏信息
+	S2C_MSG_WAR_START					   	    = 4552;// 游戏开始
+	C2S_MSG_WAR_PLACE_JETTON					= 4553;// 用户加注 
+	S2C_MSG_WAR_PLACE_JETTON_REP				= 4554;// 用户加注返回
+	S2C_MSG_WAR_PLACE_JETTON_BROADCAST		    = 4555;// 加注广播
+	S2C_MSG_WAR_GAME_END						= 4556;// 游戏结束
+	S2C_MSG_WAR_PLAY_LOG						= 4557;// 游戏记录
+	C2S_MSG_WAR_CONTINUOUS_PRESSURE_REQ 	    = 4558;// 继续下注
+	S2C_MSG_WAR_CONTINUOUS_PRESSURE_REP	        = 4559;// 继续下注
+
+	//--------------游戏消息-----------------------------------------
+	S2C_MSG_FIGHT_GAME_FREE_INFO				= 4580;// 游戏信息
+	S2C_MSG_FIGHT_GAME_PLAY_INFO				= 4581;// 游戏信息
+	S2C_MSG_FIGHT_START					   	    = 4582;// 游戏开始
+	C2S_MSG_FIGHT_PLACE_JETTON					= 4583;// 用户加注 
+	S2C_MSG_FIGHT_PLACE_JETTON_REP				= 4584;// 用户加注返回
+	S2C_MSG_FIGHT_PLACE_JETTON_BROADCAST		= 4585;// 加注广播
+	S2C_MSG_FIGHT_GAME_END						= 4586;// 游戏结束
+	S2C_MSG_FIGHT_PLAY_LOG						= 4587;// 游戏记录
+	C2S_MSG_FIGHT_CONTINUOUS_PRESSURE_REQ 	    = 4588;// 继续下注
+	S2C_MSG_FIGHT_CONTINUOUS_PRESSURE_REP	    = 4589;// 继续下注
+
+	//--------------看牌抢庄游戏消息--------------------------------------------
+	S2C_MSG_ROBNIU_GAME_FREE_INFO				= 4610;// 游戏信息
+	S2C_MSG_ROBNIU_GAME_PLAY_INFO				= 4611;// 游戏信息
+	S2C_MSG_ROBNIU_READY_START					= 4612;// 游戏开始
+	S2C_MSG_ROBNIU_START						= 4613;// 游戏开始
+	C2S_MSG_ROBNIU_APPLY_BANKER_REQ				= 4614;// 抢庄
+	S2C_MSG_ROBNIU_APPLY_BANKER_REP				= 4615;// 抢庄
+	S2C_MSG_ROBNIU_BANKER_RESULT				= 4616;// 庄家
+	C2S_MSG_ROBNIU_PLACE_JETTON_REQ				= 4617;// 下注
+	S2C_MSG_ROBNIU_PLACE_JETTON_REP				= 4618;// 下注
+	S2C_MSG_ROBNIU_PLACE_JETTON_BROADCAST		= 4619;// 下注
+	S2C_MSG_ROBNIU_SEND_FOUR_CARD_REP		    = 4620;// 发前面四张牌
+	S2C_MSG_ROBNIU_SEND_LAST_CARD_REP		    = 4621;// 发最后一张牌
+	C2S_MSG_ROBNIU_CHANGE_CARD_REQ				= 4622;// 摆牌
+	S2C_MSG_ROBNIU_CHANGE_CARD_REP				= 4623;// 摆牌广播
+	S2C_MSG_ROBNIU_GAME_END						= 4624;// 结算
+	S2C_MSG_ROBNIU_SCORE_LESS					= 4625;// 分数不足
+	S2C_MSG_ROBNIU_GAME_STATUS_ERROR			= 4626;// 游戏状态错误
+	
+	//--------------游戏消息--------------------------------------------
+	S2C_MSG_NIUNIU_GAME_FREE_INFO				= 4650;// 游戏信息
+	S2C_MSG_NIUNIU_GAME_PLAY_INFO				= 4651;// 游戏信息
+	S2C_MSG_NIUNIU_READY_START					= 4652;// 游戏开始
+	S2C_MSG_NIUNIU_START						= 4653;// 游戏开始
+	C2S_MSG_NIUNIU_APPLY_BANKER_REQ				= 4654;// 抢庄
+	S2C_MSG_NIUNIU_APPLY_BANKER_REP				= 4655;// 抢庄
+	S2C_MSG_NIUNIU_BANKER_RESULT				= 4656;// 庄家
+	C2S_MSG_NIUNIU_PLACE_JETTON_REQ				= 4657;// 下注
+	S2C_MSG_NIUNIU_PLACE_JETTON_REP				= 4658;// 下注
+	S2C_MSG_NIUNIU_PLACE_JETTON_BROADCAST		= 4659;// 下注
+	S2C_MSG_NIUNIU_SEND_CARD_REP				= 4660;// 发牌
+	C2S_MSG_NIUNIU_CHANGE_CARD_REQ				= 4661;// 摆牌
+	S2C_MSG_NIUNIU_CHANGE_CARD_REP				= 4662;// 摆牌广播
+	S2C_MSG_NIUNIU_GAME_END						= 4663;// 结算
+	S2C_MSG_NIUNIU_SCORE_LESS					= 4664;// 分数不足
+	S2C_MSG_NIUNIU_GAME_STATUS_ERROR			= 4665;// 游戏状态错误
+
+	S2C_MSG_NIUNIU_SEND_MASTER_CARD_REP			= 4666;// 发超级权限用户的牌
+	C2S_MSG_NIUNIU_RECV_MASTER_CARD_REQ			= 4667;// 接收超级权限用户的牌
+	S2C_MSG_NIUNIU_RECV_MASTER_CARD_REP			= 4668;// 接收超级权限用户的牌
+
+	//--------------捕鱼游戏消息-------------------------------------------		
+	C2S_MSG_FISHING_GAME_INFO_REQ				= 5000;// 游戏信息请求
+	S2C_MSG_FISHING_GAME_INFO_RSP				= 5001;// 游戏信息返回	
+	C2S_MSG_FISHING_SHOOTING_REQ				= 5002;// 射击请求	
+	S2C_MSG_FISHING_SHOOTING_RSP				= 5003;// 射击返回---群发	
+	C2S_MSG_FISHING_HIT_REQ						= 5004;// 击中目标请求
+	S2C_MSG_FISHING_HIT_RSP						= 5005;// 击中目标返回---群发
+	C2S_MSG_FISHING_CHANGE_BOT_REQ				= 5006;// 修改底分请求
+	S2C_MSG_FISHING_CHANGE_BOT_RSP				= 5007;// 修改底分请求---群发
+	S2C_MSG_FISHING_NOTICE_CHANGE_MAP			= 5008;// 系统通知地图切换---群发
+	C2S_MSG_FISHING_USE_PROP_REQ				= 5009;// 玩家使用道具请求
+	S2C_MSG_FISHING_NOTICE_USE_PROP				= 5010;// 玩家使用道具请求---群发
+	C2S_MSG_FISHING_MAP_INFO_REQ				= 5011;// 玩家请求当前地图信息
+	S2C_MSG_FISHING_MAP_INFO_RSP				= 5012;// 返回当前地图信息
+	C2S_MSG_FISHING_BULLET_TRACE_REQ			= 5013;// 玩家请求子弹跟踪
+	S2C_MSG_FISHING_NOTICE_BULLET_TRACE			= 5014;// 玩家请求子弹跟踪---群发
+	S2C_MSG_FISHING_HIT_NO_FISH_RSP				= 5015;// 击中目标返回---群发---无鱼/鱼已死的情况
+	C2S_MSG_FISHING_NEW_BULLET_REQ				= 5016;// 玩家请求生成新子弹
+	S2C_MSG_FISHING_NOTICE_NEW_BULLET			= 5017;// 玩家请求生成新子弹---群发
+
+	//--------------二八杠游戏消息-----------------------------------------
+	S2C_MSG_TWOEIGHT_GAME_FREE_INFO			 = 5050; // 游戏信息
+	S2C_MSG_TWOEIGHT_GAME_PLAY_INFO			 = 5051; // 游戏信息
+	S2C_MSG_TWOEIGHT_START					 = 5052; // 游戏开始
+	C2S_MSG_TWOEIGHT_PLACE_JETTON			 = 5053; // 用户加注 
+	S2C_MSG_TWOEIGHT_PLACE_JETTON_REP		 = 5054; // 用户加注返回
+	S2C_MSG_TWOEIGHT_PLACE_JETTON_BROADCAST	 = 5055; // 加注广播
+	S2C_MSG_TWOEIGHT_GAME_END				 = 5056; // 游戏结束
+	C2S_MSG_TWOEIGHT_APPLY_BANKER			 = 5057; // 申请庄家
+	S2C_MSG_TWOEIGHT_APPLY_BANKER			 = 5058; // 申请庄家返回
+	S2C_MSG_TWOEIGHT_CHANGE_BANKER			 = 5059; // 切换庄家
+	S2C_MSG_TWOEIGHT_CHANGE_USER_SCORE		 = 5060; // 更新积分
+	S2C_MSG_TWOEIGHT_APPLY_LIST				 = 5061; // 申请庄家列表
+	C2S_MSG_TWOEIGHT_JUMP_APPLY_QUEUE		 = 5062; // 坐庄插队
+	S2C_MSG_TWOEIGHT_JUMP_APPLY_QUEUE		 = 5063; // 插队回复
+	S2C_MSG_TWOEIGHT_BANKER_CALC			 = 5064; // 庄家结算
+	S2C_MSG_TWOEIGHT_ADD_BANKER_SCORE		 = 5065; // 庄家补币
+	S2C_MSG_TWOEIGHT_PLAY_LOG			     = 5066; // 游戏记录
+	C2S_MSG_TWOEIGHT_CONTINUOUS_PRESSURE_REQ = 5067; // 继续下注
+	S2C_MSG_TWOEIGHT_CONTINUOUS_PRESSURE_REP = 5068; // 继续下注
+
+	//--------------奔驰宝马游戏消息-----------------------------------------
+    S2C_MSG_CARCITY_GAME_FREE_INFO			= 5100; // 游戏信息
+	S2C_MSG_CARCITY_GAME_PLAY_INFO			= 5101; // 游戏信息
+	S2C_MSG_CARCITY_START					= 5102; // 游戏开始
+	C2S_MSG_CARCITY_PLACE_JETTON			= 5103; // 用户加注 
+	S2C_MSG_CARCITY_PLACE_JETTON_REP		= 5104; // 用户加注返回
+	S2C_MSG_CARCITY_PLACE_JETTON_BROADCAST  = 5105; // 加注广播
+	S2C_MSG_CARCITY_GAME_END				= 5106; // 游戏结束
+	S2C_MSG_CARCITY_PLAY_LOG			    = 5107; // 游戏记录
+	C2S_MSG_CARCITY_CONTINUOUS_PRESSURE_REQ = 5108; // 续押
+	S2C_MSG_CARCITY_CONTINUOUS_PRESSURE_REP	= 5109; // 续押返回
+}
+

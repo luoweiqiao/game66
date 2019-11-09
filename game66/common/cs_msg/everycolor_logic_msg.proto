@@ -1,0 +1,159 @@
+
+package net;
+import "base_msg_struct.proto";
+import "error_code.proto";
+
+//-------------时时彩游戏消息---------------------------------------
+
+// 进入游戏服务器
+message msg_enter_every_color_gamesvr_req
+{
+}
+// 进入游戏服务器返回
+message msg_enter_every_color_gamesvr_rep
+{
+	optional uint32 result 					= 1;	//1成功 2金币不足
+	optional uint32 svrid  					= 2;	//svrid
+	optional uint32 min_score				= 3;	//min_score
+}
+// 离开时时彩游戏服务器
+message msg_leave_every_color_gamesvr_req
+{
+	optional uint32 svrid					= 1;	// 跳转游戏服务器
+}
+// 离开时时彩游戏服务器返回
+message msg_leave_every_color_gamesvr_rep
+{
+	optional uint32 result					= 1;
+	optional uint32 svrid					= 2;	
+}
+// 游戏状态
+message msg_everycolor_game_info_play_rep
+{
+	optional bytes	periods_num 			= 1;	//期数
+	optional uint32 time_leave 				= 2;	//剩余时间
+	optional uint32	table_cards 			= 3;	//桌面扑克
+	optional uint32 game_status				= 4;	//游戏状态 下注区域
+	repeated int64	self_jetton_score		= 5;	//自己下注
+	repeated int64  total_jetton_score		= 6;	//全体总注
+	optional int64	win_score_flower		= 7;	//玩家成绩 花色
+	optional int64	win_score_bigsmall		= 8;	//玩家成绩 大小
+	repeated uint32 area_multiple			= 9;	//区域倍率
+	optional int64  basescore				= 10;	//底分
+	optional uint32 snatch_coin_stop		= 11;	//游戏停止 1 停止 0 进行
+}
+
+message msg_everycolor_game_info_snatch_coin_enter_req
+{
+	optional uint32 snatch_type				= 1;	//夺宝类型 0 十元 1 百元
+}
+message msg_everycolor_game_info_snatch_coin_enter_rep
+{
+	optional uint32 snatch_type				= 1;	//夺宝类型
+	optional bytes	periods_num 			= 2;	//期数
+	optional uint32 game_status				= 3;	//游戏状态
+	optional uint32 residue_card_count		= 4;	//剩余牌数
+	repeated uint32 card_data				= 5;	//购买扑克
+	optional uint32 time_leave				= 6;	//剩余时间
+	optional uint32 win_uid					= 7;	//胜利玩家
+	optional int64	win_score				= 8;	//玩家成绩
+}
+
+// 游戏开始
+message msg_everycolor_start_rep
+{
+	optional bytes	periods_num 			= 1;	//期数
+	optional uint32 time_leave 				= 2;	//剩余时间
+}
+
+message msg_everycolor_snatch_coin_start_rep
+{
+	optional bytes	periods_num 			= 1;	//期数
+}
+
+// 用户下注
+message msg_everycolor_place_jetton_req
+{
+	optional uint32 jetton_area				= 1;	//下注区域
+	optional int64  jetton_score			= 2;	//加注数目
+}
+message msg_everycolor_place_jetton_rep
+{
+	optional uint32 jetton_area				= 1;	//下注区域
+	optional int64  jetton_score			= 2;	//加注数目
+	optional uint32 result					= 3;	//加注返回
+	repeated int64	self_jetton_score		= 4;	//自己下注
+}
+message msg_everycolor_place_jetton_broadcast
+{
+	optional uint32 uid						= 1;	//用户
+	optional uint32 jetton_area				= 2;	//下注区域
+	optional int64  jetton_score			= 3;	//加注数目
+	repeated int64  total_jetton_score		= 4;	//全体总注
+}
+
+//夺宝请求
+message msg_everycolor_snatch_coin_req
+{
+	optional uint32 snatch_type				= 1;	//夺宝类型 0 十元 1 百元
+	optional uint32 snatch_count			= 2;	//夺宝数目
+}
+
+//夺宝响应
+message msg_everycolor_snatch_coin_rep
+{
+	optional uint32 snatch_type				= 1;	//本次购买类型
+	optional uint32 snatch_count			= 2;	//本次购买数目
+	optional uint32 result					= 3;	//夺宝返回  0 失败 1 成功  2 数目不足  3 筹码不足
+	optional uint32 self_total_count		= 4;	//用户购买扑克总数目
+	repeated uint32	self_snatch_card		= 5;	//用户购买扑克总扑克牌
+	optional uint32	residue_card_count		= 6;	//该类型剩余扑克数
+}
+//夺宝广播
+message msg_everycolor_snatch_coin_broadcast
+{
+	optional uint32 uid						= 1;	//用户uid
+	optional uint32 snatch_type				= 2;	//本次用户购买类型
+	optional uint32 snatch_count			= 3;	//本次用户购买数目
+	optional uint32 total_snatch_count		= 4;	//所有用户购买总数目
+	repeated uint32	total_snatch_card		= 5;	//所有用户购买扑克牌
+}
+
+// 发牌
+message msg_everycolor_send_card_rep
+{
+	repeated uint32 cards = 1;
+}
+
+// 游戏结束
+message msg_everycolor_game_end
+{
+	optional uint32 	table_cards 		= 1;	// 桌面扑克
+	optional int64		win_score_flower	= 2;	// 玩家成绩 花色
+	optional int64		win_score_bigsmall	= 3;	// 玩家成绩 大小
+	optional uint32		time_leave 			= 4;	// 剩余时间
+}
+
+//游戏状态
+message msg_everycolor_snatch_coin_game_status_rep
+{
+	optional uint32 snatch_type				= 1;	//夺宝类型
+	optional uint32 game_status				= 2;	//游戏状态
+	optional uint32 time_leave 				= 3;	//剩余时间
+}
+
+// 游戏结束
+message msg_everycolor_snatch_coin_game_end
+{
+	optional uint32		snatch_type			= 1;	// 夺宝类型
+	optional uint32 	table_cards 		= 2;	// 桌面扑克
+	optional uint32 	win_uid		 		= 3;	// 玩家uid
+	optional int64		win_score			= 4;	// 玩家成绩
+	optional bytes		periods_num 		= 5;	// 期数
+}
+
+//游戏状态
+message msg_everycolor_snatch_coin_state
+{
+	optional uint32		stop_state			= 1;	// 停止状态 1 停止 0 未停止
+}
